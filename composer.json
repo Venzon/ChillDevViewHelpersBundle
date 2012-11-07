@@ -11,6 +11,11 @@
     ],
     "homepage": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues",
+        "wiki": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/wiki",
+        "source": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle"
+    },
     "authors": [
         {
             "name": "Rafał Wrzeszcz",
@@ -27,8 +32,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "ChillDev\\Bundle\\ViewHelpersBundle": "library/ChillDev"
+            "ChillDev\\Bundle\\ViewHelpersBundle": "library/ChillDev/Bundle/ViewHelpersBundle"
         }
-    },
-    "target-dir": "ChillDev/Bundle/ViewHelpersBundle"
+    }
 }
