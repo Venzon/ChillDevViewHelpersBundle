@@ -1,0 +1,34 @@
+{
+    "name": "chilldev/view-helpers-bundle",
+    "description": "General-purpose view helpers for PHP templating engine from Chillout Development",
+    "type": "symfony-bundle",
+    "keywords": [
+        "chilldev",
+        "symfony2",
+        "view helpers",
+        "php",
+        "templating"
+    ],
+    "homepage": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafał Wrzeszcz",
+            "email": "rafal.wrzeszcz@wrzasq.pl",
+            "homepage": "http://wrzasq.pl/",
+            "role": "creator,manager,architect,developer"
+        },
+        {
+            "name": "Chillout Development",
+            "email": "biuro@chilldev.pl",
+            "homepage": "http://chilldev.pl/",
+            "role": "owner"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "ChillDev\\Bundle\\ViewHelpersBundle": "library/ChillDev"
+        }
+    },
+    "target-dir": "ChillDev/Bundle/ViewHelpersBundle"
+}
