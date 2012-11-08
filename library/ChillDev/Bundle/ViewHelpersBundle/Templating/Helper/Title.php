@@ -10,7 +10,7 @@
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
-use ChillDev\Bundle\CoreBundle\Templating\Container\Words;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\Helper\HelperInterface;

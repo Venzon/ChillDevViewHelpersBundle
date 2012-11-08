@@ -13,14 +13,23 @@
 >
     <!-- test suites definitions -->
     <testsuites>
-        <testsuite name="ChillDev ViewHelpers Bundle - Bundle">
-            <file>./library/ChillDev/Bumdle/ViewHelpersBundle/Tests/BundleTest.php</file>
-            <!-- TODO: files (core, di & configuration) -->
-        </testsuite>
-        <testsuite name="ChillDev ViewHelpers Bundle - &lt;title&gt; helper">
-            <!-- TODO: files (helper and words) -->
+        <testsuite name="ChillDev ViewHelpers Bundle">
+            <directory>./library/ChillDev/Bumdle/ViewHelpersBundle/Tests/</directory>
         </testsuite>
     </testsuites>
+
+   <!-- code coverage configuration -->
+    <filter>
+        <blacklist>
+            <directory suffix=".php">./vendor</directory>
+        </blacklist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./library</directory>
+            <exclude>
+                <directory suffix=".php">./library/ChillDev/Bundle/ViewHelpersBundle/Tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 
     <!-- logging settings -->
     <logging>

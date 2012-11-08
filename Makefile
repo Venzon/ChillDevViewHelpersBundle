@@ -32,7 +32,7 @@ check:
 
 # conde linting
 lint:
-	$(PHPCS) --standard=PSR2 --encoding=utf-8 --extensions=php library
+	$(PHPCS) --standard=PSR2 --encoding=utf-8 --extensions=php --ignore=library/ChillDev/Bundle/ViewHelpersBundle/Tests library
 
 # tests running
 test:

@@ -28,10 +28,12 @@ class BundleTest extends PHPUnit_Framework_TestCase
      * Check if bundle registers own extension.
      *
      * @test
+     * @version 0.0.1
+     * @since 0.0.1
      */
     public function ownExtension()
     {
         $extension = (new ChillDevViewHelpersBundle())->getContainerExtension();
-        $this->assertEquals('chilldev_viewhelpers', $extension->getAlias());
+        $this->assertEquals('chilldev_viewhelpers', $extension->getAlias(), 'ChillDevViewHelpersBundle::getContainerExtension() should return bundle\'s extension.');
     }
 }
