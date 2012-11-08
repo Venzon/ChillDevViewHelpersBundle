@@ -6,7 +6,7 @@
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
 # @version 0.0.1
 # @since 0.0.1
-# @package ChillDevViewHelpersBundle
+# @package ChillDev\Bundle\ViewHelpersBundle
 -->
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

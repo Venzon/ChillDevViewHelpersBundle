@@ -7,11 +7,11 @@
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 // bootstrap autoloading
-require(__DIR__ . '/../vendor/autoload.php');
+require(__DIR__ . '/../../vendor/autoload.php');
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title;

@@ -7,7 +7,7 @@
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
@@ -25,7 +25,7 @@ use Symfony\Component\Templating\Helper\Helper;
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class Serializer extends Helper
 {

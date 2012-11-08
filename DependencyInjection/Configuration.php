@@ -7,7 +7,7 @@
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\DependencyInjection;
@@ -22,7 +22,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class Configuration implements ConfigurationInterface
 {

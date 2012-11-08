@@ -7,7 +7,8 @@
         "symfony2",
         "view helpers",
         "php",
-        "templating"
+        "templating",
+        "helper"
     ],
     "homepage": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle",
     "license": "MIT",
@@ -48,10 +49,8 @@
     },
     "autoload": {
         "psr-0": {
-            "ChillDev\\Bundle\\ViewHelpersBundle": "library/"
+            "ChillDev\\Bundle\\ViewHelpersBundle": ""
         }
     },
-    "config": {
-        "bin-dir": "tools"
-    }
+    "target-dir": "ChillDev/Bundle/ViewHelpersBundle"
 }

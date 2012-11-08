@@ -7,7 +7,7 @@
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Tests;
@@ -22,7 +22,7 @@ use ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\ChillDevViewHelpersExt
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class BundleTest extends PHPUnit_Framework_TestCase
 {

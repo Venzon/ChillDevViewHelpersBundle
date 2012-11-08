@@ -7,7 +7,7 @@
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Tests\Templating\Container;
@@ -21,7 +21,7 @@ use ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words;
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class WordsTest extends PHPUnit_Framework_TestCase
 {

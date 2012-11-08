@@ -7,7 +7,7 @@
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Tests\Templating\Helper;
@@ -25,7 +25,7 @@ use Symfony\Component\Templating\Loader\FilesystemLoader;
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
  * @version 0.0.1
  * @since 0.0.1
- * @package ChillDevViewHelpersBundle
+ * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class TitleTest extends PHPUnit_Framework_TestCase
 {

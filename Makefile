@@ -5,15 +5,15 @@
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
 # @version 0.0.1
 # @since 0.0.1
-# @package ChillDevViewHelpersBundle
+# @package ChillDev\Bundle\ViewHelpersBundle
 ##
 
 # environment-vary commands
 PHP = $(shell which php)
 COMPOSER = $(shell which composer.phar)
 PHPDOC = $(shell which phpdoc)
-PHPCS = ./tools/phpcs
-PHPUNIT = ./tools/phpunit
+PHPCS = ./vendor/bin/phpcs
+PHPUNIT = ./vendor/bin/phpunit
 
 # meta-targets
 
@@ -31,16 +31,16 @@ update:
 
 # syntax checking
 check:
-	find library -name "*.php" -exec $(PHP) -l {} \;
+	 find . -path "./vendor" -prune -o -name "*.php" -exec $(PHP) -l {} \;
 
 # conde linting
 lint:
-	$(PHPCS) --standard=PSR2 --encoding=utf-8 --extensions=php --ignore=library/ChillDev/Bundle/ViewHelpersBundle/Tests library
+	$(PHPCS) --standard=PSR2 --encoding=utf-8 --extensions=php --ignore=Tests --ignore=vendor --ignore=Resources .
 
 # tests running
-test:
-	$(PHPUNIT) library
+tests:
+	$(PHPUNIT)
 
 # documentation generation
-doc:
-	$(PHPDOC) -t documentation -d library -i "library/ChillDev/Bundle/ViewHelpersBundle/Tests/*" --title "ChillDev ViewHelpers Bundle - by Chillout Development" --sourcecode --parseprivate #TODO
+documentation:
+	$(PHPDOC) -t Resources/doc -d . -i "Tests/*" -i "vendor/*" -i "Resources/*" --title "ChillDev ViewHelpers Bundle - by Chillout Development" --sourcecode --parseprivate #TODO

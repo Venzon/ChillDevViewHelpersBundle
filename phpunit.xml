@@ -6,7 +6,7 @@
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
 # @version 0.0.1
 # @since 0.0.1
-# @package ChillDevViewHelpersBundle
+# @package ChillDev\Bundle\ViewHelpersBundle
 -->
 <phpunit
     colors="true"
@@ -16,19 +16,19 @@
     <!-- test suites definitions -->
     <testsuites>
         <testsuite name="ChillDev ViewHelpers Bundle">
-            <directory>./library/ChillDev/Bumdle/ViewHelpersBundle/Tests/</directory>
+            <directory>./Tests</directory>
+            <exclude>./vendor</exclude>
         </testsuite>
     </testsuites>
 
-   <!-- code coverage configuration -->
+    <!-- code coverage configuration -->
     <filter>
-        <blacklist>
-            <directory suffix=".php">./vendor</directory>
-        </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./library</directory>
+            <directory suffix=".php">./</directory>
             <exclude>
-                <directory suffix=".php">./library/ChillDev/Bundle/ViewHelpersBundle/Tests</directory>
+                <directory suffix=".php">./Resources</directory>
+                <directory suffix=".php">./Tests</directory>
+                <directory suffix=".php">./vendor</directory>
             </exclude>
         </whitelist>
     </filter>
@@ -37,13 +37,13 @@
     <logging>
         <log
             type="coverage-html"
-            target="coverage"
+            target="Resources/doc/coverage"
             charset="utf-8"
             highlight="true"
         />
         <log
             type="testdox-html"
-            target="documentation/testdox.html"
+            target="Resources/doc/testdox.html"
         />
     </logging>
 </phpunit>
