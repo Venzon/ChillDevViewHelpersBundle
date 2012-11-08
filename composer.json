@@ -30,6 +30,9 @@
             "role": "owner"
         }
     ],
+    "require": {
+        "php": ">=5.4"
+    },
     "autoload": {
         "psr-0": {
             "ChillDev\\Bundle\\ViewHelpersBundle": "library/ChillDev/Bundle/ViewHelpersBundle"
