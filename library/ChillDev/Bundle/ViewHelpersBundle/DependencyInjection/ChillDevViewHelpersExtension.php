@@ -37,6 +37,17 @@ class ChillDevViewHelpersExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+
+        // templating helpers
+        $loader->load('services.xml');
+
+        // set up title
+        if (isset($config['title']['separator'])) {
+            $container->setParameter('chilldev.viewhelpers.title.separator', $config['title']['separator']);
+        }
+        if (isset($config['title']['base'])) {
+            $container->getDefinition('chilldev.viewhelpers.helper.title')->addMethodCall('append', [$config['title']['base']]);
+        }
     }
 
     /**

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDevViewHelpersBundle
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <!-- classes definition -->
+        <parameter key="chilldev.viewhelpers.helper.title.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title</parameter>
+
+        <parameter key="chilldev.viewhelpers.title.separator"> - </parameter>
+    </parameters>
+
+    <services>
+        <!-- <title> tag helper -->
+        <service id="chilldev.viewhelpers.helper.title" class="chilldev.viewhelpers.helper.title.class">
+            <tag name="templating.helper" alias="title"/>
+            <argument type="service" id="templating.engine.php"/>
+            <argument>%chilldev.viewhelpers.title.separator%</argument>
+        </service>
+    </services>
+</container>

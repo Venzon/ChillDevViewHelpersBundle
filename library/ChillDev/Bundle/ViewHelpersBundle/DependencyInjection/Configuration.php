@@ -34,6 +34,24 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('chilldev_viewhelpers');
 
+        // define parameters
+        $rootNode
+            ->children()
+                ->arrayNode('title')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('separator')
+                            ->defaultNull()
+                            ->info('<title> parts separator')
+                        ->end()
+                        ->scalarNode('base')
+                            ->defaultNull()
+                            ->info('initial <title> part')
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+
         return $treeBuilder;
     }
 }
