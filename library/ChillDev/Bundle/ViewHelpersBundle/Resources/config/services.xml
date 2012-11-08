@@ -14,6 +14,7 @@
     <parameters>
         <!-- classes definition -->
         <parameter key="chilldev.viewhelpers.helper.title.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title</parameter>
+        <parameter key="chilldev.viewhelpers.helper.serializer.class">ChillDev\Bundle\CoreBundle\Templating\Helper\Serializer</parameter>
 
         <parameter key="chilldev.viewhelpers.title.separator"> - </parameter>
     </parameters>
@@ -24,6 +25,12 @@
             <tag name="templating.helper" alias="title"/>
             <argument type="service" id="templating.engine.php"/>
             <argument>%chilldev.viewhelpers.title.separator%</argument>
+        </service>
+
+        <!-- serializer helper -->
+        <service id="chilldev.core.templating.helper.serializer" class="%chilldev.viewhelpers.helper.serializer.class%">
+            <tag name="templating.helper" alias="serializer"/>
+            <argument type="service" id="serializer"/>
         </service>
     </services>
 </container>

@@ -17,5 +17,6 @@
         <title><?php echo $view['title']; ?></title>
     </head>
     <body>
+        <pre><?php echo $view['serializer']->serialize(['Hello', 'World']); ?></pre>
     </body>
 </html>
