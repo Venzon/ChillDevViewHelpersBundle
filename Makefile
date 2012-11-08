@@ -1,4 +1,6 @@
 ##
+# This file is part of the ChillDev ViewHelpers bundle.
+#
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
 # @version 0.0.1
@@ -9,6 +11,7 @@
 # environment-vary commands
 PHP = $(shell which php)
 COMPOSER = $(shell which composer.phar)
+PHPDOC = $(shell which phpdoc)
 PHPCS = ./tools/phpcs
 PHPUNIT = ./tools/phpunit
 
@@ -39,5 +42,5 @@ test:
 	$(PHPUNIT) library
 
 # documentation generation
-documentation:
-	#TODO
+doc:
+	$(PHPDOC) -t documentation -d library -i "library/ChillDev/Bundle/ViewHelpersBundle/Tests/*" --title "ChillDev ViewHelpers Bundle - by Chillout Development" --sourcecode --parseprivate #TODO
