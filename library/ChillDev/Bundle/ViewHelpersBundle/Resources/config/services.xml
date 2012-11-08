@@ -20,7 +20,7 @@
 
     <services>
         <!-- <title> tag helper -->
-        <service id="chilldev.viewhelpers.helper.title" class="chilldev.viewhelpers.helper.title.class">
+        <service id="chilldev.viewhelpers.helper.title" class="%chilldev.viewhelpers.helper.title.class%">
             <tag name="templating.helper" alias="title"/>
             <argument type="service" id="templating.engine.php"/>
             <argument>%chilldev.viewhelpers.title.separator%</argument>
