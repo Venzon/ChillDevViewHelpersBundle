@@ -52,8 +52,10 @@ class WordsTest extends PHPUnit_Framework_TestCase
         $separator = '!';
 
         $words = new Words();
-        $words->setSeparator($separator);
+        $return = $words->setSeparator($separator);
+
         $this->assertEquals($separator, $words->getSeparator(), 'Words::setSeparator() should change separator.');
+        $this->assertSame($words, $return, 'Words::setSeparator() should return reference to itself.');
     }
 
     /**
@@ -69,9 +71,11 @@ class WordsTest extends PHPUnit_Framework_TestCase
         $value2 = 'bar';
 
         $words = new Words();
-        $words->append($value1, $value2);
+        $return = $words->append($value1, $value2);
+
         $this->assertEquals($value1, $words[0], 'Words::append() should remember all values passed to it, in correct order.');
         $this->assertEquals($value2, $words[1], 'Words::append() should remember all values passed to it, in correct order.');
+        $this->assertSame($words, $return, 'Words::append() should return reference to itself.');
     }
 
     /**
