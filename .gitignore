@@ -10,4 +10,5 @@
 /.project
 /.settings
 /composer.lock
+/tools/*
 /vendor/*

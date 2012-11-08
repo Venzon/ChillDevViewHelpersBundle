@@ -46,7 +46,10 @@ class ChillDevViewHelpersExtension extends Extension
             $container->setParameter('chilldev.viewhelpers.title.separator', $config['title']['separator']);
         }
         if (isset($config['title']['base'])) {
-            $container->getDefinition('chilldev.viewhelpers.helper.title')->addMethodCall('append', [$config['title']['base']]);
+            $container->getDefinition('chilldev.viewhelpers.helper.title')->addMethodCall(
+                'append',
+                [$config['title']['base']]
+            );
         }
     }
 

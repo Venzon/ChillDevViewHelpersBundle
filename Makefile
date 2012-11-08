@@ -6,8 +6,13 @@
 # @package ChillDevViewHelpersBundle
 ##
 
+# environment-vary commands
 PHP = $(shell which php)
 COMPOSER = $(shell which composer.phar)
+PHPCS = ./tools/phpcs
+
+# project setup
+DIRECTORIES = tools/
 
 # meta-targets
 
@@ -16,7 +21,7 @@ default: all
 all: check lint test documentation
 
 # project initialization
-init:
+init: $(DIRECTORIES)
 	$(COMPOSER) install
 
 # update composer dependencies
@@ -29,7 +34,7 @@ check:
 
 # conde linting
 lint:
-	#TODO
+	$(PHPCS) --standard=PSR2 --encoding=utf-8 --extensions=php library
 
 # tests running
 test:
@@ -38,3 +43,8 @@ test:
 # documentation generation
 documentation:
 	#TODO
+
+# file-specific rules
+
+$(DIRECTORIES):
+	mkdir -p $@

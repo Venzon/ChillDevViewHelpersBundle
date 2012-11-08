@@ -33,9 +33,15 @@
     "require": {
         "php": ">=5.4"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "dev-master"
+    },
     "autoload": {
         "psr-0": {
             "ChillDev\\Bundle\\ViewHelpersBundle": "library/ChillDev/Bundle/ViewHelpersBundle"
         }
+    },
+    "config": {
+        "bin-dir": "tools"
     }
 }

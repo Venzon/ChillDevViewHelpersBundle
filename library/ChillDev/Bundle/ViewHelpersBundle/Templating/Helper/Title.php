@@ -24,9 +24,8 @@ use Symfony\Component\Templating\Helper\HelperInterface;
  * @since 0.0.1
  * @package ChillDevViewHelpersBundle
  */
-class Title extends Words
-    implements
-        HelperInterface
+class Title extends Words implements
+    HelperInterface
 {
     /**
      * Current context charset.
