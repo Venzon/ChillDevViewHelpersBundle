@@ -10,9 +10,7 @@
 PHP = $(shell which php)
 COMPOSER = $(shell which composer.phar)
 PHPCS = ./tools/phpcs
-
-# project setup
-DIRECTORIES = tools/
+PHPUNIT = ./tools/phpunit
 
 # meta-targets
 
@@ -21,7 +19,7 @@ default: all
 all: check lint test documentation
 
 # project initialization
-init: $(DIRECTORIES)
+init:
 	$(COMPOSER) install
 
 # update composer dependencies
@@ -38,13 +36,8 @@ lint:
 
 # tests running
 test:
-	#TODO
+	$(PHPUNIT) library
 
 # documentation generation
 documentation:
 	#TODO
-
-# file-specific rules
-
-$(DIRECTORIES):
-	mkdir -p $@

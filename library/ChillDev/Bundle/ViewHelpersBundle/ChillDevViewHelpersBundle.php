@@ -35,7 +35,7 @@ class ChillDevViewHelpersBundle extends Bundle
         // this allows us to have custom extension alias
         // default convention would put a lot of underscores
         if (null === $this->extension) {
-            return new ChillDevViewHelpersExtension();
+            $this->extension = new ChillDevViewHelpersExtension();
         }
 
         return $this->extension;

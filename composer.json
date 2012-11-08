@@ -31,14 +31,19 @@
         }
     ],
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.4",
+        "symfony/templating": "2.1.*"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "dev-master"
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "dev-master",
+        "symfony/config": "2.1.*",
+        "symfony/dependency-injection": "2.1.*",
+        "symfony/http-kernel": "2.1.*"
     },
     "autoload": {
         "psr-0": {
-            "ChillDev\\Bundle\\ViewHelpersBundle": "library/ChillDev/Bundle/ViewHelpersBundle"
+            "ChillDev\\Bundle\\ViewHelpersBundle": "library/"
         }
     },
     "config": {

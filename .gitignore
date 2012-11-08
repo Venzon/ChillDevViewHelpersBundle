@@ -10,5 +10,7 @@
 /.project
 /.settings
 /composer.lock
+/coverage/*
+/documentation/*
 /tools/*
 /vendor/*

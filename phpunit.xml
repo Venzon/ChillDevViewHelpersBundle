@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDevViewHelpersBundle
+-->
+<phpunit
+    colors="true"
+    bootstrap="vendor/autoload.php"
+    strict="true"
+>
+    <!-- test suites definitions -->
+    <testsuites>
+        <testsuite name="ChillDev ViewHelpers Bundle - Bundle">
+            <file>./library/ChillDev/Bumdle/ViewHelpersBundle/Tests/BundleTest.php</file>
+            <!-- TODO: files (core, di & configuration) -->
+        </testsuite>
+        <testsuite name="ChillDev ViewHelpers Bundle - &lt;title&gt; helper">
+            <!-- TODO: files (helper and words) -->
+        </testsuite>
+    </testsuites>
+
+    <!-- logging settings -->
+    <logging>
+        <log
+            type="coverage-html"
+            target="coverage"
+            charset="utf-8"
+            highlight="true"
+        />
+        <log
+            type="testdox-html"
+            target="documentation/testdox.html"
+        />
+    </logging>
+</phpunit>
