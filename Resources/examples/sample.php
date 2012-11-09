@@ -13,6 +13,7 @@
 // bootstrap autoloading
 require(__DIR__ . '/../../vendor/autoload.php');
 
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title;
 
@@ -29,6 +30,10 @@ $templating = new PhpEngine(new TemplateNameParser(), new FilesystemLoader([]));
 // <title> helper
 $title = new Title($templating);
 $templating->set($title);
+
+// <link> helper
+$link = new Link($templating);
+$templating->set($link);
 
 // to reduce dependencies here is simple JSON serializer
 class JsonSerializer implements SerializerInterface
@@ -50,6 +55,8 @@ $templating->set(new Serializer(new JsonSerializer()));
 // sample pre-defined data
 $title->setSeparator(' :: ')
     ->append('<Root>', 'Category');
+$link->add('style/style.css', 'stylesheet', 'text/css')
+    ->add('images/favicon.png', ['shortcut', 'icon'], 'image/png');
 
 echo $templating->render(__DIR__ . '/template.php', [
         'title' => 'Page',

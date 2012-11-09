@@ -65,7 +65,7 @@ class Words extends ArrayObject
      * Changes separator.
      *
      * @param string $separator New separator.
-     * @return Words Self instance.
+     * @return self Self instance.
      * @version 0.0.1
      * @since 0.0.1
      */
@@ -80,7 +80,7 @@ class Words extends ArrayObject
      * Appends one, ore more values at the end of current stack.
      *
      * @param mixed $value,... Additional value.
-     * @return Words Self instance.
+     * @return self Self instance.
      * @version 0.0.1
      * @since 0.0.1
      */

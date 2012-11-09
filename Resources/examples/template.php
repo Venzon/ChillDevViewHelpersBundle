@@ -12,9 +12,11 @@
 
 ?>
 <?php $view['title']->append($title); ?>
+<?php $view['link']->add('style/print.css', 'stylesheet', 'text/css', 'print'); ?>
 <html>
     <head>
-        <title><?php echo $view['title']; ?></title>
+        <?php echo $view['title']; ?>
+        <?php echo $view['link']; ?>
     </head>
     <body>
         <pre><?php echo $view['serializer']->serialize(['Hello', 'World']); ?></pre>

@@ -94,4 +94,45 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
 
         $this->fail('ChillDevViewHelpersExtension::load() should append base title to "chilldev.viewhelpers.helper.title" service definition.');
     }
+
+    /**
+     * Check if links parameters is handled correctly.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function preDefinedLinks()
+    {
+        $href = 'foo';
+        $rels = ['bar', 'baz'];
+        $type = 'text/css';
+        $media = 'screen';
+
+        $config = [
+            'links' => [
+                [
+                    'href' => $href,
+                    'rels' => $rels,
+                    'type' => $type,
+                    'media' => $media,
+                ],
+            ],
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        foreach ($container->getDefinition('chilldev.viewhelpers.helper.link')->getMethodCalls() as $call) {
+            if ($call[0] === 'add') {
+                $this->assertEquals($href, $call[1][0], 'ChillDevViewHelpersExtension::load() should set href parameter for "chilldev.viewhelpers.helper.title"::add().');
+                $this->assertEquals($rels, $call[1][1], 'ChillDevViewHelpersExtension::load() should set rels parameter for "chilldev.viewhelpers.helper.title"::add().');
+                $this->assertEquals($type, $call[1][2], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.title"::add().');
+                $this->assertEquals($media, $call[1][3], 'ChillDevViewHelpersExtension::load() should set media parameter for "chilldev.viewhelpers.helper.title"::add().');
+                return;
+            }
+        }
+
+        $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined links in "chilldev.viewhelpers.helper.link" service definition.');
+    }
 }

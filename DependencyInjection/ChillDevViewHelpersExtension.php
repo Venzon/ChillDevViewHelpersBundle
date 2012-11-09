@@ -53,6 +53,12 @@ class ChillDevViewHelpersExtension extends Extension
                 [$config['title']['base']]
             );
         }
+
+        // pre-defined <link> elements
+        $links = $container->getDefinition('chilldev.viewhelpers.helper.link');
+        foreach ($config['links'] as $link) {
+            $links->addMethodCall('add', [$link['href'], $link['rels'], $link['type'], $link['media']]);
+        }
     }
 
     /**

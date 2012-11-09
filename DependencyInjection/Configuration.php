@@ -52,6 +52,44 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                 ->end()
+            ->end()
+            ->fixXmlConfig('link')
+            ->children()
+                ->arrayNode('links')
+                    ->prototype('array')
+                        ->fixXmlConfig('rel')
+                        ->children()
+                            ->scalarNode('href')
+                                ->isRequired()
+                            ->end()
+                            ->arrayNode('rels')
+                                ->isRequired()
+                                ->requiresAtLeastOneElement()
+                                ->beforeNormalization()
+                                    ->ifTrue(
+                                        function ($value) {
+                                            return !\is_array($value);
+                                        }
+                                    )
+                                    ->then(
+                                        function ($value) {
+                                            return [$value];
+                                        }
+                                    )
+                                ->end()
+                                ->prototype('scalar')
+                                ->end()
+                            ->end()
+                            ->scalarNode('type')
+                                ->defaultNull()
+                            ->end()
+                            ->scalarNode('media')
+                                ->defaultNull()
+                            ->end()
+                        ->end()
+                    ->end()
+                    ->info('<link> tags definitions')
+                ->end()
             ->end();
 
         return $treeBuilder;
