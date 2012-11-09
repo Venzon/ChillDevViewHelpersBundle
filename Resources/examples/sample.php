@@ -14,6 +14,7 @@
 require(__DIR__ . '/../../vendor/autoload.php');
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title;
 
@@ -30,6 +31,10 @@ $templating = new PhpEngine(new TemplateNameParser(), new FilesystemLoader([]));
 // <title> helper
 $title = new Title($templating);
 $templating->set($title);
+
+// <meta> helper
+$meta = new Meta($templating);
+$templating->set($meta);
 
 // <link> helper
 $link = new Link($templating);
@@ -55,6 +60,8 @@ $templating->set(new Serializer(new JsonSerializer()));
 // sample pre-defined data
 $title->setSeparator(' :: ')
     ->append('<Root>', 'Category');
+$meta->setMetaName('description', 'Chillout Development ViewHelpers Bundle')
+    ->setProperty('og:title', 'ChillDev\\Bundle\\ViewHelpersBundle');
 $link->add('style/style.css', 'stylesheet', 'text/css')
     ->add('images/favicon.png', ['shortcut', 'icon'], 'image/png');
 

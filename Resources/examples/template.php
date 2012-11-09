@@ -12,10 +12,12 @@
 
 ?>
 <?php $view['title']->append($title); ?>
+<?php $view['meta']->setHttpEquiv('Content-Type', 'text/html; charset="utf-8"'); ?>
 <?php $view['link']->add('style/print.css', 'stylesheet', 'text/css', 'print'); ?>
 <html>
     <head>
         <?php echo $view['title']; ?>
+        <?php echo $view['meta']; ?>
         <?php echo $view['link']; ?>
     </head>
     <body>

@@ -271,4 +271,188 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertNull($config['links'][0]['type'], 'Default value for links.$n.type should be NULL.');
         $this->assertNull($config['links'][0]['media'], 'Default value for links.$n.media should be NULL.');
     }
+
+    /**
+     * Check keywords elements handling.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function keywordsDefinition()
+    {
+        $keywords = ['foo', 'bar'];
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'keywords' => $keywords,
+        ]));
+
+        $this->assertEquals($keywords, $config['keywords'], 'Configuration should handle keywords.');
+    }
+
+    /**
+     * Check if configuration detects incorrectly defined meta with conflicting key values.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage Invalid configuration for path "chilldev_viewhelpers.meta.0": <meta> may have only one of "name", "property" and "http-equiv" attributes defined.
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function conflictingMetaKeysDefinition()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'name' => 'foo',
+                            'property' => 'bar',
+                            'content' => '',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check if configuration detects incorrectly defined meta without key values.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage Invalid configuration for path "chilldev_viewhelpers.meta.0": <meta> must have one of "name", "property" and "http-equiv" attributes defined.
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function missingMetaKeyDefinition()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'content' => '',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check if configuration detects incorrectly defined meta without content.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The child node "content" at path "chilldev_viewhelpers.meta.0" must be configured.
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function missingMetaContentDefinition()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'name' => 'foo',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check if configuration detects incorrectly defined meta with empty name key.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The path "chilldev_viewhelpers.meta.0.name" cannot contain an empty value, but got "".
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function emptyMetaNameDefinition()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'name' => '',
+                            'content' => 'foo',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check if configuration detects incorrectly defined meta with empty property key.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The path "chilldev_viewhelpers.meta.0.property" cannot contain an empty value, but got "".
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function emptyMetaPropertyDefinition()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'property' => '',
+                            'content' => 'foo',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check if configuration detects incorrectly defined meta with empty http-equiv key.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The path "chilldev_viewhelpers.meta.0.http_equiv" cannot contain an empty value, but got "".
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function emptyMetaHttpEquivDefinition()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'http_equiv' => '',
+                            'content' => 'foo',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check string-to-array conversion for "rels" property of <link> element definition.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function multipleMetaDefinitions()
+    {
+        $meta1 = 'foo';
+        $value1 = 'bar';
+        $meta2 = 'baz';
+        $value2 = 'qux';
+        $meta3 = 'quux';
+        $value3 = 'corge';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'meta' => [
+                        [
+                            'name' => $meta1,
+                            'content' => $value1,
+                        ],
+                        [
+                            'property' => $meta2,
+                            'content' => $value2,
+                        ],
+                        [
+                            'http_equiv' => $meta3,
+                            'content' => $value3,
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals($meta1, $config['meta'][0]['name'], 'Configuration should put defined meta name key into meta.$n.name.');
+        $this->assertEquals($value1, $config['meta'][0]['content'], 'Configuration should put defined meta content into meta.$n.content.');
+        $this->assertEquals($meta2, $config['meta'][1]['property'], 'Configuration should put defined meta property key into meta.$n.property.');
+        $this->assertEquals($value2, $config['meta'][1]['content'], 'Configuration should put defined meta content into meta.$n.content.');
+        $this->assertEquals($meta3, $config['meta'][2]['http_equiv'], 'Configuration should put defined meta HTTP-equiv key into meta.$n.http_equiv.');
+        $this->assertEquals($value3, $config['meta'][2]['content'], 'Configuration should put defined meta content into meta.$n.content.');
+    }
 }

@@ -19,7 +19,7 @@ PHPUNIT = ./vendor/bin/phpunit
 
 default: all
 
-all: check lint test documentation
+all: check lint tests documentation
 
 # project initialization
 init:

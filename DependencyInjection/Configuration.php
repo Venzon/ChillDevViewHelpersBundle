@@ -90,6 +90,65 @@ class Configuration implements ConfigurationInterface
                     ->end()
                     ->info('<link> tags definitions')
                 ->end()
+            ->end()
+            ->fixXmlConfig('keyword')
+            ->children()
+                ->arrayNode('keywords')
+                    ->prototype('scalar')
+                    ->end()
+                    ->example(['foo', 'bar'])
+                    ->info('initial website <meta> keywords')
+                ->end()
+            ->end()
+            ->children()
+                ->arrayNode('meta')
+                    ->prototype('array')
+                        ->addDefaultsIfNotSet()
+                        ->children()
+                            ->scalarNode('name')
+                                ->cannotBeEmpty()
+                                ->info('for meta tags by name="" attribute')
+                            ->end()
+                            ->scalarNode('property')
+                                ->cannotBeEmpty()
+                                ->info('for meta tags by property="" attribute')
+                            ->end()
+                            ->scalarNode('http_equiv')
+                                ->cannotBeEmpty()
+                                ->info('for meta tags by http-equiv="" attribute')
+                            ->end()
+                            ->scalarNode('content')
+                                ->isRequired()
+                            ->end()
+                        ->end()
+                        ->validate()
+                            ->ifTrue(
+                                function ($value) {
+                                    return (int) isset($value['name'])
+                                        + (int) isset($value['property'])
+                                        + (int) isset($value['http_equiv']) > 1;
+                                }
+                            )
+                            ->thenInvalid(
+                                '<meta> may have only one of "name", "property" and "http-equiv" attributes defined.'
+                            )
+                        ->end()
+                        ->validate()
+                            ->ifTrue(
+                                function ($value) {
+                                    return !(isset($value['name'])
+                                            || isset($value['property'])
+                                            || isset($value['http_equiv'])
+                                        );
+                                }
+                            )
+                            ->thenInvalid(
+                                '<meta> must have one of "name", "property" and "http-equiv" attributes defined.'
+                            )
+                        ->end()
+                    ->end()
+                    ->info('<meta> tag definitions')
+                ->end()
             ->end();
 
         return $treeBuilder;

@@ -96,7 +96,7 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Check if links parameters is handled correctly.
+     * Check if links parameters are handled correctly.
      *
      * @test
      * @version 0.0.1
@@ -134,5 +134,103 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
         }
 
         $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined links in "chilldev.viewhelpers.helper.link" service definition.');
+    }
+
+    /**
+     * Check if keywords are handled correctly.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function preDefinedKeywords()
+    {
+        $value = ['foo', 'bar', 'baz'];
+
+        $config = [
+            'keywords' => $value,
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        foreach ($container->getDefinition('chilldev.viewhelpers.container.keywords')->getMethodCalls() as $call) {
+            if ($call[0] === 'append') {
+                $this->assertEquals($value, $call[1], 'ChillDevViewHelpersExtension::load() should pass all defined keywords to "chilldev.viewhelpers.container.keywords"::append().');
+                return;
+            }
+        }
+
+        $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined keywords in "chilldev.viewhelpers.container.keywords" service definition.');
+    }
+
+    /**
+     * Check if meta parameters are handled correctly.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function preDefinedMetas()
+    {
+        $name = 'foo';
+        $nameContent = 'bar';
+        $property = 'baz';
+        $propertyContent = 'qux';
+        $httpEquiv = 'quux';
+        $httpEquivContent = 'corge';
+
+        $config = [
+            'meta' => [
+                [
+                    'name' => $name,
+                    'content' => $nameContent,
+                ],
+                [
+                    'property' => $property,
+                    'content' => $propertyContent,
+                ],
+                [
+                    'http_equiv' => $httpEquiv,
+                    'content' => $httpEquivContent,
+                ],
+            ],
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        $foundName = false;
+        $foundProperty = false;
+        $foundHttpEquiv = false;
+
+        foreach ($container->getDefinition('chilldev.viewhelpers.helper.meta')->getMethodCalls() as $call) {
+            if ($call[0] === 'setMetaName' && $call[1][0] != 'keywords') {
+                $foundName = true;
+
+                $this->assertEquals($name, $call[1][0], 'ChillDevViewHelpersExtension::load() should set meta key parameter for "chilldev.viewhelpers.helper.title"::setMetaName().');
+                $this->assertEquals($nameContent, $call[1][1], 'ChillDevViewHelpersExtension::load() should set meta content parameter for "chilldev.viewhelpers.helper.title"::setMetaName().');
+            } elseif ($call[0] === 'setProperty') {
+                $foundProperty = true;
+
+                $this->assertEquals($property, $call[1][0], 'ChillDevViewHelpersExtension::load() should set meta key parameter for "chilldev.viewhelpers.helper.title"::setProperty().');
+                $this->assertEquals($propertyContent, $call[1][1], 'ChillDevViewHelpersExtension::load() should set meta content parameter for "chilldev.viewhelpers.helper.title"::setProperty().');
+            } elseif ($call[0] === 'setHttpEquiv') {
+                $foundHttpEquiv = true;
+
+                $this->assertEquals($httpEquiv, $call[1][0], 'ChillDevViewHelpersExtension::load() should set meta key parameter for "chilldev.viewhelpers.helper.title"::setHttpEquiv().');
+                $this->assertEquals($httpEquivContent, $call[1][1], 'ChillDevViewHelpersExtension::load() should set meta content parameter for "chilldev.viewhelpers.helper.title"::setHttpEquiv().');
+            }
+        }
+
+        if (!$foundName) {
+            $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined meta-names in "chilldev.viewhelpers.helper.meta" service definition.');
+        }
+        if (!$foundProperty) {
+            $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined meta-properties in "chilldev.viewhelpers.helper.meta" service definition.');
+        }
+        if (!$foundHttpEquiv) {
+            $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined meta-http-equivs in "chilldev.viewhelpers.helper.meta" service definition.');
+        }
     }
 }

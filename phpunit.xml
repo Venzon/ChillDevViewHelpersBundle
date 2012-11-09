@@ -41,9 +41,5 @@
             charset="utf-8"
             highlight="true"
         />
-        <log
-            type="testdox-html"
-            target="Resources/doc/testdox.html"
-        />
     </logging>
 </phpunit>

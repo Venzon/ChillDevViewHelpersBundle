@@ -54,6 +54,32 @@ class ChillDevViewHelpersExtension extends Extension
             );
         }
 
+        // initial keywords
+        if (\count($config['keywords']) > 0) {
+            $container->getDefinition('chilldev.viewhelpers.container.keywords')->addMethodCall(
+                'append',
+                $config['keywords']
+            );
+        }
+
+        // initial <meta> tags
+        $metas = $container->getDefinition('chilldev.viewhelpers.helper.meta');
+        foreach ($config['meta'] as $meta) {
+            // choose right container
+            if (isset($meta['name'])) {
+                $key = $meta['name'];
+                $method = 'setMetaName';
+            } elseif (isset($meta['property'])) {
+                $key = $meta['property'];
+                $method = 'setProperty';
+            } else {
+                $key = $meta['http_equiv'];
+                $method = 'setHttpEquiv';
+            }
+
+            $metas->addMethodCall($method, [$key, $meta['content']]);
+        }
+
         // pre-defined <link> elements
         $links = $container->getDefinition('chilldev.viewhelpers.helper.link');
         foreach ($config['links'] as $link) {

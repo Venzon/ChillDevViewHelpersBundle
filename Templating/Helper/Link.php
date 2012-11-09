@@ -96,7 +96,7 @@ class Link extends Helper
     /**
      * Finds all currently set links by given relation.
      *
-     * @param string $rels Link relation.
+     * @param string $rel Link relation.
      * @return Element[] Found links.
      * @version 0.0.1
      * @since 0.0.1
