@@ -51,7 +51,7 @@
         </service>
 
         <!-- serializer helper -->
-        <service id="chilldev.core.templating.helper.serializer" class="%chilldev.viewhelpers.helper.serializer.class%">
+        <service id="chilldev.viewhelpers.helper.serializer" class="%chilldev.viewhelpers.helper.serializer.class%">
             <tag name="templating.helper" alias="serializer"/>
             <argument type="service" id="serializer"/>
         </service>

@@ -39,6 +39,12 @@ class Configuration implements ConfigurationInterface
         // define parameters
         $rootNode
             ->children()
+                ->booleanNode('xhtml')
+                    ->defaultFalse()
+                    ->info('application/xhtml+xml Content-Type switch')
+                ->end()
+            ->end()
+            ->children()
                 ->arrayNode('title')
                     ->addDefaultsIfNotSet()
                     ->children()

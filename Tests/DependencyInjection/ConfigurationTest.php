@@ -455,4 +455,18 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($meta3, $config['meta'][2]['http_equiv'], 'Configuration should put defined meta HTTP-equiv key into meta.$n.http_equiv.');
         $this->assertEquals($value3, $config['meta'][2]['content'], 'Configuration should put defined meta content into meta.$n.content.');
     }
+
+    /**
+     * Check default XHTML helper configuration.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function defaultXhtmlConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([]));
+
+        $this->assertFalse($config['xhtml'], 'Default value for xhtml should be FALSE.');
+    }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# This file is part of the ChillDev ViewHelpers bundle.
+#
+# @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDev\Bundle\ViewHelpersBundle
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <!-- classes definition -->
+        <parameter key="chilldev.viewhelpers.helper.xhtml.class">TODO</parameter>
+        <parameter key="chilldev.viewhelpers.filter.xhtml_response.class">TODO</parameter>
+    </parameters>
+
+    <services>
+        <!-- XHTML Content-Type filter -->
+        <service id="chilldev.viewhelpers.filter.xhtml_response" class="%chilldev.viewhelpers.filter.xhtml_response.class%">
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse"/>
+        </service>
+
+        <!-- XHTML helper -->
+        <service id="chilldev.viewhelpers.helper.xhtml" class="%chilldev.viewhelpers.helper.xhtml.class%">
+            <tag name="templating.helper" alias="xhtml"/>
+            <argument type="service" id="chilldev.viewhelpers.filter.xhtml_response"/>
+        </service>
+    </services>
+</container>

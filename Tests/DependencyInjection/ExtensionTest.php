@@ -233,4 +233,38 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
             $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined meta-http-equivs in "chilldev.viewhelpers.helper.meta" service definition.');
         }
     }
+
+    /**
+     * Check if XHTML is disabled by default.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function xhtmlDisabled()
+    {
+        $container = new ContainerBuilder();
+
+        $this->extension->load([[]], $container);
+
+        $this->assertFalse($container->hasDefinition('chilldev.viewhelpers.helper.xhtml'), 'ChillDevViewHelpersExtension::load() should not load XHTML helper definition by default.');
+    }
+
+    /**
+     * Check if enabling XHTML causes definitions loading.
+     *
+     * @test
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function xhtmlEnabled()
+    {
+        $container = new ContainerBuilder();
+
+        $this->extension->load([[
+                    'xhtml' => true,
+        ]], $container);
+
+        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.xhtml'), 'ChillDevViewHelpersExtension::load() should load XHTML helper on demand.');
+    }
 }

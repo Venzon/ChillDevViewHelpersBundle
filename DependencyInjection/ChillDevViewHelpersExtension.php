@@ -43,6 +43,11 @@ class ChillDevViewHelpersExtension extends Extension
         // templating helpers
         $loader->load('services.xml');
 
+        // enable XHTML Content-Type fix
+        if ($config['xhtml']) {
+            $loader->load('xhtml.xml');
+        }
+
         // set up title
         if (isset($config['title']['separator'])) {
             $container->setParameter('chilldev.viewhelpers.title.separator', $config['title']['separator']);
