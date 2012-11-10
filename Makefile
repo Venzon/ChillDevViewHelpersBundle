@@ -31,7 +31,7 @@ update:
 
 # syntax checking
 check:
-	 find . -path "./vendor" -prune -o -name "*.php" -exec $(PHP) -l {} \;
+	find . -path "./vendor" -prune -o -name "*.php" -exec $(PHP) -l {} \;
 
 # conde linting
 lint:
