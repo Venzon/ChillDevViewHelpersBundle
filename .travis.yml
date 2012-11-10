@@ -1,14 +1,7 @@
-##
-# This file is part of the ChillDev ViewHelpers bundle.
-#
-# @author Rafa³ Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafa³ Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
-# @since 0.0.1
-# @package ChillDev\Bundle\ViewHelpersBundle
-##
-
 language: "php"
 
 php:
     - "5.4"
+
+before_script: "composer --dev install"
+script: "make check lint tests"
