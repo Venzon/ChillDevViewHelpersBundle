@@ -15,7 +15,7 @@ namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Link;
 use Symfony\Component\Templating\PhpEngine;
 
 /**
- * Single <link> tag representation.
+ * Single &lt;link&gt; tag representation.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.

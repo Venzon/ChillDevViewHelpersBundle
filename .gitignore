@@ -12,6 +12,7 @@
 /.project
 /.settings
 /composer.lock
-/Resources/doc/*
+/Resources/doc/coverage
+/Resources/doc/gh-pages
 /output/*
 /vendor/*

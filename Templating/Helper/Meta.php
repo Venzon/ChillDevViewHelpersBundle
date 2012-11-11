@@ -18,7 +18,7 @@ use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\Helper\Helper;
 
 /**
- * <meta> tags helper.
+ * &lt;meta&gt; tags helper.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.

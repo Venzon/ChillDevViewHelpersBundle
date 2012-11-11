@@ -43,4 +43,4 @@ tests:
 
 # documentation generation
 documentation:
-	$(PHPDOC) -t Resources/doc -d . -i "Tests/*" -i "vendor/*" -i "Resources/*" --title "ChillDev ViewHelpers Bundle - by Chillout Development" --sourcecode --parseprivate
+	$(PHPDOC) -t Resources/doc/gh-pages -d . -i "Tests/*" -i "vendor/*" -i "Resources/*" --title "ChillDev ViewHelpers Bundle - by Chillout Development" --sourcecode --parseprivate
