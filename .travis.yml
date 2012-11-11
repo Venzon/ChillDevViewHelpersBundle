@@ -1,3 +1,13 @@
+##
+# This file is part of the ChillDev ViewHelpers bundle.
+#
+# @author Rafal Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2012 © by Rafal Wrzeszcz - Wrzasq.pl.
+# @version 0.0.1
+# @since 0.0.1
+# @package ChillDev\Bundle\ViewHelpersBundle
+##
+
 language: "php"
 
 php:
