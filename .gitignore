@@ -13,6 +13,5 @@
 /.settings
 /composer.lock
 /Resources/doc/coverage
-/Resources/doc/gh-pages
 /output/*
 /vendor/*

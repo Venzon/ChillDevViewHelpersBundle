@@ -23,6 +23,7 @@ all: check lint tests documentation
 
 # project initialization
 init:
+	git submodule update --init --recursive
 	$(COMPOSER) install
 
 # update composer dependencies
