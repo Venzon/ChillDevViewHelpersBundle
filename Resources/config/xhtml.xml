@@ -13,8 +13,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
         <!-- classes definition -->
-        <parameter key="chilldev.viewhelpers.helper.xhtml.class">TODO</parameter>
-        <parameter key="chilldev.viewhelpers.filter.xhtml_response.class">TODO</parameter>
+        <parameter key="chilldev.viewhelpers.helper.xhtml.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</parameter>
+        <parameter key="chilldev.viewhelpers.filter.xhtml_response.class">ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</parameter>
     </parameters>
 
     <services>
