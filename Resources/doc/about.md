@@ -10,4 +10,14 @@
 
 # About this project
 
-<!--- TODO -->
+This project is a Symfony2 bundle, that provides set of view helpers for PHP templating engine.
+
+Currently it contains:
+
+- `<title>` tag helper,
+- `<meta>` tag helper,
+- `<link>` tag helper,
+- XHTML Content-Type negotation helper for real XHTML applications (`application/xhtml+xml`),
+- PHP helper wrapper for [JMSSerializerBundle](https://github.com/schmittjoh/JMSSerializerBundle).
+
+Because not everyone uses Twig…

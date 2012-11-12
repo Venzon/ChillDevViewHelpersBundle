@@ -10,4 +10,11 @@
 
 # Resources
 
-<!--- TODO -->
+-   [GitHub project](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle)
+-   [GitHub page with API documentation](https://chilloutdevelopment.github.com/ChillDevViewHelpersBundle/)
+-   [Travis CI](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle)
+-   [Issues tracker](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues)
+-   [Packagist package](https://packagist.org/packages/chilldev/view-helpers-bundle)
+-   [Chillout Development @ GitHub](https://github.com/chilloutdevelopment/)
+-   [Chillout Development @ Facebook](http://www.facebook.com/chilldev)
+-   [Chillout Development website](http://chilldev.pl/)
