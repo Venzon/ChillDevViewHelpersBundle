@@ -12,7 +12,7 @@
 
 **ChillDevViewHelpersBundle** is a **Symfony2 bundle** that brings set of useful view helpers for PHP templating engine.
 
-[![Build Status](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle.png)](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle])
+[![Build Status](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle.png)](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle)
 
 Because not everyone uses Twig…
 
@@ -50,7 +50,7 @@ class Kernel extends BaseKernel
 }
 ```
 
-Of course there are some optional [configuration options](./Resources/doc/configuration.md).
+Of course there are some optional [configuration options](./tree/master/Resources/doc/configuration.md).
 
 # Usage
 
@@ -84,11 +84,11 @@ In your layout file:
 </html>
 ```
 
-For more advanced aspects see [advanced usage documentation](./Resources/doc/usage.md) or even [internals description](./Resources/doc/internals.md).
+For more advanced aspects see [advanced usage documentation](./tree/master/Resources/doc/usage.md) or even [internals description](./tree/master/Resources/doc/internals.md).
 
 # Resources
 
--   [Source documentation](./Resources/doc/index.md)
+-   [Source documentation](./tree/master/Resources/doc/index.md)
 -   [GitHub page with API documentation](https://chilloutdevelopment.github.com/ChillDevViewHelpersBundle/)
 -   [Travis CI](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle)
 -   [Issues tracker](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues)
