@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="ChillDev ViewHelpers Bundle - by Chillout Development">
+  <file path="DependencyInjection/Configuration.php" hash="1ded02ad8b711668eb9ce3f2cf694afd" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="TreeBuilder">Symfony\Component\Config\Definition\Builder\TreeBuilder</namespace-alias>
+    <namespace-alias name="ConfigurationInterface">Symfony\Component\Config\Definition\ConfigurationInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="27" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends/>
+      <implements>\Symfony\Component\Config\Definition\ConfigurationInterface</implements>
+      <name>Configuration</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\Configuration</full_name>
+      <docblock line="18">
+        <description><![CDATA[ChillDev.ViewHelpers configuration handler.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="18" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="18" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="18" name="version" description="0.0.1"/>
+        <tag line="18" name="since" description="0.0.1"/>
+        <tag line="18" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="34" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getConfigTreeBuilder</name>
+        <full_name>getConfigTreeBuilder</full_name>
+        <docblock line="29">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="version" description="0.0.1"/>
+          <tag line="29" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdWN1u2zYUvvdTnBoF5KS1nfQ2qZe16bAARQa0wTYgDgJaOoq4UKRKUnacNjd7m73GgL3XSFG25cSSGednP7ywZfL8fuccniPvf5clWavV395uwTacJFRBTBmC+c6I1CBi0AnC+4Qydohj+Jni5EdkGUoFo5xHDHuG0fIekFwnQsInEpO/fodf5DWq6/Aa9qXZYL1J+fvAPBD1pZexQcEVimwq6UWi4c3O7hv48w8YTe/I6NpHx9UruMZGPxUcdno7vd1iR1EeYuV3RsJLcrGwfPiusHZYccDtGOp+q8VJisrweDAMDzFDHiEPp0f8Nwy1MWSv1coVwudpGgs+Hb4XaSY4cm2eeEwvDEtMObWURixlEcrhiUQsn/e8md1OLon9dcQ1ytjYvDcP4Mz4XjVOYZUJEmKdkP+LsIWMKAVLoABNM4apge/WwRyt1tcWmFUgZtc2fD2gPEFJ9aEIb2abt40td5cMLvb6xXeWjxgNIc55kRBwgdqpr8S5s1WQOv12vdSLQ3gLHCewRL63oJRC6GMRoSGrcnUH9qAThBavCMfnYwNU4oAKDP9cQL8Pkc0jtHVtkt2Aoe5Kn+/Y1R1YqZFEXhq+fDgSgiHhlq0TXCU6ZcFdMkdqNJOc6R8IU7hCliOiPBadgGSZwbGIWL8Q+uoqZTaS2oS0ezLNENSE6jBZoaw7MHV5S/7qvUbHiJRk6tzSVDOsdYtE0aHzTB3Fx0J/Rl3rXYPGBZEKCSPSqVZoA6WFrFG/4CrRPc4Za5DuaB3I+4Vfg+KKV+CjaRWM9baPiKpD7SFmF7cgYVA1f0Ob6878UyimV7+mzNV4J2CUXwabZpllVrVZlkmhhTaJb4rD8jR6vGyVxLqaXGvgMmE1uInEeE1wHRNVn/BLTiU2JY4jbU4uR1MBzPhVh9eGJjhy6YjV9/ojEqV/4vjB9RIv7hHGQuKxkClh9Lq4wjz4SkPjE5ljx4varnmf6bwcE5bjVqWr+CyJOpccXgypOi+AncnZ8xZz40XpC4CZMvmzu3/quM+e32mflHd0lfJ3VeiV+D4F5UNTLXxrhJfy+9zs9zUixYiSZ7Zik0bizsp2ay/4AWhyodwQVgzzq26wTdvPJU4nQkYbd6CS36sJNWbhGqiuiJ3OO6dBLETwGsygIIOzZvBmTX+CI0U1wr6ZXckAGix+/DHQqnyc/uw/Mq61cJmwWiP2ZdarRELCudDv8EOa6anXbeRiYvocWExcSps3P6vxbbsNRGtJR7leP/3dt+4NyuadRjeh+wR+zbQ+rW+J1tm5HT3Gz+ud1dst9D6tf6F7e3veoXH9uen9NCK67o20YpPncLbpVFJOIx3K9RZQpcyd4ASculKuuSFXrVcrpcyL58GSKql6tgUD2F0/OjWPTOuwt3PhES9CtT4AQdkcUmKSm4wRBGdT84H2f8y2xbL9GtozNEzK8wjaiyqo1EDZqDHqBRua/9/Lvxedh+WeXd++PULqrRS0lHneojzeZ/6J/MyVniXovy03vQZa54bpI5vPs5X/Jsv8q/6v6cJ207pp/Q0nuZS2</source>
+  </file>
+  <file path="DependencyInjection/ChillDevViewHelpersExtension.php" hash="19d50614b4eb02de7790395e047cfa23" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="FileLocator">Symfony\Component\Config\FileLocator</namespace-alias>
+    <namespace-alias name="ContainerBuilder">Symfony\Component\DependencyInjection\ContainerBuilder</namespace-alias>
+    <namespace-alias name="XmlFileLoader">Symfony\Component\DependencyInjection\Loader\XmlFileLoader</namespace-alias>
+    <namespace-alias name="Extension">Symfony\Component\HttpKernel\DependencyInjection\Extension</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="29" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\HttpKernel\DependencyInjection\Extension</extends>
+      <name>ChillDevViewHelpersExtension</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\ChillDevViewHelpersExtension</full_name>
+      <docblock line="20">
+        <description><![CDATA[ChillDev ViewHelpers extensions.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="20" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="20" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="20" name="version" description="0.0.1"/>
+        <tag line="20" name="since" description="0.0.1"/>
+        <tag line="20" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="36" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="31">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="version" description="0.0.1"/>
+          <tag line="31" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="36">
+          <name>$configs</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="36">
+          <name>$container</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\DependencyInjection\ContainerBuilder</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="100" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getAlias</name>
+        <full_name>getAlias</full_name>
+        <docblock line="95">
+          <description><![CDATA[{@inheritdoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="95" name="version" description="0.0.1"/>
+          <tag line="95" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="31" code="50015">Argument $configs is missing from the Docblock of load()</error>
+      <error line="31" code="50015">Argument $container is missing from the Docblock of load()</error>
+    </parse_markers>
+    <source>eJzdVs1u20YQvvMp5hCAsiFRTq52VTdWCgd1isA12gCWIKzIobj1csnsLmXLgS59m75Ggb5XZ5cURVJS7NQ9lRdyh9/MfPPt7M/Z93mSe97w+NiDY7hJuIaYCwR650wZyGIwCcJFwoUY4xJ+5Xh/iSJHpWFeyEhgQI7W95wVJskUXLOY/f0H/KYeUT+Gj3CmyCCC+2p8Th9Mfw5yMXJeYZavFF8kBt6cvH4Df/0J89VOjIH9LL0C57Wk/DyTcBKcBK+dRXMZYmOcs/COLbbMJ28d20mjgNJC6KHnSZaiJp9nOEzGmKOMUIar9/J3DA0ROfW8QiP8skrjTK4mF1maZxKloS8Z88XkR9L0KguZydTpAeSeqNbbMC5RvS24iPCbfK8yRh6TT6kok7Ov+F8ak/+ESqLYG+rdg0GpyzKrTtnbELjB6f9FU4SCaV1jG5haj7LiSENt8b54QI9TyT7H8OWcywQVN+MsXG+MXa6VtcXX2YbunRdzwUOIC+kmBATNZo8pxVbwKnQdpvvQbRb3q7QcuSglNftUToViLtx3IPEeLpq23tFpF02wV4Y2iMEoV1mIWrcd2jH7NTEKtI0kXBtWCVut2duy7bu/jSXTm83G769nMwjAHwbB8Bp1ViiiMCxz+EfNJMMhGExzQTzkApJyyroUBiOnoa9RLTlFCh5S4XeioGRz2go/Xd58uHLq0lIZ3KxypC3yoQbyGDa13/oPiaE406OG1nuSOtQm4wazbuXWaKDIwXBjm7GRimv6tU3oAP70lgqh/dqKRdl30tfSDkbk/ZGAKRrS3A9tc0e4DJbU3ZVUgYsZbAPWc3kgXbOG51CdM41PsFygGWPMJXettZ9m+S7Z+keDEYuiD0i7TXTBhOi1QtvHZ7nd2fz+zp/bQxSnLejBuXI0mYA7XN1nKtItESZhVsiGChuQbZIRnLxUhBoe1IFfIsUemt+mwRk1FhuBYYvGkrM2bbePfzfD1r25UuJMIQuTxrJziClQEperKyrxC5Mso6OvPFRqGi1Uo2VtkFvf3gn29KkrifSxBTWBp7uo1E0CAWm9GJoR9rNFtoFrQKFxJzntsVS7WT2LwBb8FImPG+Q+Ek/mSeieMMPPBV8+ncneKd45aCeV53WdmO62bBWqT2uTCPQ3+cNyE6aVebARc4WDyDYWRnAmuLwbUWmYklfzDCD7CxrSun+9IV2CqiPt9+6BYAHdqn0a+rZm+5fUVhj70z5UQ0VT1BgaOogawxQjzrrCNOTZdyOJ/rsbCan3g+BM97pXDYWmUBJqPWcNPavOWHtr7x8nZsfl</source>
+  </file>
+  <file path="ChillDevViewHelpersBundle.php" hash="b8c5fb4b6962fef97c69dcef3290c0cd" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="ChillDevViewHelpersExtension">ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\ChillDevViewHelpersExtension</namespace-alias>
+    <namespace-alias name="Bundle">Symfony\Component\HttpKernel\Bundle\Bundle</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle" line="28" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\HttpKernel\Bundle\Bundle</extends>
+      <name>ChillDevViewHelpersBundle</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\ChillDevViewHelpersBundle</full_name>
+      <docblock line="19">
+        <description><![CDATA[Common general-purpose PHP templating features.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="19" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="19" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="19" name="version" description="0.0.1"/>
+        <tag line="19" name="since" description="0.0.1"/>
+        <tag line="19" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle" line="35" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getContainerExtension</name>
+        <full_name>getContainerExtension</full_name>
+        <docblock line="30">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="version" description="0.0.1"/>
+          <tag line="30" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdU71u2zAQ3vkUN3RIDFh2siZOjdgFXHQJ2qJdtNDUyWJLkSx/7MqBl75NX6NA3qsnylbVJEPm3MLj8fuO392R129tZRmbjEYMRvC5kh5KqRBotdwFMCWECmFRSaWWuIUvEncrVBadh3XUhcKMiC13zmOojIOPvOQPv+Cr26Pfiz1cOwqobHfcz8nh/kdm1U1iCWMbJzdVgMvpxSX8+Q3r5kmOcet2rCyxtnS/NBqm2TS7SBEvtcDB3nLxnW/+Kc9vk9p8UEAXIfSEMc1r9MR5AeGKsehfgMuXaFEXqEXzXn9DEUhwfmIN0O9+BtRtNcfEn5q6NLrJF6a2RqMO+SoE+wGdRnW6rFdyHBxha2rHBjU6rsY2Omso1d3qDgLWVvEg9QZK5CE69K9iZEJx7+GZfnYYwLathYcj5Z4BWWpXayO4n0tdoZNhacThFHys8hj9T2mKTdJq41pJAWXUabrU/7AwOnBJY+jHenaesJ2AJGJCf4o+GFfK7DxED8FAxbcIIvpg6k56ksGV5H5ILLDkUQUQRm/pabSYnYmqICkBOCiTviyVTHUIQ7PuybKEMx2VgtlsBm9aAeOb/qLzgbzWHp/DDDTunuv2oMyrPsWB9a5DenL6ScIOe2AH9hfREXmE</source>
+  </file>
+  <file path="Templating/Link/Element.php" hash="d58ddfbaabb7a44c48ba41a035f8f032" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="PhpEngine">Symfony\Component\Templating\PhpEngine</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="26" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends/>
+      <name>Element</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element</full_name>
+      <docblock line="17">
+        <description><![CDATA[Single &lt;link&gt; tag representation.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="17" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="17" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="17" name="version" description="0.0.1"/>
+        <tag line="17" name="since" description="0.0.1"/>
+        <tag line="17" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="35" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" package="Default">
+        <name>$href</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Link target.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="version" description="0.0.1"/>
+          <tag line="28" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="44" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" package="Default">
+        <name>$rels</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="37">
+          <description><![CDATA[Link relations.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="version" description="0.0.1"/>
+          <tag line="37" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="53" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+        <docblock line="46">
+          <description><![CDATA[MIME type.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="46" name="version" description="0.0.1"/>
+          <tag line="46" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="62" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" package="Default">
+        <name>$media</name>
+        <default><![CDATA[]]></default>
+        <docblock line="55">
+          <description><![CDATA[Destination media type.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="55" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="55" name="version" description="0.0.1"/>
+          <tag line="55" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="71" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" package="Default">
+        <name>$templating</name>
+        <default><![CDATA[]]></default>
+        <docblock line="64">
+          <description><![CDATA[Templating engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="var" description="" type="\Symfony\Component\Templating\PhpEngine">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="64" name="version" description="0.0.1"/>
+          <tag line="64" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="84" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="73">
+          <description><![CDATA[Initializes templating helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="param" description="Templating engine." type="\Symfony\Component\Templating\PhpEngine" variable="$templating">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="73" name="param" description="Link location." type="string" variable="$href">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="param" description="Link relations." type="string[]" variable="$rels">
+            <type by_reference="false">string[]</type>
+          </tag>
+          <tag line="73" name="param" description="Link MIME type." type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="param" description="Media query." type="string" variable="$media">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="version" description="0.0.1"/>
+          <tag line="73" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="84">
+          <name>$templating</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Templating\PhpEngine</type>
+        </argument>
+        <argument line="84">
+          <name>$href</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="84">
+          <name>$rels</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="84">
+          <name>$type</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="84">
+          <name>$media</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="100" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getHref</name>
+        <full_name>getHref</full_name>
+        <docblock line="93">
+          <description><![CDATA[Returns link target.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="return" description="Link target." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="version" description="0.0.1"/>
+          <tag line="93" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="112" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getRels</name>
+        <full_name>getRels</full_name>
+        <docblock line="105">
+          <description><![CDATA[Returns list of link relations.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="105" name="return" description="Link relations." type="string[]">
+            <type by_reference="false">string[]</type>
+          </tag>
+          <tag line="105" name="version" description="0.0.1"/>
+          <tag line="105" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="124" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getType</name>
+        <full_name>getType</full_name>
+        <docblock line="117">
+          <description><![CDATA[Returns link MIME type.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="117" name="return" description="Link MIME type." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="117" name="version" description="0.0.1"/>
+          <tag line="117" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="136" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getMedia</name>
+        <full_name>getMedia</full_name>
+        <docblock line="129">
+          <description><![CDATA[Returns link media query.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="129" name="return" description="Link media query." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="129" name="version" description="0.0.1"/>
+          <tag line="129" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="149" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>hasRel</name>
+        <full_name>hasRel</full_name>
+        <docblock line="141">
+          <description><![CDATA[Checks if link belongs to given relation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="141" name="param" description="Relationship identifier." type="string" variable="$rel">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="141" name="return" description="Relationship flag." type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="141" name="version" description="0.0.1"/>
+          <tag line="141" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="149">
+          <name>$rel</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Link" line="161" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="154">
+          <description><![CDATA[Generates string representation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="154" name="return" description="Text representation." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="154" name="version" description="0.0.1"/>
+          <tag line="154" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdV91u2zYUvtdTHBRB5QSOnPY2sRcsDdYCCzAkwXZhBwEtH0lEaEolqbTO0Ju9zV6jQN9rh5RkyZZkD0tyM13YFnl+vvOdH9JnP2VJ5nmjoyMPjuA24RoiLhDoO2PKQBqBSRAuEi7EB3yE3zl++YgiQ6VhnsuFwIAUre45y02SKrhmEfvxF/yhnlA/hU9wpmhBBF/K93P6wfTnIBMTpxWm2UrxODHw/uTde/j+N8xXLRvH9mehFTitR/LPUwknwUnwzq1oLkNsvGcsfGBxjXz2s0M7awRQrJD0yPMkW6ImnX+hMLvFZSaY4TKe/crlw6nn5RrhZrWMUrmaXaTLLJUoTVPutyS7lDGXeLrm+obWiei3wpwKsvI2NqdgWAwKM4Wa9Ekzlf8LdkPBtIZLgUsKy/vTA3ocC/Y5Aksiha5iNEG5Vm2dPzIF2ijiql7aRFeubiB0ayP3nanUYGhwAQeJwoj47/KuUDi69asCIC8axjC9a6O4+nR1CWaV4asCsA7avj+gpiJ18cMSF5y9PhDnpo2k7hhA1y6dINbN9AKErB22wXyS3HAmOHUJ1HKQuPJuAaNpyZY1tKbp/rAqtYLWokKLghRpWPV/h+T0riym7uLdNmvTWYi2ymxbtMj/lfv8nKNaBf+V5HwueAhRLkNXWPf3ISE0Kg/NoJOlYRH+EJhSbFXENyyxj0HmQgwreMXrofNTTBP7HBg6vY4nDd7HmwneEnRkj6uxsLVZtqpD0dosMZXttLVZQaxq3G59axXXNZpcSQ1ix+xTTqZKTceUfG5OyNRHCn6wzWTpuMHT/jC0uyuI3cN0IyIq4r7yfXZY15S2PWHVmd2Tnf7R3JGgjgZ7djC3ZG5PMHUl7glm2e7sXeF0iL9AQG687IloZ/dcJBg+aOBlwc1RpDKmKZ1CzB9RrkuqZ0pXw47EiJ2y+hKeAV/QBYVHvJ7va1bmabolHAkWvxQpCdNke2AR9dAy4/LeTUYnNGxW8WEfTb+gRMUMnV9lxK275a4CuMWvpkfj+YeBSW+cl1YVHCyYseNzul6xj2+HkA/jSXMoDTdFiAonMeM08tMFDnzwN3mqFaobmCNsBGlmYTFBZ0+c20uqXu9SjQ241mgGjVY7PGwgXqOe+nbPv3NHw1ZbFgnqNeqqvc+q22yabfRGI/FlLHGZdDizvTGx/ylqcpkxqrqCVotRqpCFCQwK6pmGA/tvyJFNZ7YhOlrAnJ2phUQkQ1BqBOCP37jX7aP4eII6ZDTGaosk/MbvDKIsQ98FYM2tM1r4dbqjiV+V/TfvH/a1HHk=</source>
+  </file>
+  <file path="Templating/Container/Meta.php" hash="e33bf94c8f4f1e1fcd9e5c98d6f8285a" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="ArrayObject">ArrayObject</namespace-alias>
+    <namespace-alias name="PhpEngine">Symfony\Component\Templating\PhpEngine</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="28" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\ArrayObject</extends>
+      <name>Meta</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Meta</full_name>
+      <docblock line="19">
+        <description><![CDATA[Meta-values container.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="19" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="19" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="19" name="version" description="0.0.1"/>
+        <tag line="19" name="since" description="0.0.1"/>
+        <tag line="19" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="37" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" package="Default">
+        <name>$attribute</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[Identifying attribute.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="version" description="0.0.1"/>
+          <tag line="30" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="46" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" package="Default">
+        <name>$templating</name>
+        <default><![CDATA[]]></default>
+        <docblock line="39">
+          <description><![CDATA[Templating engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="var" description="" type="\Symfony\Component\Templating\PhpEngine">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="39" name="version" description="0.0.1"/>
+          <tag line="39" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="56" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="48">
+          <description><![CDATA[Initializes container.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="48" name="param" description="Templating engine." type="\Symfony\Component\Templating\PhpEngine" variable="$templating">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="48" name="param" description="Attribute used by this container." type="string" variable="$attribute">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="48" name="version" description="0.0.1"/>
+          <tag line="48" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="56">
+          <name>$templating</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Templating\PhpEngine</type>
+        </argument>
+        <argument line="56">
+          <name>$attribute</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="71" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getAttribute</name>
+        <full_name>getAttribute</full_name>
+        <docblock line="64">
+          <description><![CDATA[Returns attribute name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="return" description="Attribute name for &lt;meta&gt; element." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="version" description="0.0.1"/>
+          <tag line="64" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="83" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="76">
+          <description><![CDATA[Generates string representation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="return" description="Text representation." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="76" name="version" description="0.0.1"/>
+          <tag line="76" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdVE1v00AQvftXjKpI+RBx2h7bJrQUBD2goraCQ1NVG2dsL7XXZned4qBc+Df8DST+F7Mbxx9xq4LKib3Y3p038+bNWx+9TMPUcUaDgQMDuAq5Ap9HCPRMmdSQ+KBDhNOQR9FrXMBHjvfvMEpRKphlYh6hS0CDPWaZDhMJF8xnv77DJ7lEtfSWcCRpI3Lvi+9jemHqi5tGE4vykjSXPAg17O/u7cPPHzDLWzmG5nWNci1qQfV5ImDX3XX37I7iwsPad8q8OxZUzKevLNtprYH1DkWPHEewGBVh/gAwvcI4jZjmIpieJkIzLlAeOk6mEE6kZPn57DN6uti5zGM/ETlFxmkiUOg6/EOYvhEB4Q/LEbxHzYYLFmWowNtk/y809iKmlO0P8KtGMVd1uZxvDtCyKpg1gLM5qcX9nIQCprXks0wbt9nTTdDxgklQdCiCaqtJvNhtkLd7I/tMZaKpPs6hU1ahcWyRqYYGaCf2IJFyns/nosuCbTJngmvOIr7c8kiTEN1fFleU6ikfb2cDW0takwROyjey9dw4SJu/Rav+X/eczSLugZ8JTxvU7S2lpPKZp3sPkn9RY9W3KdbWscmYJNMcHNST9AsBzeoYzsNJTYlxU+qtwKr9ccMeJmTVmssF6kwKVbkVzG+lNRhpwzYSnzSCwafrfRTTJZkARhhTN/9K2AB1Wau3LVzBabvtxzp9izRxpsl/RRcSU4mK2DJT64mWr+j+P4J4vnt0cmmrtFrsaBYomuP1Tc0QoxHpsu5lI7sJK89pHMi8EHpWGWAKOneYw3gCHfuT7tcKlEWub6hM16aDbuPYLLdtLhe6451udVI5cjhB5bEUe6Zs/4Fc3R17BUnHJzMUhA1mNOlWXl852zaYckInc8KYdvobF6yc3/2ra0o=</source>
+  </file>
+  <file path="Templating/Container/Words.php" hash="bf3de5a4a3b095279aaf9c0e501b0427" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="ArrayObject">ArrayObject</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="26" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\ArrayObject</extends>
+      <name>Words</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words</full_name>
+      <docblock line="17">
+        <description><![CDATA[Common words container.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="17" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="17" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="17" name="version" description="0.0.1"/>
+        <tag line="17" name="since" description="0.0.1"/>
+        <tag line="17" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="35" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" package="Default">
+        <name>$separator</name>
+        <default><![CDATA[',']]></default>
+        <docblock line="28">
+          <description><![CDATA[Content separator.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="version" description="0.0.1"/>
+          <tag line="28" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="44" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="37">
+          <description><![CDATA[Initializes container.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="Separator for content parts." type="string" variable="$separator">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="version" description="0.0.1"/>
+          <tag line="37" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="44">
+          <name>$separator</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="59" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getSeparator</name>
+        <full_name>getSeparator</full_name>
+        <docblock line="52">
+          <description><![CDATA[Returns current separator.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="return" description="Currently used separator." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="52" name="version" description="0.0.1"/>
+          <tag line="52" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="72" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setSeparator</name>
+        <full_name>setSeparator</full_name>
+        <docblock line="64">
+          <description><![CDATA[Changes separator.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="param" description="New separator." type="string" variable="$separator">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="64" name="version" description="0.0.1"/>
+          <tag line="64" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="72">
+          <name>$separator</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="87" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>append</name>
+        <full_name>append</full_name>
+        <docblock line="79">
+          <description><![CDATA[Appends one, ore more values at the end of current stack.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="79" name="param" description="Additional value." type="mixed" variable="$value,...">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="79" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="79" name="version" description="0.0.1"/>
+          <tag line="79" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="87">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Container" line="103" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="96">
+          <description><![CDATA[Generates string representation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="96" name="return" description="Text representation." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="96" name="version" description="0.0.1"/>
+          <tag line="96" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="79" code="50014">Name of argument $value does not match with the DocBlock's name $value,... in append()</error>
+      <notice line="79" code="50013">Parameter $value,... could not be found in append()</notice>
+    </parse_markers>
+    <source>eJzdVc1O20AQvvsp5oCEEwUHOBJKoanU9tJKgMolUrSxx/G267W7u04IiEvfpq9Rqe/V2XVsbIP7R9VDLcV21vPNzPftzOzx8zzJPW88HHowhMuEa4i5QKBnzpSBLAaTIEwTLsRLXMF7juvXKHJUGhaFjAQGBLTYU1aYJFNwzmL27TNcqRvUN+ENHCtaEMF6+/+UXpj+FOTixKHCLN8ovkwMHO4fHMLXL7DYPPCxZ19LVOBQK4rPMwn7wX5w4FY0lyE2/ucs/MiW95nPXrhsZw0C5QpZjz1PshQ1YX4BMLvENBfMcLmcTTNpGJeoJp5XaIQzpdjm3eIDhmZSqzrN0pRyXWcq0hBWiP9Ct1AwreHKMcNrg5KeDQ28Ww/ocjrYy2ohycqARiovZjIrg/tSGZyumAJtFKl7v9TOervaytytjd0zV5mh2BjBTh0FnsHuaJe2pJPOG8kNZ4KTXq2daadknaTbpJpOL+q3mH7hlprtGx38afLFQvAQ4kKGxqLmc3JLkYvQ+C06shBi4CClxg7MFCVwdNQEDSb1Zx6Dz7XGpqfBoIG3146hGbB3QlY1u6b5vbc7r7x3JT1HUyhJchZK/XinlbOsdJ2W9mID1EjRQ9hTlVw2GXWV26ZSk9/aTXo4ThMml1Qy/dz6SuYtrh+jVkmBIqaqohun/WNE7G+x79vPjg5dAajQdhpqPKpXn0hnee7mQSZxBJlCSO1txURByjHjzhUysEdMXSuGpk+Plim/ti3t8KMgCOAsirjlxkTp9B+qyRw1v0xmPCykLdnhuKsmTQVkYQL+zCLnVIFzppbaHwDTWybd9qtauBWh1XW/tQevkOYZM7ZUy1JUmCvUFIJZIj9pyUsa6T2Ip881k124KH29OON0ymYR+t2aHFVVSnq6s2ZKR6E/GFQa3HnfAeXBmyc=</source>
+  </file>
+  <file path="Templating/Helper/Xhtml.php" hash="bc27683767205e337120c8b136e06877" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="XhtmlResponseListener">ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="28" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Xhtml</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</full_name>
+      <docblock line="19">
+        <description><![CDATA[XHTML Content-Type switch helper.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="19" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="19" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="19" name="version" description="0.0.1"/>
+        <tag line="19" name="since" description="0.0.1"/>
+        <tag line="19" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="37" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$filter</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[XHTML response filter.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener">
+            <type by_reference="false">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</type>
+          </tag>
+          <tag line="30" name="version" description="0.0.1"/>
+          <tag line="30" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="46" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="39">
+          <description><![CDATA[Initializes helper for given filter.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="param" description="Response filter." type="\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener" variable="$filter">
+            <type by_reference="false">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</type>
+          </tag>
+          <tag line="39" name="version" description="0.0.1"/>
+          <tag line="39" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="46">
+          <name>$filter</name>
+          <default><![CDATA[]]></default>
+          <type>\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="58" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="51">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="version" description="0.0.1"/>
+          <tag line="51" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="71" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setXhtml</name>
+        <full_name>setXhtml</full_name>
+        <docblock line="63">
+          <description><![CDATA[Changes XHTML flag.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="param" description="XHTML switch." type="bool" variable="$flag">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="63" name="return" description="Self reference." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="63" name="version" description="0.0.1"/>
+          <tag line="63" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="71">
+          <name>$flag</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="86" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__invoke</name>
+        <full_name>__invoke</full_name>
+        <docblock line="78">
+          <description><![CDATA[Shorter way for invoking helper method.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="param" description="XHTML switch." type="bool" variable="$flag">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="78" name="return" description="Self reference." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="78" name="version" description="0.0.1"/>
+          <tag line="78" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="86">
+          <name>$flag</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <source>eJzdVMtu2zAQvOsr9hAgjgHLTq5NXKNugRRIe7CNNgcBBi2vJCIUpZKUHbnIpX/T3yjQ/+qSomE7fiAFcijKgx7kDndnZsnrt2VWBkG33Q6gDZOMa0i4QKB3yZSBIgGTIQwzLsR7XMAXjstbFCUqDbNKzgWGBLTYAatMVigYsYT9/gFf1Qr1Kl7BtaIJES79/4A+mP4WlqLvUHFR1oqnmYGr3uUV/PoJs3pvj479bFChQy0oPy8k9MJeeOlmNJcxbv2XLH5g6aby6J2rNtoi0MxQdDcIJMtRE+YFgGiCeSmY4TKNmoU3QVDplyA/LFCaO64NSlTRfWZyMaK0hdS4nvV7jes8KWQdDYuclgm1n3WT3Lt3fzv5dAfDQtJGpjOpSwS95CbOIHOR/4VTsWBag5MO8JGYzjU0UcH3AGg4MexYC6K8wraxjVPBra6DBgum4KAVm4hdDn52h4eb67p3qQqDscE5nDUZyaFnhX2U3HAmOInmvYGEDEk59cexMuk4svxwoetEMDpM9a8ZVDPBY0gqGRuLmk5j2tWoKjatkwVcOHjjgx1nhi6UTt9Xd7MRxC4+7ckyQlMpuZZEAynE9J4QykUB1UNnwXsP9vy+Ft0UzWfarvWcjU98/mglOD9GYpgxmZKvTfMlgqVHrJwVhSBFKMDHNoc13COKIoGxfShMUCGReC2mGo3zs9WUcQPkMZ40sdPfxVz45t7Sx8UfU2dMF4/thSWrXctzuSgerI/+GORIV9P831VsOnUV40nFtoU4IFijzFPwB/RxQGU=</source>
+  </file>
+  <file path="Templating/Helper/Serializer.php" hash="e71ee9813be260042896300d83332a1c" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="SerializerInterface">JMS\SerializerBundle\Serializer\SerializerInterface</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="30" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Serializer</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer</full_name>
+      <docblock line="19">
+        <description><![CDATA[Serializer helper.]]></description>
+        <long-description><![CDATA[<p>This is PHP helper, since JMSSerializerBundle provides only one for Twig.</p>]]></long-description>
+        <tag line="19" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="19" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="19" name="version" description="0.0.1"/>
+        <tag line="19" name="since" description="0.0.1"/>
+        <tag line="19" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="39" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$serializer</name>
+        <default><![CDATA[]]></default>
+        <docblock line="32">
+          <description><![CDATA[Serializer.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="" type="\JMS\SerializerBundle\Serializer\SerializerInterface">
+            <type by_reference="false">\JMS\SerializerBundle\Serializer\SerializerInterface</type>
+          </tag>
+          <tag line="32" name="version" description="0.0.1"/>
+          <tag line="32" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="48" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="41">
+          <description><![CDATA[Initializes object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="param" description="Serializaer service." type="\JMS\SerializerBundle\Serializer\SerializerInterface" variable="$serializer">
+            <type by_reference="false">\JMS\SerializerBundle\Serializer\SerializerInterface</type>
+          </tag>
+          <tag line="41" name="version" description="0.0.1"/>
+          <tag line="41" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="48">
+          <name>$serializer</name>
+          <default><![CDATA[]]></default>
+          <type>\JMS\SerializerBundle\Serializer\SerializerInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="62" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>serialize</name>
+        <full_name>serialize</full_name>
+        <docblock line="53">
+          <description><![CDATA[Performs inline serialization.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="param" description="Data to serialize." type="mixed" variable="$object">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="53" name="param" description="Output format." type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="return" description="Serialized data." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="version" description="0.0.1"/>
+          <tag line="53" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="62">
+          <name>$object</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="62">
+          <name>$type</name>
+          <default><![CDATA['json']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="74" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="67">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="version" description="0.0.1"/>
+          <tag line="67" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdVM1u2zAMvvspeCiQtGidtNe1XbD20A7YFjTBdjFQKDYdq5MlTZKTOkUve5u9xoC91+ifxE7cYMPQ04Qgpkl+1MePks/f6kR73uDoyIMjmCbcQswFAj01Mw5UDC5BuEq4ENe4gM8clzcoNBoLs0xGAn0CFtgRy1yiDNyxmP36Dl/MCu0qXMG5IYfwl/X7iAxmv/laXJaoUOnc8Hni4Gx4egY/f8As79Q4KcwK5ZeoBe3PlYShP/RPS4/lMsTWu2bhVzZvmAfvSrZBq4HKQ9kDz5MsRUuYvwAEU0y1YI7LeVAF3nheZhHef5gEEzScCb5CUyc3jpZ5Kx2amHarkZM8jZXMgyuVaiVRuu4ezVb1rJpqkJSh9SDKIdJvfDOuI8dQqUMEd/mBNmrBI7SgpMjpDyGmIU6XfP5fDDYUzNq2VvjoUEYWqlTvyQNapaTFasvq1651ZLRgBl6YYRPf5l57t/iXvkH5JOEdhg4jOLCbojTeHT63krsqSCOaPRCiw4suKktfYtauvIkzssm94CH6/0o9mwkeQpzJ0BWo+/tQSetMFrr+H2gclgUq1Yt14Oi0nly2eF5s61EkPXdUGVNlZVI651JwOrNrBCv47BEo5Y+F2JWIcM0cA6c2yJYYVTr1Q7ePCOYa4VPmdOaKq5Ey12QadJmR69RN6xFEVP211N0w7Nfcj2tSF9B7sEr2djWtWXWkbdk7pQ736XxXlrL1d8QCgZnt6LstQ3WzoPiivpYEc3QfqVx/T6e9psfeupNn7ze3NR8U</source>
+  </file>
+  <file path="Templating/Helper/Link.php" hash="79ec06e2c8ac4d0d98e72f47f03a9f36" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="Element">ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element</namespace-alias>
+    <namespace-alias name="PhpEngine">Symfony\Component\Templating\PhpEngine</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="29" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Link</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link</full_name>
+      <docblock line="20">
+        <description><![CDATA[&lt;link&gt; tag helper.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="20" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="20" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="20" name="version" description="0.0.1"/>
+        <tag line="20" name="since" description="0.0.1"/>
+        <tag line="20" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="38" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$links</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="31">
+          <description><![CDATA[List of defined links.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="var" description="" type="\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element[]">
+            <type by_reference="false">\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element[]</type>
+          </tag>
+          <tag line="31" name="version" description="0.0.1"/>
+          <tag line="31" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$templating</name>
+        <default><![CDATA[]]></default>
+        <docblock line="40">
+          <description><![CDATA[Templating engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="var" description="" type="\Symfony\Component\Templating\PhpEngine">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="40" name="version" description="0.0.1"/>
+          <tag line="40" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="56" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="49">
+          <description><![CDATA[Initializes templating helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="param" description="Templating engine." type="\Symfony\Component\Templating\PhpEngine" variable="$templating">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="49" name="version" description="0.0.1"/>
+          <tag line="49" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="56">
+          <name>$templating</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Templating\PhpEngine</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="68" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="61">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="61" name="version" description="0.0.1"/>
+          <tag line="61" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="84" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>add</name>
+        <full_name>add</full_name>
+        <docblock line="73">
+          <description><![CDATA[Adds new link.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="param" description="Link target." type="string" variable="$href">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="param" description="Link relations." type="string[]|string" variable="$rels">
+            <type by_reference="false">string[]</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="param" description="MIME type." type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="param" description="Media query." type="string" variable="$media">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="73" name="version" description="0.0.1"/>
+          <tag line="73" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="84">
+          <name>$href</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="84">
+          <name>$rels</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="84">
+          <name>$type</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="84">
+          <name>$media</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="104" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getByRel</name>
+        <full_name>getByRel</full_name>
+        <docblock line="96">
+          <description><![CDATA[Finds all currently set links by given relation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="96" name="param" description="Link relation." type="string" variable="$rel">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="96" name="return" description="Found links." type="\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element[]">
+            <type by_reference="false">\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element[]</type>
+          </tag>
+          <tag line="96" name="version" description="0.0.1"/>
+          <tag line="96" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="104">
+          <name>$rel</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="126" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>delete</name>
+        <full_name>delete</full_name>
+        <docblock line="118">
+          <description><![CDATA[Deletes a link.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="param" description="Link tag to delete." type="\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element" variable="$link">
+            <type by_reference="false">\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element</type>
+          </tag>
+          <tag line="118" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="118" name="version" description="0.0.1"/>
+          <tag line="118" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="126">
+          <name>$link</name>
+          <default><![CDATA[]]></default>
+          <type>\ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="142" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="135">
+          <description><![CDATA[Generates string representation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="135" name="return" description="Text representation." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="135" name="version" description="0.0.1"/>
+          <tag line="135" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdVs1u20YQvvMppoCRUIZMObnKct0kThsgLgLbaA+iYKzJIbnIasnsLuXQjS99m75Ggb5XZ5fUD3/UJI3RQ3WQlsuZnZnv+2ZWJ98XWeF5k8NDDw7hOuMaEi4Q6LdgykCegMkQXmZciFe4gl843v2EokCl4baUscCAHK3vGStNliu4ZAn763f4Vd2jvo/u4UTRhgjumuczWjD9ISjEqfOK8qJSPM0MPD9+9hz+/ANuq94ZR3ZZewXOa0XxeS7hODgOnrkdzWWEO88Fi96zdJt5+MJlG+4UUO+Q9cTzJFuiJp8vcAivcVkIZrhMw/rF1PNK/ZWeb7l8H54LXKI0jf9VtUxyWYUv82WRS9rftX+XFecy5RKnn7etg26Ta9h9IsxUUNgnqZmCYSlkzuB/QWAkmNZgQQX8aFDGGmoj7zcP6OMgsJ9DMtJO1zEmBGcMFhIdNG/XRmcrpqChZ77Y7rbTbnZbqbu9ifstVG4wMhTjwAWBGcwXxEcnoS1zgI7iwWQ2Avj2ZMwmYD+ZN5IbzgQn4mBrt5VKOzGaEWy5TW336P1lfXXm5a3gESSljIz1urmJcqmNKiPjD4YeObeaePs5MDTXjk53cpu1QbBGDz0oLtGUSuqmdg2ECusLRTkroHzswbXowI6Txyo3RfMzHed3q2oCP7XSerqvhh9i6gSJd07le+hrUj/IFCZ1CxmmKGowaDdffFo7KBRNz9GK2WT1sA+hXRUIF28uzsGu9lktMeYMLtz3hxJVFfRgRpHAlf3iJAFGCD4WzCyOfQfBuC5s3CQ9A1kKMV4nVz92uZhMSB0ivwOT071Jk4iipnSNNoUxbRGCFRMlbnx4An7I9U1t47ugo9HOoU66DmOaG26xmG5eNlTvyNuNmPnCZkh8N7PL72l/DANVrssbTb2uvtwB++T1mttJS6VDVCpF8URFFJl6ptqLIOUrlBt5fEaAFqOWnHr0byYyvM5p+Ldn9yM02ovqEoWjojdDehO84Z0ukdgh0K95Y5bkClmUgb9LlVWFO7XLuRWGe3F0mjG9Sahrts3Kke6W05bFw5Ba1rQ6z328vkKBhm4A9k9zoyGjPmo9OFLbArFz/w+btw7otzLqMmhh9Q+ILfxIcIVMKVbdaGQqymq4x61OGgPdMEiofzebAf0B0tgloJQk9Ral8/r4xWiwT7+koX5EiYpZ6JumUFgo1FTUcAO1b59r+u+zx+PbL12TX9WTqn+9snSoM9KmFjix4Jxaceh/2RIuhJO5X5c66uq9j3PIaeTlMfrOebRG/MH7G5KXu98=</source>
+  </file>
+  <file path="Templating/Helper/Meta.php" hash="01ac9df3a563f49ab534ab91c3b43385" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="Container">ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Meta</namespace-alias>
+    <namespace-alias name="PhpEngine">Symfony\Component\Templating\PhpEngine</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="29" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Meta</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta</full_name>
+      <docblock line="20">
+        <description><![CDATA[&lt;meta&gt; tags helper.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="20" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="20" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="20" name="version" description="0.0.1"/>
+        <tag line="20" name="since" description="0.0.1"/>
+        <tag line="20" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="38" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$meta</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="31">
+          <description><![CDATA[List of meta tags containers.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="var" description="" type="\ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Meta[]">
+            <type by_reference="false">\ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Meta[]</type>
+          </tag>
+          <tag line="31" name="version" description="0.0.1"/>
+          <tag line="31" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$templating</name>
+        <default><![CDATA[]]></default>
+        <docblock line="40">
+          <description><![CDATA[Templating engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="var" description="" type="\Symfony\Component\Templating\PhpEngine">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="40" name="version" description="0.0.1"/>
+          <tag line="40" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="56" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="49">
+          <description><![CDATA[Initializes templating helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="param" description="Templating engine." type="\Symfony\Component\Templating\PhpEngine" variable="$templating">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="49" name="version" description="0.0.1"/>
+          <tag line="49" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="56">
+          <name>$templating</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Templating\PhpEngine</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="71" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="64">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="version" description="0.0.1"/>
+          <tag line="64" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="83" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getMetaName</name>
+        <full_name>getMetaName</full_name>
+        <docblock line="76">
+          <description><![CDATA[Returns current meta name value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="76" name="version" description="0.0.1"/>
+          <tag line="76" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="83">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="97" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setMetaName</name>
+        <full_name>setMetaName</full_name>
+        <docblock line="88">
+          <description><![CDATA[Sets meta name value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="88" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="88" name="param" description="Variable value." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="88" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="88" name="version" description="0.0.1"/>
+          <tag line="88" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="97">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="97">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="112" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>unsetMetaName</name>
+        <full_name>unsetMetaName</full_name>
+        <docblock line="104">
+          <description><![CDATA[Deletes meta name value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="104" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="104" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="104" name="version" description="0.0.1"/>
+          <tag line="104" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="112">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="126" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getProperty</name>
+        <full_name>getProperty</full_name>
+        <docblock line="119">
+          <description><![CDATA[Returns current meta property value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="119" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="119" name="version" description="0.0.1"/>
+          <tag line="119" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="126">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="140" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setProperty</name>
+        <full_name>setProperty</full_name>
+        <docblock line="131">
+          <description><![CDATA[Sets meta property value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="131" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="131" name="param" description="Variable value." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="131" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="131" name="version" description="0.0.1"/>
+          <tag line="131" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="140">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="140">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="155" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>unsetProperty</name>
+        <full_name>unsetProperty</full_name>
+        <docblock line="147">
+          <description><![CDATA[Deletes meta property value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="147" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="147" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="147" name="version" description="0.0.1"/>
+          <tag line="147" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="155">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="169" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getHttpEquiv</name>
+        <full_name>getHttpEquiv</full_name>
+        <docblock line="162">
+          <description><![CDATA[Returns current meta HTTP-equiv value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="162" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="162" name="version" description="0.0.1"/>
+          <tag line="162" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="169">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="183" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setHttpEquiv</name>
+        <full_name>setHttpEquiv</full_name>
+        <docblock line="174">
+          <description><![CDATA[Sets meta HTTP-equiv value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="174" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="174" name="param" description="Variable value." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="174" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="174" name="version" description="0.0.1"/>
+          <tag line="174" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="183">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="183">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="198" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>unsetHttpEquiv</name>
+        <full_name>unsetHttpEquiv</full_name>
+        <docblock line="190">
+          <description><![CDATA[Deletes meta HTTP-equiv value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="190" name="param" description="Meta-variable name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="190" name="return" description="Self instance." type="self">
+            <type by_reference="false">self</type>
+          </tag>
+          <tag line="190" name="version" description="0.0.1"/>
+          <tag line="190" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="198">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="212" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="205">
+          <description><![CDATA[Generates string representation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="205" name="return" description="Text representation." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="205" name="version" description="0.0.1"/>
+          <tag line="205" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdWM1u00AQvvsp5hCRpKLpz5FQqKCIIgGq2ggOSYW2ziRedbM2u+u0KeqFt+E1kHgvZtdO7MR2kwiDKnxoks03szPfzDfZ7fOXURB53t7Ojgc70Au4hhEXCPQaMWUgHIEJEF4HXIgTnMInjjenKCJUGq5iORTYIUNre8xiE4QKztmI/foOn9Ud6jv/Dp4rWhCdm/TzMb1h+msnEi+clR9GM8XHgYHD/YND+PkDrmYFH7v2bWLVcVZT2p+HEvY7+50Dt6K59DH3OWL+NRtnkQ9euWgHuQSSFULveZ5kE9Rks4HBoIeTSDDD5XiQfNH1vFhvafk6lIZxiWrwAQ0DpmGxkrq7mE1GoZwRchKFEqXJm58F0Rs5JnR3PTaJIYs1LfYTYboT2vvJ2HTBsLGGwCH+i4L6gmkNjlq8NSiHGhKQ980DehwH9tmB91y7PrdcJDz480roTgqaY4+nTGWF6l9m68vxp6tLObi1PfcaqdCgb3AIDbfrEfQvqTArgWUlBHS1Lo1m0Ql/HotZbFgM5p3khjPBqYCQ4bKWWQ6MZgebZKHlXVentXXk8ZXgPoxi6Rtr9eULFU4bFfumVbp125klDWCfhqF5t/siF9vRMgkrQFurftOOiuYlQSXeZL3Qyhk+hQTUrvBAlBNpZrbWywJY5SkwJtrFrzGfrvWVg6be7gtFPkcTKzkfBBqo3qyoAeVQQExbyhJZgU24rkKO0Xwkd63VeqUbN23uzXU5+LFSNAgTWdvoYMpEXNRQ0qppMo1rnLmpsUvS4uyKfglrTsw6d8nZrSoS5FqjaZU0Xd8aXbbhZVlHJl/CM2hWcnOBRtdMSIKe8Fs7QJxD+DRHLvnP+gbFiCKhP5zUyoi5uujVK/Q+TSOq0H0JeUepRTr/cjVxNlW8nqBAg3VT+9f5iuUqY6tMOcQDnbglT6XanA+5x6HPszSaLfWZjfQKja4CNtRpreQ8Mq0uUb2RVgsk1qHXWin+N5p9sElLNFvozjp0e9rrnSUHiseh3FM64Lyx4Wwp3fwZqkK8RciG8q2Zo0cm4GXGN1JwCZN1aLhmnv+Nih9u2BIZl3TqlqS9RboYMEtbSoXCSKEmTTMb15qjfo+u0hUWf353M+GF26Vw6m+4O3nuiuxy2rNzexiTcyZE7sZentjCbhQqZH4AeWLtP18aCw/t3NaL7fu2TVuJ63YOnF3L7guFGHC6fYVDOlhZD4s71733Gy79rLI=</source>
+  </file>
+  <file path="Templating/Helper/Title.php" hash="ab3836d75d9b6b052b016261c5a2fe23" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="Words">ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words</namespace-alias>
+    <namespace-alias name="PhpEngine">Symfony\Component\Templating\PhpEngine</namespace-alias>
+    <namespace-alias name="HelperInterface">Symfony\Component\Templating\Helper\HelperInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="29" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words</extends>
+      <implements>\Symfony\Component\Templating\Helper\HelperInterface</implements>
+      <name>Title</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title</full_name>
+      <docblock line="20">
+        <description><![CDATA[&lt;title&gt; tag helper.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="20" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="20" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="20" name="version" description="0.0.1"/>
+        <tag line="20" name="since" description="0.0.1"/>
+        <tag line="20" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="39" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$charset</name>
+        <default><![CDATA['utf-8']]></default>
+        <docblock line="32">
+          <description><![CDATA[Current context charset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="32" name="version" description="0.0.1"/>
+          <tag line="32" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$templating</name>
+        <default><![CDATA[]]></default>
+        <docblock line="41">
+          <description><![CDATA[Templating engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="var" description="" type="\Symfony\Component\Templating\PhpEngine">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="41" name="version" description="0.0.1"/>
+          <tag line="41" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="58" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="50">
+          <description><![CDATA[Initializes templating helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="Templating engine." type="\Symfony\Component\Templating\PhpEngine" variable="$templating">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="50" name="param" description="Separator for content parts." type="string" variable="$separator">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="50" name="version" description="0.0.1"/>
+          <tag line="50" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="58">
+          <name>$templating</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Templating\PhpEngine</type>
+        </argument>
+        <argument line="58">
+          <name>$separator</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="71" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setCharset</name>
+        <full_name>setCharset</full_name>
+        <docblock line="64">
+          <description><![CDATA[Sets current charset]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="param" description="The charset." type="string" variable="$charset">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="version" description="0.0.1"/>
+          <tag line="64" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="71">
+          <name>$charset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="83" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getCharset</name>
+        <full_name>getCharset</full_name>
+        <docblock line="76">
+          <description><![CDATA[Returns current charset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="return" description="The charset." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="76" name="version" description="0.0.1"/>
+          <tag line="76" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="95" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="88">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="88" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="88" name="version" description="0.0.1"/>
+          <tag line="88" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="107" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="100">
+          <description><![CDATA[Generates string representation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="100" name="return" description="Text representation." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="100" name="version" description="0.0.1"/>
+          <tag line="100" name="since" description="0.0.1"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzdVc1u00AQvvsp5lA1bUSctifUpKEiIOgFoSail0jV1hnbKzZrsztuSVAvvA2vgcR7MV7bsfOnAIULlizb4/lm5vtmdrf/Io1Tz+u22x60YRxLC6FUCPxMhSFIQqAYYRhLpV7hPXyQ+PAWVYrGwl2mpwp9BubYS5FRnBi4FqH48RVuzALtIlhA37BB+Q/l9yW/CPvJT9XAoYIknRsZxQRnJ6dn8P0b3M03YnTy1wLlO9Q955eJhhP/xD91Fit1gI3vVAQfRVRXPnnpqp00CBQW9u56nhYztIz5BcBkjLNUCZI6mhQ/ep6X2d9EDhNNQmo0k5vETG0ZYjSfhYme899ZmmjU1IS8j9PXOmJMb79vkbd8XGlCEzK53rLTh4p6JEnhYUQ9IBFB7Fz/i24GSlgL45we4GdCPbXgVAbJAuGMtbIe8LUmj/fFWZ1E+dWGYWYMe0PA3eJIEMTCWCS//F+5Xd4LA5YMK1+bVkmV1hViztZ1z9QkhAHhFA7KHHABrYzCzvMWd22trLrRgG4itha0nJen10TLhJvFXGlJUijJ3YXar56n1cJ4VxGzurRm6N20KlghMRxYzL+J53O0fAv5dm3iduVbl/X/lHZ2p2QAYaYDylG3txyWM2cBHW2t+1mzoAvQmVLHLlIxTi6myMfo/LwZqwYd95aOB8RbcGfQEOViVf3c6XGjByMkC0E1rMUAbVe+krCasjHv7mtT/VTBONSwiHhUpVnXo6RZj3rluIvgNVJm9AbHjfEyzq9i+Q/IRTW5dVJl7lVu+wjF5WHKC0jYPXSK7Qrys+ov0nnH4XZxabkzorWLxBvkA0wQL/yyQoOpQcsNEnn0fd3Jd9TtiKevWUpGLstOZn1HbdACf3PRdQZoA5HiUb1u63jHjGj1uyW8kubR+wkBackv</source>
+  </file>
+  <file path="EventListener/XhtmlResponseListener.php" hash="4dc7149bb1e5c7cf69d275885c268566" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="HttpKernelInterface">Symfony\Component\HttpKernel\HttpKernelInterface</namespace-alias>
+    <namespace-alias name="FilterResponseEvent">Symfony\Component\HttpKernel\Event\FilterResponseEvent</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\EventListener" line="27" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends/>
+      <name>XhtmlResponseListener</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</full_name>
+      <docblock line="18">
+        <description><![CDATA[Real XHTML Content-Type filter.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="18" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="18" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="18" name="version" description="0.0.1"/>
+        <tag line="18" name="since" description="0.0.1"/>
+        <tag line="18" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="36" namespace="ChillDev\Bundle\ViewHelpersBundle\EventListener" package="Default">
+        <name>$xhtml</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="29">
+          <description><![CDATA[XHTML flag.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="29" name="version" description="0.0.1"/>
+          <tag line="29" name="since" description="0.0.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\EventListener" line="46" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>setXhtml</name>
+        <full_name>setXhtml</full_name>
+        <docblock line="38">
+          <description><![CDATA[Sets XHTML flag.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="param" description="New flag value." type="bool" variable="$xhtml">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="38" name="reutrn" description="self Self instance."/>
+          <tag line="38" name="version" description="0.0.1"/>
+          <tag line="38" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="46">
+          <name>$xhtml</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\EventListener" line="60" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>onKernelResponse</name>
+        <full_name>onKernelResponse</full_name>
+        <docblock line="53">
+          <description><![CDATA[Handles Content-Type switch for HTML format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="param" description="Response event." type="\Symfony\Component\HttpKernel\Event\FilterResponseEvent" variable="$event">
+            <type by_reference="false">\Symfony\Component\HttpKernel\Event\FilterResponseEvent</type>
+          </tag>
+          <tag line="53" name="version" description="0.0.1"/>
+          <tag line="53" name="since" description="0.0.1"/>
+        </docblock>
+        <argument line="60">
+          <name>$event</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\HttpKernel\Event\FilterResponseEvent</type>
+        </argument>
+      </method>
+    </class>
+    <source>eJzdVc1O20AQvvspRggRhxIHOFUEApQGBZVUakhbDpHQxoxji82u2V0nhIpL36avUanv1dm1kzgJtFXVU/fgn9n5+fb7ZuzD4zROPa++ve3BNvTiREOUcAS6p0wZkBGYGOEsTjh/i2P4lOCkjTxFpWGQiVuOAQXa2BOWmVgq6LKI/fgKn9Uj6sfwEQ4VGXgwKd5P6IHp+yDlTRcVynSqkmFsYH93bx++f4PBdC1HzT7mUYGLGlP9RArYDXaDPWfRiQix9J6y8I4NF8j7bxzafukAuYW8654n2Ag1xfxBQL81RmEuE21QoGp4XqYRrqajSIpp/0yOUilov982Jn2HSiAvPV4IgyqiMo3fR7ky/fOEU0iXwEmh0dkac726yDhct3udSziTlFqYWm+aopWQgv4LZULOtIbr2Iz4jIQZ9d4XD2g5LuzaLqiIOBsGhWm2czJmCgZS8oVhGWhhXQLrbHV3T5U0GBq8hc0HiwWOgLjTpOMqhis0+ldAaKzYyEGZpXqPE+cKY8YzDOaeCjOjBGjkEWWlSyK0YYQv+NtDZAOehBBlIjQ2SqNxxPrzMxmVYdX55tzatWnoq1Brzlxy3+Lcdik0GcF0bg1nfVojpc2soHq5S/UkMWEMEbVmTpdUI2ZeIOyZOYBNdLeZEdzrvyJHinwOZ9n9lxGsMabwPkNtLFvOodYcounmRr/aKDsW0Fc8i5LVEs1JBH5ZivmGXVtb8MxH5uCgc3rVa3Vvuq0PH1tXPTg6eg6RFcOvLuWr1+n8fAq3ErQcIZUVQ5jEKNzfoDgeDUMumf1bbFhMG6ugZkyUy527GL9KaKBioyqrpUfsjrojUwghTyzNOktTqeZz1bnotFwLrZbrJ+KGKcWmfoWlKcnJrJR1x9erB6q0s4zoNAwxNWzAsWhMm1T71QUZ1ZKsS4rVmjGyW+qwWpPGyF9ysqtSbvXKzvr+swAbEMZMUcKjCgSk96IaoT3Lt4i54wOoZCaqva4sy1ZqradiEp+8n48CYAI=</source>
+  </file>
+  <package name="ChillDev" full_name="ChillDev">
+    <package name="Bundle" full_name="ChillDev\Bundle">
+      <package name="ViewHelpersBundle" full_name="ChillDev\Bundle\ViewHelpersBundle"/>
+    </package>
+  </package>
+  <package name="Default" full_name="Default"/>
+  <namespace name="ChillDev" full_name="ChillDev">
+    <namespace name="Bundle" full_name="ChillDev\Bundle">
+      <namespace name="ViewHelpersBundle" full_name="ChillDev\Bundle\ViewHelpersBundle">
+        <namespace name="DependencyInjection" full_name="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection"/>
+        <namespace name="EventListener" full_name="ChillDev\Bundle\ViewHelpersBundle\EventListener"/>
+        <namespace name="Templating" full_name="ChillDev\Bundle\ViewHelpersBundle\Templating">
+          <namespace name="Container" full_name="ChillDev\Bundle\ViewHelpersBundle\Templating\Container"/>
+          <namespace name="Helper" full_name="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper"/>
+          <namespace name="Link" full_name="ChillDev\Bundle\ViewHelpersBundle\Templating\Link"/>
+        </namespace>
+      </namespace>
+    </namespace>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
