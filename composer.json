@@ -11,12 +11,12 @@
         "helper",
         "xhtml"
     ],
-    "homepage": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle",
+    "homepage": "https://chilloutdevelopment.github.com/ChillDevViewHelpersBundle/",
     "license": "MIT",
     "support": {
         "issues": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues",
         "wiki": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/wiki",
-        "source": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle"
+        "source": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/"
     },
     "authors": [
         {

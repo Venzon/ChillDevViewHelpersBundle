@@ -89,7 +89,7 @@ For more advanced aspects see [advanced usage documentation](./tree/master/Resou
 # Resources
 
 -   [Source documentation](./tree/master/Resources/doc/index.md)
--   [GitHub page with API documentation](https://chilloutdevelopment.github.com/ChillDevViewHelpersBundle/)
+-   [GitHub page with API documentation](http://chilloutdevelopment.github.com/ChillDevViewHelpersBundle/)
 -   [Travis CI](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle)
 -   [Issues tracker](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues)
 -   [Packagist package](https://packagist.org/packages/chilldev/view-helpers-bundle)

@@ -103,6 +103,8 @@ To output all defined meta tags simply call:
 
 Meta helper automatically escapes both key and content attributes content.
 
+**Note:** meta value doesn't need to be a string - helper casts all values to strings, so you can put, for example, any object that has `__toString()` method.
+
 ### Keywords
 
 Sample of special meta association is keywords container which is pre-defined as phrases container (object of class that extends [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php), so you can use all of it's methods). To define new keywords, just call:

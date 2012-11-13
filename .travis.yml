@@ -8,6 +8,8 @@
 # @package ChillDev\Bundle\ViewHelpersBundle
 ##
 
+#FIXME: https://github.com/travis-ci/travis-ci/issues/753
+
 language: "php"
 
 php:
