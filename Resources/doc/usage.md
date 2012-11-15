@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
+# @version 0.0.2
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -49,7 +49,7 @@ if ($current > 1) {
 ```
 
 ```php
-<?php /* in your main layout */
+<?php /* in your main layout */ ?>
 <html>
     <head>
         <?php echo $view['title']->setSeparator(' :: '); ?>
@@ -110,7 +110,7 @@ Meta helper automatically escapes both key and content attributes content.
 Sample of special meta association is keywords container which is pre-defined as phrases container (object of class that extends [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php), so you can use all of it's methods). To define new keywords, just call:
 
 ```php
-<?php $view['meta']->getMetaName('keywords')->append('xhtml', 'chilldev', 'view helpers'; ?>
+<?php $view['meta']->getMetaName('keywords')->append('xhtml', 'chilldev', 'view helpers'); ?>
 ```
 
 ## &lt;link&gt; tags

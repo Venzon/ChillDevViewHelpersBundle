@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
+# @version 0.0.2
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -50,7 +50,7 @@ class Kernel extends BaseKernel
 }
 ```
 
-Of course there are some optional [configuration options](./tree/master/Resources/doc/configuration.md).
+Of course there are some optional [configuration options](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/configuration.md).
 
 # Usage
 
@@ -84,23 +84,24 @@ In your layout file:
 </html>
 ```
 
-For more advanced aspects see [advanced usage documentation](./tree/master/Resources/doc/usage.md) or even [internals description](./tree/master/Resources/doc/internals.md).
+For more advanced aspects see [advanced usage documentation](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/usage.md) or even [internals description](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/internals.md).
 
 # Resources
 
--   [Source documentation](./tree/master/Resources/doc/index.md)
--   [GitHub page with API documentation](http://chilloutdevelopment.github.com/ChillDevViewHelpersBundle/)
+-   [Source documentation](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/index.md)
+-   [GitHub page with API documentation](http://chilloutdevelopment.github.com/ChillDevViewHelpersBundle)
 -   [Travis CI](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle)
 -   [Issues tracker](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues)
 -   [Packagist package](https://packagist.org/packages/chilldev/view-helpers-bundle)
--   [Chillout Development @ GitHub](https://github.com/chilloutdevelopment/)
+-   [Chillout Development @ GitHub](https://github.com/chilloutdevelopment)
 -   [Chillout Development @ Facebook](http://www.facebook.com/chilldev)
+-   [Post on Wrzasq.pl](http://wrzasq.pl/blog/83.html)
 
 # Contributing
 
 Do you want to help improving this project? Simply *fork* it and post a pull request. You can do everything on your own, you don't need to ask if you can, just do all the awesome things you want!
 
-This project is published under [MIT license](./LICENSE).
+This project is published under [MIT license](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/LICENSE).
 
 # Authors
 

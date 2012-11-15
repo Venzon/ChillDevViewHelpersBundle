@@ -46,7 +46,7 @@ tests:
 documentation:
 	$(PHPDOC) -t Resources/doc/gh-pages -d . -i "Tests/*" -i "vendor/*" -i "Resources/*" --title "ChillDev ViewHelpers Bundle - by Chillout Development" --sourcecode --parseprivate
 	#FIXME: this is temporary, until phpDocumentor2 will provide some convenient way for generating text pages and templates customization
-	find Resources/doc/gh-pages -name "*.html" -exec sed "s|<body>|<body>\\n<div id=\"ribbon\"><a href=\"https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/\" rel=\"me\">Fork me on GitHub</a></div>|g" {} -i \;
+	find Resources/doc/gh-pages -name "*.html" -exec sed "s|<body>|<body>\\n<div id=\"ribbon\"><a href=\"https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle\" rel=\"me\">Fork me on GitHub</a></div>|g" {} -i \;
 	echo "\
 /* after http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms/ */\
 #ribbon {\
