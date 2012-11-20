@@ -143,6 +143,55 @@ class LinkTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Check if multiple stylesheets are added to container.
+     *
+     * @test
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function addStylesheetsToContainer()
+    {
+        $href1 = 'foo';
+        $href2 = 'bar';
+        $rel = Link::REL_STYLESHEET;
+        $type = 'baz';
+        $media = 'qux';
+
+        $link = new Link($this->templating);
+        $return = $link->addStylesheets([$href1, $href2], $media, $type);
+
+        $elements = $link->getByRel($rel);
+
+        $this->assertEquals($href1, $elements[0]->getHref(), 'Link::addStylesheets() should set href from list passed as argument.');
+        $this->assertEquals($type, $elements[0]->getType(), 'Link::addStylesheets() should set type passed as argument.');
+        $this->assertEquals($media, $elements[0]->getMedia(), 'Link::addStylesheets() should set media passed as argument.');
+        $this->assertEquals([$rel], $elements[0]->getRels(), 'Link::addStylesheets() should set rel to Link::REL_STYLESHEET.');
+        $this->assertEquals($href2, $elements[1]->getHref(), 'Link::addStylesheets() should set href from list passed as argument.');
+        $this->assertEquals($type, $elements[1]->getType(), 'Link::addStylesheets() should set type passed as argument.');
+        $this->assertEquals($media, $elements[1]->getMedia(), 'Link::addStylesheets() should set media passed as argument.');
+        $this->assertEquals([$rel], $elements[1]->getRels(), 'Link::addStylesheets() should set rel to Link::REL_STYLESHEET.');
+        $this->assertSame($link, $return, 'Link::addStylesheets() should return reference to itself.');
+    }
+
+    /**
+     * Check default attributes values for batch-added stylesheets.
+     *
+     * @test
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function addStylesheetsWithDefaultValues()
+    {
+        $link = new Link($this->templating);
+        $link->addStylesheets(['foo', 'bar']);
+
+        $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[0]->getType(), 'Link::addStylesheets() should set all types to "text/css" if not passed as argument.');
+        $this->assertNull($link->getByRel(Link::REL_STYLESHEET)[0]->getMedia(), 'Link::addStylesheets() should set all media to NULL if not passed as argument.');
+        $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[1]->getType(), 'Link::addStylesheets() should set all types to "text/css" if not passed as argument.');
+        $this->assertNull($link->getByRel(Link::REL_STYLESHEET)[1]->getMedia(), 'Link::addStylesheets() should set all media to NULL if not passed as argument.');
+    }
+
+    /**
      * Check string-to-array conversion of rel attribute.
      *
      * @test

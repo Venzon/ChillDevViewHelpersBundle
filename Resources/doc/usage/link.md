@@ -31,6 +31,16 @@ Very similar like `<meta>` tags you can define `<link>` tags with `$view['link']
     ->addStylesheet('/styles/print.css', 'print'); ?>
 ```
 
+Even shorter way to add multiple stylesheets is `addStylesheets()` method, which simply adds all links from given array (second parameter defined media query and third - MIME-Type for all links added in given call):
+
+```php
+<?php $view['link']->addStylesheets([
+        '/styles/base.css',
+        '/styles/forms.css',
+        '/styles/grids.css',
+]); ?>
+```
+
 You can manipulate contained links with `getByRel()` and `delete()` methods. First of them returns array of `ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element` objects that match specified relationship; `delete()` method removes specified element from the collection (`delete()` method implements fluent interface):
 
 ```php

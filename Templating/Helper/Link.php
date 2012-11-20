@@ -118,6 +118,25 @@ class Link extends Helper
     }
 
     /**
+     * Adds multiple new stylesheets links.
+     *
+     * @param string[] $hrefs Links targets.
+     * @param string $media Media query.
+     * @param string $type MIME type.
+     * @return self Self instance.
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function addStylesheets(array $hrefs, $media = null, $type = 'text/css')
+    {
+        foreach ($hrefs as $href) {
+            $this->addStylesheet($href, $media, $type);
+        }
+
+        return $this;
+    }
+
+    /**
      * Finds all currently set links by given relation.
      *
      * @param string $rel Link relation.
