@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -62,7 +62,7 @@ $title->setSeparator(' :: ')
     ->append('<Root>', 'Category');
 $meta->setMetaName('description', 'Chillout Development ViewHelpers Bundle')
     ->setProperty('og:title', 'ChillDev\\Bundle\\ViewHelpersBundle');
-$link->add('style/style.css', 'stylesheet', 'text/css')
+$link->addStylesheet('style/style.css')
     ->add('images/favicon.png', ['shortcut', 'icon'], 'image/png');
 
 echo $templating->render(__DIR__ . '/template.php', [

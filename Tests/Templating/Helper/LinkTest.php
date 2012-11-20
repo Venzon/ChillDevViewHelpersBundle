@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -24,7 +24,7 @@ use Symfony\Component\Templating\Loader\FilesystemLoader;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -98,6 +98,48 @@ class LinkTest extends PHPUnit_Framework_TestCase
 
         $this->assertNull($link->getByRel($rel)[0]->getType(), 'Link::add() should set type to NULL if not passed as argument.');
         $this->assertNull($link->getByRel($rel)[0]->getMedia(), 'Link::add() should set media to NULL if not passed as argument.');
+    }
+
+    /**
+     * Check if stylesheet is added to container.
+     *
+     * @test
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function addStylesheetToContainer()
+    {
+        $href = 'foo';
+        $rel = Link::REL_STYLESHEET;
+        $type = 'baz';
+        $media = 'qux';
+
+        $link = new Link($this->templating);
+        $return = $link->addStylesheet($href, $media, $type);
+
+        $element = $link->getByRel($rel)[0];
+
+        $this->assertEquals($href, $element->getHref(), 'Link::addStylesheet() should set href passed as argument.');
+        $this->assertEquals($type, $element->getType(), 'Link::addStylesheet() should set type passed as argument.');
+        $this->assertEquals($media, $element->getMedia(), 'Link::addStylesheet() should set media passed as argument.');
+        $this->assertEquals([$rel], $element->getRels(), 'Link::addStylesheet() should set rel to Link::REL_STYLESHEET.');
+        $this->assertSame($link, $return, 'Link::addStylesheet() should return reference to itself.');
+    }
+
+    /**
+     * Check default attributes values for stylesheet.
+     *
+     * @test
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function addStylesheetWithDefaultValues()
+    {
+        $link = new Link($this->templating);
+        $link->addStylesheet('bar');
+
+        $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[0]->getType(), 'Link::addStylesheet() should set type to "text/css" if not passed as argument.');
+        $this->assertNull($link->getByRel(Link::REL_STYLESHEET)[0]->getMedia(), 'Link::addStylesheet() should set media to NULL if not passed as argument.');
     }
 
     /**

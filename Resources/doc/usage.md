@@ -129,7 +129,12 @@ Very similar like `<meta>` tags you can define `<link>` tags with `$view['link']
     ->add('/images/favicon.png', ['shortcut', 'icon']); ?>
 ```
 
-`add()` method implements fluent interface.
+`add()` method implements fluent interface. There is also a handy shortcut method for adding stylesheets - `addStylesheet()`. It assums that your link has `rel="stylesheet"` and sets default MIME-Type to `text/css`. For stylesheets you more often change media query then MIME-Type, so order of last two arguments is inversed:
+
+```php
+<?php $view['link']->addStylesheet('/styles/style.css')
+    ->addStylesheet('/styles/print.css', 'print'); ?>
+```
 
 You can manipulate contained links with `getByRel()` and `delete()` methods. First of them returns array of `ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element` objects that match specified relationship; `delete()` method removes specified element from the collection (`delete()` method implements fluent interface):
 

@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -22,12 +22,21 @@ use Symfony\Component\Templating\Helper\Helper;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class Link extends Helper
 {
+    /**
+     * Stylesheet rel value.
+     *
+     * @var string
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    const REL_STYLESHEET = 'stylesheet';
+
     /**
      * List of defined links.
      *
@@ -91,6 +100,21 @@ class Link extends Helper
         $this->links[] = new Element($this->templating, $href, $rels, $type, $media);
 
         return $this;
+    }
+
+    /**
+     * Adds new stylesheet link.
+     *
+     * @param string $href Link target.
+     * @param string $media Media query.
+     * @param string $type MIME type.
+     * @return self Self instance.
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function addStylesheet($href, $media = null, $type = 'text/css')
+    {
+        return $this->add($href, self::REL_STYLESHEET, $type, $media);
     }
 
     /**
