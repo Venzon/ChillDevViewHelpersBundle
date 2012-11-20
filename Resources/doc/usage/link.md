@@ -64,3 +64,5 @@ To output all defined links simply call:
 ```
 
 Link helper automatically escapes all attributes content.
+
+**Note:** Depending on XHTML switch state helper will generate tags ended with `>` (for XHTML turned off, default), or `/>` (for enabled XHTML). Thus it's important to enable XHTML before rendering helper output.

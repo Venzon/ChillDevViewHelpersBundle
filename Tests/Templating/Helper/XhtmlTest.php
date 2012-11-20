@@ -27,11 +27,11 @@ use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml;
 class XhtmlTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var MockFilter
+     * @var XhtmlResponseListener
      * @version 0.0.1
      * @since 0.0.1
      */
-    protected $mock;
+    protected $listener;
 
     /**
      * @version 0.0.1
@@ -39,7 +39,7 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->mock = new MockFilter();
+        $this->listener = new XhtmlResponseListener();
     }
 
     /**
@@ -49,7 +49,7 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     public function getHelperName()
     {
-        $this->assertEquals('xhtml', (new Xhtml($this->mock))->getName(), 'Xhtml::getName() should return helper alias.');
+        $this->assertEquals('xhtml', (new Xhtml($this->listener))->getName(), 'Xhtml::getName() should return helper alias.');
     }
 
     /**
@@ -61,10 +61,10 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     public function defaultXhtmlSwitch()
     {
-        $xhtml = new Xhtml($this->mock);
+        $xhtml = new Xhtml($this->listener);
         $return = $xhtml->setXhtml();
 
-        $this->assertTrue($this->mock->flag, 'Xhtml::setXhtml() should enable XHTML by default.');
+        $this->assertTrue($this->listener->getXhtml(), 'Xhtml::setXhtml() should enable XHTML by default.');
         $this->assertSame($xhtml, $return, 'Xhtml::setXhtml() should return reference to itself.');
     }
 
@@ -77,8 +77,8 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     public function setXhtmlSwitch()
     {
-        (new Xhtml($this->mock))->setXhtml(false);
-        $this->assertFalse($this->mock->flag, 'Xhtml::setXhtml() should pass specified XHTML switch.');
+        (new Xhtml($this->listener))->setXhtml(false);
+        $this->assertFalse($this->listener->getXhtml(), 'Xhtml::setXhtml() should pass specified XHTML switch.');
     }
 
     /**
@@ -90,10 +90,10 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     public function defaultInvokeSwitch()
     {
-        $xhtml = new Xhtml($this->mock);
+        $xhtml = new Xhtml($this->listener);
         $return = $xhtml->__invoke();
 
-        $this->assertTrue($this->mock->flag, 'Xhtml::__invoke() should enable XHTML by default.');
+        $this->assertTrue($this->listener->getXhtml(), 'Xhtml::__invoke() should enable XHTML by default.');
         $this->assertSame($xhtml, $return, 'Xhtml::__invoke() should return reference to itself.');
     }
 
@@ -106,8 +106,8 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     public function setInvokeSwitch()
     {
-        (new Xhtml($this->mock))->__invoke(false);
-        $this->assertFalse($this->mock->flag, 'Xhtml::__invoke() should pass specified XHTML switch.');
+        (new Xhtml($this->listener))->__invoke(false);
+        $this->assertFalse($this->listener->getXhtml(), 'Xhtml::__invoke() should pass specified XHTML switch.');
     }
 
     /**
@@ -119,18 +119,8 @@ class XhtmlTest extends PHPUnit_Framework_TestCase
      */
     public function callableInvoke()
     {
-        $xhtml = new Xhtml($this->mock);
+        $xhtml = new Xhtml($this->listener);
         $xhtml(false);
-        $this->assertFalse($this->mock->flag, 'Xhtml::__invoke() should handle inline invocation of object as function.');
-    }
-}
-
-class MockFilter extends XhtmlResponseListener
-{
-    public $flag;
-
-    public function setXhtml($flag = true)
-    {
-        $this->flag = $flag;
+        $this->assertFalse($this->listener->getXhtml(), 'Xhtml::__invoke() should handle inline invocation of object as function.');
     }
 }

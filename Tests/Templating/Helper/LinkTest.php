@@ -16,6 +16,7 @@ use PHPUnit_Framework_TestCase;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\TemplateNameParser;
@@ -38,29 +39,37 @@ class LinkTest extends PHPUnit_Framework_TestCase
     protected $templating;
 
     /**
-     * @version 0.0.1
+     * @var Checker
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    protected $checker;
+
+    /**
+     * @version 0.0.2
      * @since 0.0.1
      */
     protected function setUp()
     {
         $this->templating = new PhpEngine(new TemplateNameParser(), new FilesystemLoader([]));
+        $this->checker = new Checker();
     }
 
     /**
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function getHelperName()
     {
-        $this->assertEquals('link', (new Link($this->templating))->getName(), 'Link::getName() should return helper alias.');
+        $this->assertEquals('link', (new Link($this->templating, $this->checker))->getName(), 'Link::getName() should return helper alias.');
     }
 
     /**
      * Check if element is added to container.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function addToContainer()
@@ -70,7 +79,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
         $type = 'baz';
         $media = 'qux';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $return = $link->add($href, $rels, $type, $media);
 
         $element = $link->getByRel($rels[0])[0];
@@ -86,14 +95,14 @@ class LinkTest extends PHPUnit_Framework_TestCase
      * Check default attributes values.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function addWithDefaultValues()
     {
         $rel = 'foo';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->add('bar', [$rel]);
 
         $this->assertNull($link->getByRel($rel)[0]->getType(), 'Link::add() should set type to NULL if not passed as argument.');
@@ -114,7 +123,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
         $type = 'baz';
         $media = 'qux';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $return = $link->addStylesheet($href, $media, $type);
 
         $element = $link->getByRel($rel)[0];
@@ -135,7 +144,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
      */
     public function addStylesheetWithDefaultValues()
     {
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->addStylesheet('bar');
 
         $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[0]->getType(), 'Link::addStylesheet() should set type to "text/css" if not passed as argument.');
@@ -157,7 +166,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
         $type = 'baz';
         $media = 'qux';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $return = $link->addStylesheets([$href1, $href2], $media, $type);
 
         $elements = $link->getByRel($rel);
@@ -182,7 +191,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
      */
     public function addStylesheetsWithDefaultValues()
     {
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->addStylesheets(['foo', 'bar']);
 
         $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[0]->getType(), 'Link::addStylesheets() should set all types to "text/css" if not passed as argument.');
@@ -195,7 +204,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
      * Check string-to-array conversion of rel attribute.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function addWithStringAsRels()
@@ -203,7 +212,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
         $href = 'foo';
         $rel = 'bar';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->add($href, $rel);
 
         $this->assertEquals($href, $link->getByRel($rel)[0]->getHref(), 'Link::add() should convert rel attribute to array if single string is specified.');
@@ -213,14 +222,14 @@ class LinkTest extends PHPUnit_Framework_TestCase
      * Check finding elemnets by rel attribute.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function getByRelCounts()
     {
         $rel = 'foo';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->add('bar', [$rel])
             ->add('bar', [$rel, 'baz'])
             ->add('bar', ['baz']);
@@ -232,14 +241,14 @@ class LinkTest extends PHPUnit_Framework_TestCase
      * Check deleting links from container.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function deleteFromContainer()
     {
         $rel = 'foo';
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->add('bar', [$rel]);
 
         $this->assertCount(1, $link->getByRel($rel), 'If this fails, check add() or getByRel() test.');
@@ -254,7 +263,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
      * Check to-string conversion.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function toStringConversion()
@@ -263,10 +272,10 @@ class LinkTest extends PHPUnit_Framework_TestCase
         $value2 = 'bar';
         $value3 = 'baz';
 
-        $element1 = new Element($this->templating, $value1, [$value2, $value3]);
-        $element2 = new Element($this->templating, $value1, [$value2, $value3]);
+        $element1 = new Element($this->templating, $this->checker, $value1, [$value2, $value3]);
+        $element2 = new Element($this->templating, $this->checker, $value1, [$value2, $value3]);
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->add($value1, [$value2, $value3])
             ->add($value1, [$value2, $value3]);
 
@@ -277,7 +286,7 @@ class LinkTest extends PHPUnit_Framework_TestCase
      * Check to-string casting.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function toStringCasting()
@@ -286,9 +295,9 @@ class LinkTest extends PHPUnit_Framework_TestCase
         $value2 = 'bar';
         $value3 = 'baz';
 
-        $element = new Element($this->templating, $value1, [$value2, $value3]);
+        $element = new Element($this->templating, $this->checker, $value1, [$value2, $value3]);
 
-        $link = new Link($this->templating);
+        $link = new Link($this->templating, $this->checker);
         $link->add($value1, [$value2, $value3]);
 
         $this->assertEquals((string) $element, (string) $link, 'Link::__toString() should handle conversion to string.');

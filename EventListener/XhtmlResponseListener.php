@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -48,6 +48,18 @@ class XhtmlResponseListener
         $this->xhtml = $xhtml;
 
         return $this;
+    }
+
+    /**
+     * Returns XHTML flag.
+     *
+     * @return bool XHTML flag state.
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function getXhtml()
+    {
+        return $this->xhtml;
     }
 
     /**

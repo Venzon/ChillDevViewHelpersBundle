@@ -13,6 +13,7 @@
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\Helper\Helper;
@@ -56,15 +57,26 @@ class Link extends Helper
     protected $templating;
 
     /**
+     * XHTML checker.
+     *
+     * @var Checker
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    protected $checker;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
+     * @param Checker $checker XHTML checker.
      * @version 0.0.1
      * @since 0.0.1
      */
-    public function __construct(PhpEngine $templating)
+    public function __construct(PhpEngine $templating, Checker $checker)
     {
         $this->templating = $templating;
+        $this->checker = $checker;
     }
 
     /**
@@ -97,7 +109,7 @@ class Link extends Helper
             $rels = [$rels];
         }
 
-        $this->links[] = new Element($this->templating, $href, $rels, $type, $media);
+        $this->links[] = new Element($this->templating, $this->checker, $href, $rels, $type, $media);
 
         return $this;
     }

@@ -29,3 +29,5 @@ XHTML helper implements `__invoke()` magic method which allows you to use it in 
 ```
 
 **Note:** remember that you need to enable XHTML in your application [configuration](../configuration.md) first.
+
+Checking XHTML switch has also some side effects on other helpers (for example `>` vs. `/>` tag endings).

@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -24,7 +24,7 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -61,6 +61,27 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
     {
         $this->mock = new MockKernel();
         $this->listener = new XhtmlResponseListener();
+    }
+
+    /**
+     * Check flag getter and setter.
+     *
+     * @test
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    public function getSetXhtml()
+    {
+        $listener = new XhtmlResponseListener();
+        $this->assertFalse($listener->getXhtml(), 'XHTML content type switch should be disabled by default.');
+
+        $return = $listener->setXhtml(true);
+        $this->assertTrue($listener->getXhtml(), 'XhtmlResponseListener::setXhtml() should change flag value.');
+        $this->assertSame($listener, $return, 'XhtmlResponseListener::setXhtml() should return reference to itself.');
+
+        $listener->setXhtml(false)
+            ->setXhtml();
+        $this->assertTrue($listener->getXhtml(), 'XhtmlResponseListener::setXhtml() should enable switch when called without arguments.');
     }
 
     /**
@@ -101,11 +122,10 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
         $response->setCharset($charset);
         $event = new FilterResponseEvent($this->mock, $request, HttpKernelInterface::MASTER_REQUEST, $response);
 
-        $return = $this->listener->setXhtml();
-        $this->listener->onKernelResponse($event);
+        $this->listener->setXhtml()
+            ->onKernelResponse($event);
 
         $this->assertEquals('application/xhtml+xml; charset=' . $charset, $response->headers->get('Content-Type'), 'XhtmlResponseListener::setXhtml() should set flag to true by default and XhtmlResponseListener::onKernelResponse() should set XHTML content type if request supports it.');
-        $this->assertSame($this->listener, $return, 'XhtmlResponseListener::setXhtml() should return reference to itself.');
     }
 
     /**

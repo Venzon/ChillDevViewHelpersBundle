@@ -4,7 +4,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
+# @version 0.0.2
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -18,12 +18,19 @@
         <parameter key="chilldev.viewhelpers.helper.link.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link</parameter>
         <parameter key="chilldev.viewhelpers.helper.serializer.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer</parameter>
 
+        <parameter key="chilldev.viewhelpers.xhtml.checker.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker</parameter>
+
         <parameter key="chilldev.viewhelpers.container.keywords.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words</parameter>
 
         <parameter key="chilldev.viewhelpers.title.separator"> - </parameter>
     </parameters>
 
     <services>
+        <!-- XHTML checker -->
+        <service id="chilldev.viewhelpers.xhtml.checker" class="%chilldev.viewhelpers.xhtml.checker.class%">
+            <argument type="service" id="chilldev.viewhelpers.filter.xhtml_response" on-invalid="ignore"/>
+        </service>
+
         <!-- keywords container -->
         <service id="chilldev.viewhelpers.container.keywords" class="%chilldev.viewhelpers.container.keywords.class%"/>
 
@@ -31,6 +38,7 @@
         <service id="chilldev.viewhelpers.helper.meta" class="%chilldev.viewhelpers.helper.meta.class%">
             <tag name="templating.helper" alias="meta"/>
             <argument type="service" id="templating.engine.php"/>
+            <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
             <call method="setMetaName">
                 <argument>keywords</argument>
                 <argument type="service" id="chilldev.viewhelpers.container.keywords"/>
@@ -48,6 +56,7 @@
         <service id="chilldev.viewhelpers.helper.link" class="%chilldev.viewhelpers.helper.link.class%">
             <tag name="templating.helper" alias="link"/>
             <argument type="service" id="templating.engine.php"/>
+            <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
         </service>
 
         <!-- serializer helper -->

@@ -49,3 +49,5 @@ Sample of special meta association is keywords container which is pre-defined as
 ```php
 <?php $view['meta']->getMetaName('keywords')->append('xhtml', 'chilldev', 'view helpers'); ?>
 ```
+
+**Note:** Depending on XHTML switch state helper will generate tags ended with `>` (for XHTML turned off, default), or `/>` (for enabled XHTML). Thus it's important to enable XHTML before rendering helper output.

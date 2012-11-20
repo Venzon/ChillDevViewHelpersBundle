@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -16,6 +16,7 @@ use PHPUnit_Framework_TestCase;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Meta as Container;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\TemplateNameParser;
@@ -24,7 +25,7 @@ use Symfony\Component\Templating\Loader\FilesystemLoader;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -38,29 +39,37 @@ class MetaTest extends PHPUnit_Framework_TestCase
     protected $templating;
 
     /**
-     * @version 0.0.1
+     * @var Checker
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    protected $checker;
+
+    /**
+     * @version 0.0.2
      * @since 0.0.1
      */
     protected function setUp()
     {
         $this->templating = new PhpEngine(new TemplateNameParser(), new FilesystemLoader([]));
+        $this->checker = new Checker();
     }
 
     /**
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function getHelperName()
     {
-        $this->assertEquals('meta', (new Meta($this->templating))->getName(), 'Meta::getName() should return helper alias.');
+        $this->assertEquals('meta', (new Meta($this->templating, $this->checker))->getName(), 'Meta::getName() should return helper alias.');
     }
 
     /**
      * Check operations on meta-name values.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function metaNameCrud()
@@ -68,7 +77,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
         $key = 'foo';
         $value = 'bar';
 
-        $meta = new Meta($this->templating);
+        $meta = new Meta($this->templating, $this->checker);
 
         $this->assertEquals('', $meta->getMetaName($key), 'Meta::getMetaName() should return empty string for undefined meta names.');
 
@@ -85,7 +94,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
      * Check operations on meta-properties values.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function metaPropertyCrud()
@@ -93,7 +102,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
         $key = 'foo';
         $value = 'bar';
 
-        $meta = new Meta($this->templating);
+        $meta = new Meta($this->templating, $this->checker);
 
         $this->assertEquals('', $meta->getProperty($key), 'Meta::getProperty() should return empty string for undefined meta properties.');
 
@@ -110,7 +119,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
      * Check operations on meta-http-equiv values.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function metaHttpEquivCrud()
@@ -118,7 +127,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
         $key = 'foo';
         $value = 'bar';
 
-        $meta = new Meta($this->templating);
+        $meta = new Meta($this->templating, $this->checker);
 
         $this->assertEquals('', $meta->getHttpEquiv($key), 'Meta::getHttpEquiv() should return empty string for undefined meta HTTP-equivs.');
 
@@ -135,7 +144,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
      * Check to-string conversion.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function toStringConversion()
@@ -147,14 +156,14 @@ class MetaTest extends PHPUnit_Framework_TestCase
         $key3 = 'quux';
         $value3 = 'corge';
 
-        $container1 = new Container($this->templating, 'name');
+        $container1 = new Container($this->templating, $this->checker, 'name');
         $container1[$key1] = $value1;
         $container1[$key2] = $value2;
 
-        $container2 = new Container($this->templating, 'property');
+        $container2 = new Container($this->templating, $this->checker, 'property');
         $container2[$key3] = $value3;
 
-        $meta = new Meta($this->templating);
+        $meta = new Meta($this->templating, $this->checker);
         $meta->setMetaName($key1, $value1)
             ->setMetaName($key2, $value2)
             ->setProperty($key3, $value3);
@@ -166,7 +175,7 @@ class MetaTest extends PHPUnit_Framework_TestCase
      * Check to-string casting.
      *
      * @test
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function toStringCasting()
@@ -174,10 +183,10 @@ class MetaTest extends PHPUnit_Framework_TestCase
         $key = 'foo';
         $value = 'bar';
 
-        $container = new Container($this->templating, 'name');
+        $container = new Container($this->templating, $this->checker, 'name');
         $container[$key] = $value;
 
-        $meta = new Meta($this->templating);
+        $meta = new Meta($this->templating, $this->checker);
         $meta->setMetaName($key, $value);
 
         $this->assertEquals((string) $container, (string) $meta, 'Meta::__toString() should handle conversion to string.');

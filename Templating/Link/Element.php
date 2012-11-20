@@ -5,12 +5,14 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Link;
+
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 
 use Symfony\Component\Templating\PhpEngine;
 
@@ -19,7 +21,7 @@ use Symfony\Component\Templating\PhpEngine;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.0.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -71,9 +73,19 @@ class Element
     protected $templating;
 
     /**
+     * XHTML checker.
+     *
+     * @var Checker
+     * @version 0.0.2
+     * @since 0.0.2
+     */
+    protected $checker;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
+     * @param Checker $checker XHTML checker.
      * @param string $href Link location.
      * @param string[] $rels Link relations.
      * @param string $type Link MIME type.
@@ -81,9 +93,16 @@ class Element
      * @version 0.0.1
      * @since 0.0.1
      */
-    public function __construct(PhpEngine $templating, $href, array $rels, $type = null, $media = null)
-    {
+    public function __construct(
+        PhpEngine $templating,
+        Checker $checker,
+        $href,
+        array $rels,
+        $type = null,
+        $media = null
+    ) {
         $this->templating = $templating;
+        $this->checker = $checker;
         $this->href = $href;
         $this->rels = $rels;
         $this->type = $type;
@@ -155,7 +174,7 @@ class Element
      * Generates string representation.
      *
      * @return string Text representation.
-     * @version 0.0.1
+     * @version 0.0.2
      * @since 0.0.1
      */
     public function __toString()
@@ -179,6 +198,6 @@ class Element
             $attrs[] = ' ' . $name . '="' . $this->templating->escape($content) . '"';
         }
 
-        return '<link' . \implode($attrs) . '/>';
+        return '<link' . \implode($attrs) . ($this->checker->isXhtml() ? '/' : '') . '>';
     }
 }
