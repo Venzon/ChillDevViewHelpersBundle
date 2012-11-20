@@ -123,8 +123,7 @@ class ScriptTest extends PHPUnit_Framework_TestCase
         $charset = 'quz';
 
         $script = new Script($this->templating, $this->checker);
-        $script->add($src1, $type, $flow, $charset)
-            ->add($src2, $type, $flow, $charset);
+        $script->addMany([$src1, $src2], $type, $flow, $charset);
 
         $element1 = new Element($this->templating, $this->checker, $src1, $type, $flow, $charset);
         $element2 = new Element($this->templating, $this->checker, $src2, $type, $flow, $charset);
@@ -145,8 +144,7 @@ class ScriptTest extends PHPUnit_Framework_TestCase
         $src2 = 'bar';
 
         $script = new Script($this->templating, $this->checker);
-        $script->add($src1)
-            ->add($src2);
+        $script->addMany([$src1, $src2]);
 
         $element1 = new Element($this->templating, $this->checker, $src1, Element::TYPE_TEXTJAVASCRIPT);
         $element2 = new Element($this->templating, $this->checker, $src2, Element::TYPE_TEXTJAVASCRIPT);
