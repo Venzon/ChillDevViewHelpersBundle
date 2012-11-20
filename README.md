@@ -66,6 +66,7 @@ In your view file:
 <?php $view['meta']->setMetaName('description', \strip_tags($page->getDescription())); ?>
 <?php $view['meta']->setProperty('og:title', $page->getName()); ?>
 <?php $view['link']->add('http://example.com/page-2-slug.html', 'next'); ?>
+<?php $view['script']->add('/javascript/prototype.js'); ?>
 ```
 
 In your layout file:
@@ -77,6 +78,7 @@ In your layout file:
         <?php echo $view['title']; ?>
         <?php echo $view['meta']; ?>
         <?php echo $view['link']; ?>
+        <?php echo $view['script']; ?>
     </head>
     <body>
         <?php $view['slots']->output('_content') ?>

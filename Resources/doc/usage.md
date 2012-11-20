@@ -16,4 +16,5 @@
 -   [&lt;title&gt;](./usage/title.md)
 -   [&lt;meta&gt;](./usage/meta.md)
 -   [&lt;link&gt;](./usage/link.md)
+-   [&lt;script&gt;](./usage/script.md)
 -   [Serializer](./usage/serializer.md)

@@ -16,6 +16,7 @@
         <parameter key="chilldev.viewhelpers.helper.title.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title</parameter>
         <parameter key="chilldev.viewhelpers.helper.meta.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta</parameter>
         <parameter key="chilldev.viewhelpers.helper.link.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link</parameter>
+        <parameter key="chilldev.viewhelpers.helper.script.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Script</parameter>
         <parameter key="chilldev.viewhelpers.helper.serializer.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer</parameter>
 
         <parameter key="chilldev.viewhelpers.xhtml.checker.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker</parameter>
@@ -55,6 +56,13 @@
         <!-- <link> tag helper -->
         <service id="chilldev.viewhelpers.helper.link" class="%chilldev.viewhelpers.helper.link.class%">
             <tag name="templating.helper" alias="link"/>
+            <argument type="service" id="templating.engine.php"/>
+            <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
+        </service>
+
+        <!-- <script> tag helper -->
+        <service id="chilldev.viewhelpers.helper.script" class="%chilldev.viewhelpers.helper.script.class%">
+            <tag name="templating.helper" alias="script"/>
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
         </service>

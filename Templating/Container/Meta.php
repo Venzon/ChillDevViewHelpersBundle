@@ -102,7 +102,7 @@ class Meta extends ArrayObject
             $tags[] = '<meta '
                 . $this->attribute . '="' . $this->templating->escape($key)
                 . '" content="' . $this->templating->escape($value) . '"'
-                . ($this->checker->isXhtml() ? '/' : '') . '>';
+                . ($this->checker->isXhtml() ? '/>' : '>');
         }
 
         return \implode($tags);

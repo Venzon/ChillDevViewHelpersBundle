@@ -198,6 +198,6 @@ class Element
             $attrs[] = ' ' . $name . '="' . $this->templating->escape($content) . '"';
         }
 
-        return '<link' . \implode($attrs) . ($this->checker->isXhtml() ? '/' : '') . '>';
+        return '<link' . \implode($attrs) . ($this->checker->isXhtml() ? '/>' : '>');
     }
 }
