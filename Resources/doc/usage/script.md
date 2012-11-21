@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.2
+# @version 0.1.0
 # @since 0.0.2
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -54,6 +54,7 @@ To output all defined scripts simply call:
 
 Script helper automatically escapes all attributes content.
 
-**Note:** Depending on XHTML switch state helper will generate tags ended with `>` (for XHTML turned off, default), or `/>` (for enabled XHTML). Thus it's important to enable XHTML before rendering helper output.
+**Note:** Depending on XHTML switch state helper will generate tags ended with `>` (for XHTML turned off, default), or `/>` (for enabled XHTML). Thus it's important to enable XHTML 
+before rendering helper output. XHTML output also ommits `</script>` ending tag.
 
 **Remember:** Even though `text/javascript` is a default value for `type=""` attribute of `<script>` element, it is obsolete - the really proper MIME type for **JavaScript** files is `application/javascript`!
