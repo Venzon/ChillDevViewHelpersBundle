@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>ChillDev ViewHelpers Bundle - by Chillout Development » \ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</title>
+<title>ChillDev ViewHelpers Bundle - by Chillout Development » \ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -59,10 +59,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Initializes helper for given filter."><span class="description">Initializes helper for given filter.</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method___invoke" title="__invoke :: Shorter way for invoking helper method."><span class="description">Shorter way for invoking helper method.</span><pre>__invoke()</pre></a></li>
-<li class="method public "><a href="#method_getName" title="getName :: Returns helpers alias."><span class="description">Returns helpers alias.</span><pre>getName()</pre></a></li>
-<li class="method public "><a href="#method_setXhtml" title="setXhtml :: Changes XHTML flag."><span class="description">Changes XHTML flag.</span><pre>setXhtml()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Initializes proxy for given listener (if it exists)."><span class="description">Initializes proxy for given listener (if it exists).</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_isXhtml" title="isXhtml :: Checks if page uses XHTML."><span class="description">Checks if page uses XHTML.</span><pre>isXhtml()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -70,12 +68,12 @@
                     <ul></ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="property protected "><a href="#property_filter" title="$filter :: XHTML response filter."><span class="description">XHTML response filter.</span><pre>$filter</pre></a></li></ul>
+                    <ul><li class="property protected "><a href="#property_listener" title="$listener :: XHTML event listener."><span class="description">XHTML event listener.</span><pre>$listener</pre></a></li></ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml"></a><ul class="breadcrumb">
+<a id="\ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -90,14 +88,14 @@
 <span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.Templating.html">Templating</a>
 </li>
 <li>
-<span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.html">Helper</a>
+<span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.Templating.Xhtml.html">Xhtml</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Xhtml.html">Xhtml</a>
+<span class="divider">\</span><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Xhtml.Checker.html">Checker</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">XHTML Content-Type switch helper.</p>
+<p class="short_description">Proxy for checking if site is using XHTML.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -111,11 +109,11 @@
 </tr>
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 <tr>
 <th>package</th>
@@ -125,122 +123,64 @@
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Initializes helper for given filter.</h2>
-<pre>__construct(\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener $filter) </pre>
+<h2>Initializes proxy for given listener (if it exists).</h2>
+<pre>__construct(\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener $listener) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 </table>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$filter</h4>
-<code><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.EventListener.XhtmlResponseListener.html">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</a></code><p>Response filter.</p></div>
+<h4>$listener</h4>
+<code><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.EventListener.XhtmlResponseListener.html">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</a></code><p>XHTML event listener.</p></div>
 </div></div>
 </div>
-<a id="method___invoke"></a><div class="element clickable method public method___invoke" data-toggle="collapse" data-target=".method___invoke .collapse">
-<h2>Shorter way for invoking helper method.</h2>
-<pre>__invoke(bool $flag) : <a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Xhtml.html">\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</a></pre>
+<a id="method_isXhtml"></a><div class="element clickable method public method_isXhtml" data-toggle="collapse" data-target=".method_isXhtml .collapse">
+<h2>Checks if page uses XHTML.</h2>
+<pre>isXhtml() : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
-</tr>
-<tr>
-<th>fluent</th>
-<td>This method is part of a fluent interface and will return the same instance</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$flag</h4>
-<code>bool</code><p>XHTML switch.</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Xhtml.html">\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</a></code>Self reference.</div>
-</div></div>
-</div>
-<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
-<h2>Returns helpers alias.</h2>
-<pre>getName() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>version</th>
-<td>0.0.1</td>
-</tr>
-<tr>
-<th>since</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 </table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>string</code>Helper name.</div>
-</div></div>
-</div>
-<a id="method_setXhtml"></a><div class="element clickable method public method_setXhtml" data-toggle="collapse" data-target=".method_setXhtml .collapse">
-<h2>Changes XHTML flag.</h2>
-<pre>setXhtml(bool $flag) : <a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Xhtml.html">\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>version</th>
-<td>0.0.1</td>
-</tr>
-<tr>
-<th>since</th>
-<td>0.0.1</td>
-</tr>
-<tr>
-<th>fluent</th>
-<td>This method is part of a fluent interface and will return the same instance</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$flag</h4>
-<code>bool</code><p>XHTML switch.</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Xhtml.html">\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xhtml</a></code>Self reference.</div>
+<code>bool</code>XHTML flag state.</div>
 </div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_filter"> </a><div class="element clickable property protected property_filter" data-toggle="collapse" data-target=".property_filter .collapse">
-<h2>XHTML response filter.</h2>
-<pre>$filter : <a href="../classes/ChillDev.Bundle.ViewHelpersBundle.EventListener.XhtmlResponseListener.html">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</a></pre>
+<a id="property_listener"> </a><div class="element clickable property protected property_listener" data-toggle="collapse" data-target=".property_listener .collapse">
+<h2>XHTML event listener.</h2>
+<pre>$listener : <a href="../classes/ChillDev.Bundle.ViewHelpersBundle.EventListener.XhtmlResponseListener.html">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.0.2</td>
 </tr>
 </table>
 </div></div>
