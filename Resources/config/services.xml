@@ -4,7 +4,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.2
+# @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -70,7 +70,7 @@
         <!-- serializer helper -->
         <service id="chilldev.viewhelpers.helper.serializer" class="%chilldev.viewhelpers.helper.serializer.class%">
             <tag name="templating.helper" alias="serializer"/>
-            <argument type="service" id="serializer"/>
+            <argument type="service" id="jms_serializer"/>
         </service>
     </services>
 </container>
