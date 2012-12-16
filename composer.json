@@ -1,6 +1,6 @@
 {
     "name": "chilldev/view-helpers-bundle",
-    "description": "General-purpose view helpers for PHP templating engine from Chillout Development",
+    "description": "General-purpose view helpers for PHP templating engine from Chillout Development.",
     "type": "symfony-bundle",
     "keywords": [
         "chilldev",
@@ -15,7 +15,6 @@
     "license": "MIT",
     "support": {
         "issues": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues",
-        "wiki": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/wiki",
         "source": "https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle"
     },
     "authors": [

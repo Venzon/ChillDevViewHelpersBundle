@@ -50,7 +50,7 @@ public function registerBundles()
 
 No configuration is needed in order to use helpers. The only exception is use of XHTML content-type switch. To enable the switch you need to add minimal configuration to your application configuration file:
 
-```
+```yaml
 chilldev_viewhelpers:
     xhtml: true
 ```

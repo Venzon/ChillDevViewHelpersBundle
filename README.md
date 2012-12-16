@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.2
+# @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -97,7 +97,7 @@ For more advanced aspects see [advanced usage documentation](https://github.com/
 -   [Packagist package](https://packagist.org/packages/chilldev/view-helpers-bundle)
 -   [Chillout Development @ GitHub](https://github.com/chilloutdevelopment)
 -   [Chillout Development @ Facebook](http://www.facebook.com/chilldev)
--   [Post on Wrzasq.pl](http://wrzasq.pl/blog/83.html)
+-   [Post on Wrzasq.pl](http://wrzasq.pl/blog/chilldevviewhelpersbundle-php-templating-helpers-for-symfony-2.html)
 
 # Contributing
 
