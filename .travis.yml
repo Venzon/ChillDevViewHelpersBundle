@@ -3,7 +3,7 @@
 #
 # @author Rafal Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafal Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
+# @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 ##
@@ -16,4 +16,4 @@ php:
     - "5.4"
 
 before_script: "composer --dev install"
-script: "make check lint tests"
+script: "make ci"

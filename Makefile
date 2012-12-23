@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
+# @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 ##
@@ -19,7 +19,9 @@ PHPUNIT = ./vendor/bin/phpunit
 
 default: all
 
-all: check lint tests documentation
+all: ci documentation
+
+ci: check lint tests
 
 # project initialization
 init:
