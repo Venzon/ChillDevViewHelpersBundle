@@ -5,30 +5,35 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
+use ArrayObject;
+
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 
 use Symfony\Component\Templating\PhpEngine;
-use Symfony\Component\Templating\Helper\Helper;
+use Symfony\Component\Templating\Helper\HelperInterface;
 
 /**
  * &lt;link&gt; tag helper.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
-class Link extends Helper
+class Link extends ArrayObject implements
+    HelperInterface
 {
+    use ChangeableCharset;
+
     /**
      * Stylesheet rel value.
      *
@@ -37,15 +42,6 @@ class Link extends Helper
      * @since 0.0.2
      */
     const REL_STYLESHEET = 'stylesheet';
-
-    /**
-     * List of defined links.
-     *
-     * @var Element[]
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    protected $links = [];
 
     /**
      * Templating engine.
@@ -99,7 +95,7 @@ class Link extends Helper
      * @param string $type MIME type.
      * @param string $media Media query.
      * @return self Self instance.
-     * @version 0.0.1
+     * @version 0.1.0
      * @since 0.0.1
      */
     public function add($href, $rels, $type = null, $media = null)
@@ -109,7 +105,7 @@ class Link extends Helper
             $rels = [$rels];
         }
 
-        $this->links[] = new Element($this->templating, $this->checker, $href, $rels, $type, $media);
+        $this[] = new Element($this->templating, $this->checker, $href, $rels, $type, $media);
 
         return $this;
     }
@@ -153,7 +149,7 @@ class Link extends Helper
      *
      * @param string $rel Link relation.
      * @return Element[] Found links.
-     * @version 0.0.1
+     * @version 0.1.0
      * @since 0.0.1
      */
     public function getByRel($rel)
@@ -161,7 +157,7 @@ class Link extends Helper
         $links = [];
 
         // find all links by given rel
-        foreach ($this->links as $link) {
+        foreach ($this as $link) {
             if ($link->hasRel($rel)) {
                 $links[] = $link;
             }
@@ -175,13 +171,13 @@ class Link extends Helper
      *
      * @param Element $link Link tag to delete.
      * @return self Self instance.
-     * @version 0.0.1
+     * @version 0.1.0
      * @since 0.0.1
      */
     public function delete(Element $link)
     {
-        if (($index = \array_search($link, $this->links, true)) !== false) {
-            unset($this->links[$index]);
+        if (($index = \array_search($link, $this->getArrayCopy(), true)) !== false) {
+            unset($this[$index]);
         }
 
         return $this;
@@ -191,7 +187,7 @@ class Link extends Helper
      * Generates string representation.
      *
      * @return string Text representation.
-     * @version 0.0.1
+     * @version 0.1.0
      * @since 0.0.1
      */
     public function __toString()
@@ -199,7 +195,7 @@ class Link extends Helper
         $tags = [];
 
         // generate <link> tags
-        foreach ($this->links as $link) {
+        foreach ($this as $link) {
             $tags[] = (string) $link;
         }
 

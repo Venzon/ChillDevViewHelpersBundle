@@ -29,14 +29,7 @@ use Symfony\Component\Templating\Helper\HelperInterface;
 class Title extends Words implements
     HelperInterface
 {
-    /**
-     * Current context charset.
-     *
-     * @var string
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    protected $charset = 'utf-8';
+    use ChangeableCharset;
 
     /**
      * Templating engine.
@@ -59,30 +52,6 @@ class Title extends Words implements
     {
         parent::__construct($separator);
         $this->templating = $templating;
-    }
-
-    /**
-     * Sets current charset
-     *
-     * @param string $charset The charset.
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function setCharset($charset)
-    {
-        $this->charset = $charset;
-    }
-
-    /**
-     * Returns current charset.
-     *
-     * @return string The charset.
-     * @version 0.0.1
-     * @since 0.0.1
-     */
-    public function getCharset()
-    {
-        return $this->charset;
     }
 
     /**

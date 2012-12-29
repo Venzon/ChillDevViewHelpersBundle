@@ -5,38 +5,34 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
+use ArrayObject;
+
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 
 use Symfony\Component\Templating\PhpEngine;
-use Symfony\Component\Templating\Helper\Helper;
+use Symfony\Component\Templating\Helper\HelperInterface;
 
 /**
  * &lt;script&gt; tag helper.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
-class Script extends Helper
+class Script extends ArrayObject implements
+    HelperInterface
 {
-    /**
-     * List of defined scripts.
-     *
-     * @var Element[]
-     * @version 0.0.2
-     * @since 0.0.2
-     */
-    protected $scripts = [];
+    use ChangeableCharset;
 
     /**
      * Templating engine.
@@ -90,12 +86,12 @@ class Script extends Helper
      * @param int $flow Execution flow.
      * @param string $charset Script charset.
      * @return self Self instance.
-     * @version 0.0.2
+     * @version 0.1.0
      * @since 0.0.2
      */
     public function add($src, $type = Element::TYPE_TEXTJAVASCRIPT, $flow = Element::FLOW_DEFAULT, $charset = null)
     {
-        $this->scripts[] = new Element($this->templating, $this->checker, $src, $type, $flow, $charset);
+        $this[] = new Element($this->templating, $this->checker, $src, $type, $flow, $charset);
 
         return $this;
     }
@@ -129,15 +125,15 @@ class Script extends Helper
      *
      * @param string $src Script location.
      * @return self Self instance.
-     * @version 0.0.2
+     * @version 0.1.0
      * @since 0.0.2
      */
     public function delete($src)
     {
         // find script by given src
-        foreach ($this->scripts as $index => $script) {
+        foreach ($this as $index => $script) {
             if ($script->getSrc() == $src) {
-                unset($this->scripts[$index]);
+                unset($this[$index]);
                 break;
             }
         }
@@ -149,7 +145,7 @@ class Script extends Helper
      * Generates string representation.
      *
      * @return string Text representation.
-     * @version 0.0.2
+     * @version 0.1.0
      * @since 0.0.2
      */
     public function __toString()
@@ -157,7 +153,7 @@ class Script extends Helper
         $tags = [];
 
         // generate <script> tags
-        foreach ($this->scripts as $script) {
+        foreach ($this as $script) {
             $tags[] = (string) $script;
         }
 

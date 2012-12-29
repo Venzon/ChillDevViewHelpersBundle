@@ -57,4 +57,6 @@ Script helper automatically escapes all attributes content.
 **Note:** Depending on XHTML switch state helper will generate tags ended with `>` (for XHTML turned off, default), or `/>` (for enabled XHTML). Thus it's important to enable XHTML 
 before rendering helper output. XHTML output also ommits `</script>` ending tag.
 
+**Note:** `<script>` tag helper extends [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php), so you can use standard methods to manage contained elements.
+
 **Remember:** Even though `text/javascript` is a default value for `type=""` attribute of `<script>` element, it is obsolete - the really proper MIME type for **JavaScript** files is `application/javascript`!

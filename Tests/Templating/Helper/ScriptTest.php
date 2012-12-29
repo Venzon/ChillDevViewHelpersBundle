@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -25,7 +25,7 @@ use Symfony\Component\Templating\Loader\FilesystemLoader;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -169,6 +169,22 @@ class ScriptTest extends PHPUnit_Framework_TestCase
         $script->delete($src);
 
         $this->assertEmpty($script->__toString(), 'Script::delete() should delete element with given src from container.');
+    }
+
+    /**
+     * Check get/set charset.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function charsetChange()
+    {
+        $charset = 'iso-8859-2';
+
+        $title = new Script($this->templating, $this->checker);
+        $title->setCharset($charset);
+        $this->assertEquals($charset, $title->getCharset(), 'Script::setCharset() should change used charset.');
     }
 
     /**
