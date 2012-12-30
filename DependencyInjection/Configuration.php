@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -20,7 +20,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritDoc}
-     * @version 0.0.1
+     * @version 0.1.0
      * @since 0.0.1
      */
     public function getConfigTreeBuilder()
@@ -95,6 +95,25 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                     ->info('<link> tags definitions')
+                ->end()
+            ->end()
+            ->fixXmlConfig('stylesheet')
+            ->children()
+                ->arrayNode('stylesheets')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('href')
+                                ->isRequired()
+                            ->end()
+                            ->scalarNode('type')
+                                ->defaultValue('text/css')
+                            ->end()
+                            ->scalarNode('media')
+                                ->defaultNull()
+                            ->end()
+                        ->end()
+                    ->end()
+                    ->info('<link> stylesheets definitions')
                 ->end()
             ->end()
             ->fixXmlConfig('keyword')

@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -22,7 +22,7 @@ use Symfony\Component\Config\Definition\NodeInterface;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -270,6 +270,99 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
 
         $this->assertNull($config['links'][0]['type'], 'Default value for links.$n.type should be NULL.');
         $this->assertNull($config['links'][0]['media'], 'Default value for links.$n.media should be NULL.');
+    }
+
+    /**
+     * Check multiple <link> stylesheets elements handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function multipleStylesheetsDefinition()
+    {
+        $href1 = 'foo';
+        $href2 = 'baz';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'stylesheets' => [
+                        [
+                            'href' => $href1,
+                        ],
+                        [
+                            'href' => $href2,
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals($href1, $config['stylesheets'][0]['href'], 'Configuration should handle key stylesheets.$n.href for each link definition.');
+        $this->assertEquals($href2, $config['stylesheets'][1]['href'], 'Configuration should handle key stylesheets.$n.href for each link definition.');
+    }
+
+    /**
+     * Check optional <link> stylesheet element properties handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function optionalStylesheetsProperties()
+    {
+        $type = 'foo';
+        $media = 'bar';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'stylesheets' => [
+                        [
+                            'href' => 'baz',
+                            'type' => $type,
+                            'media' => $media,
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals($type, $config['stylesheets'][0]['type'], 'Configuration should handle key stylesheets.$n.type for link definition.');
+        $this->assertEquals($media, $config['stylesheets'][0]['media'], 'Configuration should handle key stylesheets.$n.media for link definition.');
+    }
+
+    /**
+     * Check requirement constraint on "href" property of <link> stylesheet element definition.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The child node "href" at path "chilldev_viewhelpers.stylesheets.0" must be configured.
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function requiredStylesheetHref()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'stylesheets' => [
+                        [
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check default <link> helper configuration for stylesheet.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function defaultStylesheetConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'stylesheets' => [
+                        [
+                            'href' => '',
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals('text/css', $config['stylesheets'][0]['type'], 'Default value for stylesheets.$n.type should be "text/css".');
+        $this->assertNull($config['stylesheets'][0]['media'], 'Default value for stylesheets.$n.media should be NULL.');
     }
 
     /**

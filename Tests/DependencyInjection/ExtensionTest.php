@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -134,6 +134,44 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
         }
 
         $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined links in "chilldev.viewhelpers.helper.link" service definition.');
+    }
+
+    /**
+     * Check if stylesheets links parameters are handled correctly.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function preDefinedStylesheets()
+    {
+        $href = 'foo';
+        $type = 'text/xsl';
+        $media = 'screen';
+
+        $config = [
+            'stylesheets' => [
+                [
+                    'href' => $href,
+                    'type' => $type,
+                    'media' => $media,
+                ],
+            ],
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        foreach ($container->getDefinition('chilldev.viewhelpers.helper.link')->getMethodCalls() as $call) {
+            if ($call[0] === 'addStylesheet') {
+                $this->assertEquals($href, $call[1][0], 'ChillDevViewHelpersExtension::load() should set href parameter for "chilldev.viewhelpers.helper.title"::addStylesheet().');
+                $this->assertEquals($media, $call[1][1], 'ChillDevViewHelpersExtension::load() should set media parameter for "chilldev.viewhelpers.helper.title"::addStylesheet().');
+                $this->assertEquals($type, $call[1][2], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.title"::addStylesheet().');
+                return;
+            }
+        }
+
+        $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined stylesheets links in "chilldev.viewhelpers.helper.link" service definition.');
     }
 
     /**

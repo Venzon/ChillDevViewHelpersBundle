@@ -22,7 +22,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -30,7 +30,7 @@ class ChillDevViewHelpersExtension extends Extension
 {
     /**
      * {@inheritDoc}
-     * @version 0.0.1
+     * @version 0.1.0
      * @since 0.0.1
      */
     public function load(array $configs, ContainerBuilder $container)
@@ -89,6 +89,10 @@ class ChillDevViewHelpersExtension extends Extension
         $links = $container->getDefinition('chilldev.viewhelpers.helper.link');
         foreach ($config['links'] as $link) {
             $links->addMethodCall('add', [$link['href'], $link['rels'], $link['type'], $link['media']]);
+        }
+        // pre-defined <link> elements for stylesheets
+        foreach ($config['stylesheets'] as $stylesheet) {
+            $links->addMethodCall('addStylesheet', [$stylesheet['href'], $stylesheet['media'], $stylesheet['type']]);
         }
     }
 
