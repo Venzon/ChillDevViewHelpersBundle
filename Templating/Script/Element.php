@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -13,6 +13,7 @@
 namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Script;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
+use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
 
 use Symfony\Component\Templating\PhpEngine;
 
@@ -21,7 +22,7 @@ use Symfony\Component\Templating\PhpEngine;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -127,20 +128,31 @@ class Element
     protected $checker;
 
     /**
+     * Markup generator.
+     *
+     * @var Markup
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    protected $markup;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
      * @param Checker $checker XHTML checker.
+     * @param Markup $markup Markup generator.
      * @param string $src Script location.
      * @param string $type Link MIME type.
      * @param int $flow Loading flow.
      * @param string $charset Script charset.
-     * @version 0.0.2
+     * @version 0.1.0
      * @since 0.0.2
      */
     public function __construct(
         PhpEngine $templating,
         Checker $checker,
+        Markup $markup,
         $src,
         $type = self::TYPE_TEXTJAVASCRIPT,
         $flow = self::FLOW_DEFAULT,
@@ -148,6 +160,7 @@ class Element
     ) {
         $this->templating = $templating;
         $this->checker = $checker;
+        $this->markup = $markup;
         $this->src = $src;
         $this->type = $type;
         $this->flow = $flow;
@@ -206,7 +219,7 @@ class Element
      * Generates string representation.
      *
      * @return string Text representation.
-     * @version 0.0.2
+     * @version 0.1.0
      * @since 0.0.2
      */
     public function __toString()
@@ -235,12 +248,14 @@ class Element
                 break;
         }
 
-        // generate <script> tag
-        $attrs = [];
-        foreach ($data as $name => $content) {
-            $attrs[] = ' ' . $name . '="' . $this->templating->escape($content) . '"';
+        $isXhtml = $this->checker->isXhtml();
+        $markup = $this->markup->generateElement('script', $data, $isXhtml);
+
+        // in HTML <script> element needs closing tag
+        if (!$isXhtml) {
+            $markup .= '</script>';
         }
 
-        return '<script' . \implode($attrs) . ($this->checker->isXhtml() ? '/>' : '></script>');
+        return $markup;
     }
 }

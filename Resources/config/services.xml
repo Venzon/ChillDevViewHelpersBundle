@@ -23,6 +23,8 @@
 
         <parameter key="chilldev.viewhelpers.container.keywords.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words</parameter>
 
+        <parameter key="chilldev.viewhelpers.utils.markup.class">ChillDev\Bundle\ViewHelpersBundle\Utils\Markup</parameter>
+
         <parameter key="chilldev.viewhelpers.title.separator"> - </parameter>
     </parameters>
 
@@ -34,6 +36,11 @@
 
         <!-- keywords container -->
         <service id="chilldev.viewhelpers.container.keywords" class="%chilldev.viewhelpers.container.keywords.class%"/>
+
+        <!-- markup generator container -->
+        <service id="chilldev.viewhelpers.utils.markup" class="%chilldev.viewhelpers.utils.markup.class%">
+            <argument type="service" id="templating.engine.php"/>
+        </service>
 
         <!-- <meta> tag helper -->
         <service id="chilldev.viewhelpers.helper.meta" class="%chilldev.viewhelpers.helper.meta.class%">
@@ -58,6 +65,7 @@
             <tag name="templating.helper" alias="link"/>
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
+            <argument type="service" id="chilldev.viewhelpers.utils.markup"/>
         </service>
 
         <!-- <script> tag helper -->
@@ -65,6 +73,7 @@
             <tag name="templating.helper" alias="script"/>
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
+            <argument type="service" id="chilldev.viewhelpers.utils.markup"/>
         </service>
 
         <!-- serializer helper -->

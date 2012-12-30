@@ -16,6 +16,7 @@ use ArrayObject;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
+use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\Helper\HelperInterface;
@@ -53,17 +54,28 @@ class Script extends ArrayObject implements
     protected $checker;
 
     /**
+     * Markup generator.
+     *
+     * @var Markup
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    protected $markup;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
      * @param Checker $checker XHTML checker.
-     * @version 0.0.2
+     * @param Markup $markup Markup generator.
+     * @version 0.1.0
      * @since 0.0.2
      */
-    public function __construct(PhpEngine $templating, Checker $checker)
+    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup)
     {
         $this->templating = $templating;
         $this->checker = $checker;
+        $this->markup = $markup;
     }
 
     /**
@@ -91,7 +103,7 @@ class Script extends ArrayObject implements
      */
     public function add($src, $type = Element::TYPE_TEXTJAVASCRIPT, $flow = Element::FLOW_DEFAULT, $charset = null)
     {
-        $this[] = new Element($this->templating, $this->checker, $src, $type, $flow, $charset);
+        $this[] = new Element($this->templating, $this->checker, $this->markup, $src, $type, $flow, $charset);
 
         return $this;
     }

@@ -16,6 +16,7 @@ use ArrayObject;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
+use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\Helper\HelperInterface;
@@ -62,17 +63,28 @@ class Link extends ArrayObject implements
     protected $checker;
 
     /**
+     * Markup generator.
+     *
+     * @var Markup
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    protected $markup;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
      * @param Checker $checker XHTML checker.
+     * @param Markup $markup Markup generator.
      * @version 0.0.1
      * @since 0.0.1
      */
-    public function __construct(PhpEngine $templating, Checker $checker)
+    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup)
     {
         $this->templating = $templating;
         $this->checker = $checker;
+        $this->markup = $markup;
     }
 
     /**
@@ -105,7 +117,7 @@ class Link extends ArrayObject implements
             $rels = [$rels];
         }
 
-        $this[] = new Element($this->templating, $this->checker, $href, $rels, $type, $media);
+        $this[] = new Element($this->templating, $this->checker, $this->markup, $href, $rels, $type, $media);
 
         return $this;
     }

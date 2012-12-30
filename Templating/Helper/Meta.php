@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -14,6 +14,7 @@ namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Meta as Container;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
+use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\Helper\Helper;
@@ -52,15 +53,16 @@ class Meta extends Helper
      *
      * @param PhpEngine $templating Templating engine.
      * @param Checker $checker XHTML checker.
-     * @version 0.0.1
+     * @param Markup $markup Markup generator.
+     * @version 0.1.0
      * @since 0.0.1
      */
-    public function __construct(PhpEngine $templating, Checker $checker)
+    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup)
     {
         $this->templating = $templating;
-        $this->meta['name'] = new Container($templating, $checker, 'name');
-        $this->meta['property'] = new Container($templating, $checker, 'property');
-        $this->meta['http-equiv'] = new Container($templating, $checker, 'http-equiv');
+        $this->meta['name'] = new Container($templating, $checker, $markup, 'name');
+        $this->meta['property'] = new Container($templating, $checker, $markup, 'property');
+        $this->meta['http-equiv'] = new Container($templating, $checker, $markup, 'http-equiv');
     }
 
     /**
