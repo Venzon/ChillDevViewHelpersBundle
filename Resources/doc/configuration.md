@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.1
+# @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -48,6 +48,49 @@ chilldev_viewhelpers:
                 - "icon"
             type: "image/png" # optional, but depending on link tyle it may be needed
             media: "screen" # optional
+```
+
+### Stylesheets
+
+Most common use of `<link>` element is to define external stylesheets. You can use `stylesheets` key for shorter notation - it requires only `href` key, `type` is by default of value *text/css* and `rel` is always *stylesheet*:
+
+```yaml
+chilldev_viewhelpers:
+    stylesheets:
+        -
+            href: "/styles/main.css" # required
+            media: "screen" # optional
+            type: "text/css" # optional, this is default value
+```
+
+You can even use shorthand notation with inline string which will be used as href key:
+
+```yaml
+chilldev_viewhelpers:
+    stylesheets:
+        - "/styles/main.css"
+```
+
+## &lt;script&gt;
+
+`<script>` tag helper configuration allows you to define initial script references:
+
+```yaml
+chilldev_viewhelpers:
+    scripts:
+        -
+            src: "/javascript/prototype.js" # required
+            type: "text/javascript" # optional, this is default value
+            flow: "default" # optional, one of "default", "defer", "async", this is default value
+            charset: "utf-8" # optional
+```
+
+Like with stylesheet definitions, `<script>` can be defined with just a plain string:
+
+```yaml
+chilldev_viewhelpers:
+    scripts:
+        - "/javascript/prototype.js"
 ```
 
 ## &lt;meta&gt;
@@ -102,6 +145,17 @@ chilldev_viewhelpers:
                 - "shortcut"
                 - "icon"
             type: "image/png"
+
+    # stylesheets <link>s
+    stylesheets:
+        -
+            href: "/styles/main.css"
+
+    # <script>s definition
+    scripts:
+        -
+            src: "/javascript/prototype.js" # required
+            type: "application/javascript"
 
     # <meta> tags
     meta:

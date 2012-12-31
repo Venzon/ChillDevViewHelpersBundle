@@ -15,6 +15,7 @@ namespace ChillDev\Bundle\ViewHelpersBundle\Tests\DependencyInjection;
 use PHPUnit_Framework_TestCase;
 
 use ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\ChillDevViewHelpersExtension;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element as Script;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -125,10 +126,10 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
 
         foreach ($container->getDefinition('chilldev.viewhelpers.helper.link')->getMethodCalls() as $call) {
             if ($call[0] === 'add') {
-                $this->assertEquals($href, $call[1][0], 'ChillDevViewHelpersExtension::load() should set href parameter for "chilldev.viewhelpers.helper.title"::add().');
-                $this->assertEquals($rels, $call[1][1], 'ChillDevViewHelpersExtension::load() should set rels parameter for "chilldev.viewhelpers.helper.title"::add().');
-                $this->assertEquals($type, $call[1][2], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.title"::add().');
-                $this->assertEquals($media, $call[1][3], 'ChillDevViewHelpersExtension::load() should set media parameter for "chilldev.viewhelpers.helper.title"::add().');
+                $this->assertEquals($href, $call[1][0], 'ChillDevViewHelpersExtension::load() should set href parameter for "chilldev.viewhelpers.helper.link"::add().');
+                $this->assertEquals($rels, $call[1][1], 'ChillDevViewHelpersExtension::load() should set rels parameter for "chilldev.viewhelpers.helper.link"::add().');
+                $this->assertEquals($type, $call[1][2], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.link"::add().');
+                $this->assertEquals($media, $call[1][3], 'ChillDevViewHelpersExtension::load() should set media parameter for "chilldev.viewhelpers.helper.link"::add().');
                 return;
             }
         }
@@ -164,14 +165,50 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
 
         foreach ($container->getDefinition('chilldev.viewhelpers.helper.link')->getMethodCalls() as $call) {
             if ($call[0] === 'addStylesheet') {
-                $this->assertEquals($href, $call[1][0], 'ChillDevViewHelpersExtension::load() should set href parameter for "chilldev.viewhelpers.helper.title"::addStylesheet().');
-                $this->assertEquals($media, $call[1][1], 'ChillDevViewHelpersExtension::load() should set media parameter for "chilldev.viewhelpers.helper.title"::addStylesheet().');
-                $this->assertEquals($type, $call[1][2], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.title"::addStylesheet().');
+                $this->assertEquals($href, $call[1][0], 'ChillDevViewHelpersExtension::load() should set href parameter for "chilldev.viewhelpers.helper.link"::addStylesheet().');
+                $this->assertEquals($media, $call[1][1], 'ChillDevViewHelpersExtension::load() should set media parameter for "chilldev.viewhelpers.helper.link"::addStylesheet().');
+                $this->assertEquals($type, $call[1][2], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.link"::addStylesheet().');
                 return;
             }
         }
 
         $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined stylesheets links in "chilldev.viewhelpers.helper.link" service definition.');
+    }
+
+    /**
+     * Check if scripts parameters are handled correctly.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function preDefinedScripts()
+    {
+        $src = 'foo';
+
+        $config = [
+            'scripts' => [
+                [
+                    'src' => $src,
+                    'flow' => 'async',
+                ],
+            ],
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        foreach ($container->getDefinition('chilldev.viewhelpers.helper.script')->getMethodCalls() as $call) {
+            if ($call[0] === 'add') {
+                $this->assertEquals($src, $call[1][0], 'ChillDevViewHelpersExtension::load() should set src parameter for "chilldev.viewhelpers.helper.script"::add().');
+                $this->assertEquals(Script::TYPE_TEXTJAVASCRIPT, $call[1][1], 'ChillDevViewHelpersExtension::load() should set type parameter for "chilldev.viewhelpers.helper.script"::add().');
+                $this->assertEquals(Script::FLOW_ASYNC, $call[1][2], 'ChillDevViewHelpersExtension::load() should set flow (translated to proper flag) parameter for "chilldev.viewhelpers.helper.script"::add().');
+                $this->assertNull($call[1][3], 'ChillDevViewHelpersExtension::load() should set charset parameter for "chilldev.viewhelpers.helper.script"::add().');
+                return;
+            }
+        }
+
+        $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined scripts in "chilldev.viewhelpers.helper.script" service definition.');
     }
 
     /**

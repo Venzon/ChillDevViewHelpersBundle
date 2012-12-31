@@ -16,6 +16,7 @@ use PHPUnit_Framework_TestCase;
 
 use ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\ChillDevViewHelpersExtension;
 use ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\Configuration;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 
 use Symfony\Component\Config\Definition\NodeInterface;
 
@@ -363,6 +364,169 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('text/css', $config['stylesheets'][0]['type'], 'Default value for stylesheets.$n.type should be "text/css".');
         $this->assertNull($config['stylesheets'][0]['media'], 'Default value for stylesheets.$n.media should be NULL.');
+    }
+
+    /**
+     * Check inline stylesheet handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function inlineStylesheetConfiguration()
+    {
+        $href = 'foo';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'stylesheets' => [
+                        $href,
+                    ],
+        ]));
+
+        $this->assertEquals($href, $config['stylesheets'][0]['href'], 'Scalar string should be converted to href of new stylesheet definition.');
+        $this->assertEquals('text/css', $config['stylesheets'][0]['type'], 'Stylesheet definition created from scalar string should get default type.');
+        $this->assertNull($config['stylesheets'][0]['media'], 'Stylesheet definition created from scalar string should not get any media query.');
+    }
+
+    /**
+     * Check multiple <script> stylesheets elements handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function multipleScriptsDefinition()
+    {
+        $src1 = 'foo';
+        $src2 = 'baz';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'scripts' => [
+                        [
+                            'src' => $src1,
+                        ],
+                        [
+                            'src' => $src2,
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals($src1, $config['scripts'][0]['src'], 'Configuration should handle key scripts.$n.src for each script definition.');
+        $this->assertEquals($src2, $config['scripts'][1]['src'], 'Configuration should handle key scripts.$n.src for each script definition.');
+    }
+
+    /**
+     * Check optional <script> element properties handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function optionalScriptsProperties()
+    {
+        $type = 'foo';
+        $flow = 'defer';
+        $charset = 'bar';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'scripts' => [
+                        [
+                            'src' => 'baz',
+                            'type' => $type,
+                            'flow' => $flow,
+                            'charset' => $charset,
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals($type, $config['scripts'][0]['type'], 'Configuration should handle key scripts.$n.type for script definition.');
+        $this->assertEquals($flow, $config['scripts'][0]['flow'], 'Configuration should handle key scripts.$n.media for script definition.');
+        $this->assertEquals($charset, $config['scripts'][0]['charset'], 'Configuration should handle key scripts.$n.charset for script definition.');
+    }
+
+    /**
+     * Check value constraint on "flow" property of <script> element definition.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The value "bar" is not allowed for path "chilldev_viewhelpers.scripts.0.flow". Permissible values: "default", "defer", "async"
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function enumScriptFlow()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'scripts' => [
+                        [
+                            'src' => 'foo',
+                            'flow' => 'bar',
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check requirement constraint on "src" property of <script> element definition.
+     *
+     * @test
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The child node "src" at path "chilldev_viewhelpers.scripts.0" must be configured.
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function requiredScriptSrc()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'scripts' => [
+                        [
+                        ],
+                    ],
+        ]));
+    }
+
+    /**
+     * Check default <script> helper configuration.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function defaultScriptConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'scripts' => [
+                        [
+                            'src' => '',
+                        ],
+                    ],
+        ]));
+
+        $this->assertEquals(Element::TYPE_TEXTJAVASCRIPT, $config['scripts'][0]['type'], 'Default value for scripts.$n.type should be "text/javascript".');
+        $this->assertEquals('default', $config['scripts'][0]['flow'], 'Default value for scripts.$n.flow should be "default".');
+        $this->assertNull($config['scripts'][0]['charset'], 'Default value for scripts.$n.charset should be NULL.');
+    }
+
+    /**
+     * Check inline <script> handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function inlineScriptConfiguration()
+    {
+        $src = 'foo';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'scripts' => [
+                        $src,
+                    ],
+        ]));
+
+        $this->assertEquals($src, $config['scripts'][0]['src'], 'Scalar string should be converted to src of new script definition.');
+        $this->assertEquals(Element::TYPE_TEXTJAVASCRIPT, $config['scripts'][0]['type'], 'Script definition created from scalar string should get default type.');
+        $this->assertEquals('default', $config['scripts'][0]['flow'], 'Script definition created from scalar string should get default flow.');
+        $this->assertNull($config['scripts'][0]['charset'], 'Script definition created from scalar string should not get any charset query.');
     }
 
     /**

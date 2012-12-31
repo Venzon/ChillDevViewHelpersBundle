@@ -5,12 +5,14 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\DependencyInjection;
+
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -93,6 +95,21 @@ class ChillDevViewHelpersExtension extends Extension
         // pre-defined <link> elements for stylesheets
         foreach ($config['stylesheets'] as $stylesheet) {
             $links->addMethodCall('addStylesheet', [$stylesheet['href'], $stylesheet['media'], $stylesheet['type']]);
+        }
+
+        $flows = [
+            'normal' => Element::FLOW_DEFAULT,
+            'defer' => Element::FLOW_DEFER,
+            'async' => Element::FLOW_ASYNC,
+        ];
+
+        // pre-defined <script> elements
+        $scripts = $container->getDefinition('chilldev.viewhelpers.helper.script');
+        foreach ($config['scripts'] as $script) {
+            $scripts->addMethodCall(
+                'add',
+                [$script['src'], $script['type'], $flows[$script['flow']], $script['charset']]
+            );
         }
     }
 

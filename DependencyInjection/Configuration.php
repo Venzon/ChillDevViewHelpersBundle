@@ -12,6 +12,8 @@
 
 namespace ChillDev\Bundle\ViewHelpersBundle\DependencyInjection;
 
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
+
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -101,6 +103,18 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->arrayNode('stylesheets')
                     ->prototype('array')
+                        ->beforeNormalization()
+                            ->ifTrue(
+                                function ($value) {
+                                    return !\is_array($value);
+                                }
+                            )
+                            ->then(
+                                function ($value) {
+                                    return ['href' => $value];
+                                }
+                            )
+                        ->end()
                         ->children()
                             ->scalarNode('href')
                                 ->isRequired()
@@ -114,6 +128,41 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                     ->info('<link> stylesheets definitions')
+                ->end()
+            ->end()
+            ->fixXmlConfig('script')
+            ->children()
+                ->arrayNode('scripts')
+                    ->prototype('array')
+                        ->beforeNormalization()
+                            ->ifTrue(
+                                function ($value) {
+                                    return !\is_array($value);
+                                }
+                            )
+                            ->then(
+                                function ($value) {
+                                    return ['src' => $value];
+                                }
+                            )
+                        ->end()
+                        ->children()
+                            ->scalarNode('src')
+                                ->isRequired()
+                            ->end()
+                            ->scalarNode('type')
+                                ->defaultValue(Element::TYPE_TEXTJAVASCRIPT)
+                            ->end()
+                            ->enumNode('flow')
+                                ->values(['default', 'defer', 'async'])
+                                ->defaultValue('default')
+                            ->end()
+                            ->scalarNode('charset')
+                                ->defaultNull()
+                            ->end()
+                        ->end()
+                    ->end()
+                    ->info('<script> tags definitions')
                 ->end()
             ->end()
             ->fixXmlConfig('keyword')
