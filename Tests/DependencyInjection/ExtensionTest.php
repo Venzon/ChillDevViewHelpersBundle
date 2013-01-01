@@ -49,13 +49,16 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
      * @version 0.1.1
      * @since 0.1.1
      */
-    public function noSerializer()
+    public function enabledSerializer()
     {
+        $config = [
+            'serializer' => true,
+        ];
         $container = new ContainerBuilder();
 
-        $this->extension->load([], $container);
+        $this->extension->load([$config], $container);
 
-        $this->assertFalse($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should not load serializer helper if no serializer definition is present.');
+        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should load serializer helper if it is enabled in configuration.');
     }
 
     /**
@@ -63,16 +66,16 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
      * @version 0.1.1
      * @since 0.1.1
      */
-    public function oldSerializer()
+    public function disabledSerializer()
     {
+        $config = [
+            'serializer' => false,
+        ];
         $container = new ContainerBuilder();
-        $container->register('serializer', 'foo');
 
-        $this->extension->load([], $container);
+        $this->extension->load([$config], $container);
 
-        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should load serializer helper if serializer definition is present.');
-        $this->assertTrue($container->hasAlias('jms_serializer'), 'ChillDevViewHelpersExtension::load() should register "jms_serializer" alias to old "serializer" ID.');
-        $this->assertEquals('serializer', $container->getAlias('jms_serializer')->__toString(), 'ChillDevViewHelpersExtension::load() should register "jms_serializer" alias to old "serializer" ID.');
+        $this->assertFalse($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should not load serializer helper if it is disabled in configuration.');
     }
 
     /**

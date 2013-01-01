@@ -50,13 +50,8 @@ class ChillDevViewHelpersExtension extends Extension
             $loader->load('xhtml.xml');
         }
 
-        // this is for forward compatibility
-        if ($container->has('serializer') && !$container->has('jms_serializer')) {
-            $container->setAlias('jms_serializer', 'serializer');
-        }
-
-        // enable serializer helper only if possible
-        if ($container->has('jms_serializer')) {
+        // enable serializer helper only on-demand
+        if ($config['serializer']) {
             $loader->load('serializer.xml');
         }
 
