@@ -10,6 +10,10 @@
 
 # ChangeLog
 
+## **0.1.1** (01.01.2013)
+
+-   Fixed services definitions &lt;Rafał Wrzeszcz&gt;.
+
 ## **0.1.0** (01.01.2013)
 
 -   Documentation fixes for &lt;script&gt; helper &lt;Rafał Wrzeszcz&gt;.
