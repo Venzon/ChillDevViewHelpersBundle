@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.1
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -21,8 +21,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.1
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -42,6 +42,52 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->extension = new ChillDevViewHelpersExtension();
+    }
+
+    /**
+     * @test
+     * @version 0.1.1
+     * @since 0.1.1
+     */
+    public function noSerializer()
+    {
+        $container = new ContainerBuilder();
+
+        $this->extension->load([], $container);
+
+        $this->assertFalse($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should not load serializer helper if no serializer definition is present.');
+    }
+
+    /**
+     * @test
+     * @version 0.1.1
+     * @since 0.1.1
+     */
+    public function oldSerializer()
+    {
+        $container = new ContainerBuilder();
+        $container->register('serializer', 'foo');
+
+        $this->extension->load([], $container);
+
+        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should load serializer helper if serializer definition is present.');
+        $this->assertTrue($container->hasAlias('jms_serializer'), 'ChillDevViewHelpersExtension::load() should register "jms_serializer" alias to old "serializer" ID.');
+        $this->assertEquals('serializer', $container->getAlias('jms_serializer')->__toString(), 'ChillDevViewHelpersExtension::load() should register "jms_serializer" alias to old "serializer" ID.');
+    }
+
+    /**
+     * @test
+     * @version 0.1.1
+     * @since 0.1.1
+     */
+    public function newSerializer()
+    {
+        $container = new ContainerBuilder();
+        $container->register('jms_serializer', 'foo');
+
+        $this->extension->load([], $container);
+
+        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should load serializer helper if serializer definition is present.');
     }
 
     /**

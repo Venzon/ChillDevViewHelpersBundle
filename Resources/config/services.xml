@@ -3,8 +3,8 @@
 # This file is part of the ChillDev ViewHelpers bundle.
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.0
+# @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.1.1
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -17,7 +17,6 @@
         <parameter key="chilldev.viewhelpers.helper.meta.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta</parameter>
         <parameter key="chilldev.viewhelpers.helper.link.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link</parameter>
         <parameter key="chilldev.viewhelpers.helper.script.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Script</parameter>
-        <parameter key="chilldev.viewhelpers.helper.serializer.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer</parameter>
         <parameter key="chilldev.viewhelpers.helper.xmlns.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xmlns</parameter>
 
         <parameter key="chilldev.viewhelpers.xhtml.checker.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker</parameter>
@@ -48,6 +47,7 @@
             <tag name="templating.helper" alias="meta"/>
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
+            <argument type="service" id="chilldev.viewhelpers.utils.markup"/>
             <call method="setMetaName">
                 <argument>keywords</argument>
                 <argument type="service" id="chilldev.viewhelpers.container.keywords"/>
@@ -75,12 +75,6 @@
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
             <argument type="service" id="chilldev.viewhelpers.utils.markup"/>
-        </service>
-
-        <!-- serializer helper -->
-        <service id="chilldev.viewhelpers.helper.serializer" class="%chilldev.viewhelpers.helper.serializer.class%">
-            <tag name="templating.helper" alias="serializer"/>
-            <argument type="service" id="jms_serializer"/>
         </service>
 
         <!-- xmlns attribute helper -->

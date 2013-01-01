@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.1
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -23,8 +23,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  * ChillDev ViewHelpers extensions.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.1
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -48,6 +48,16 @@ class ChillDevViewHelpersExtension extends Extension
         // enable XHTML Content-Type fix
         if ($config['xhtml']) {
             $loader->load('xhtml.xml');
+        }
+
+        // this is for forward compatibility
+        if ($container->hasDefinition('serializer') && !$container->hasDefinition('jms_serializer')) {
+            $container->setAlias('jms_serializer', 'serializer');
+        }
+
+        // enable serializer helper only if possible
+        if ($container->has('jms_serializer')) {
+            $loader->load('serializer.xml');
         }
 
         // set up title

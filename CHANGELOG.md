@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.0
+# @version 0.1.1
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -12,10 +12,10 @@
 
 ## **0.1.0** (01.01.2013)
 
--   Documentation fixes for <script> helper &lt;Rafał Wrzeszcz&gt;.
+-   Documentation fixes for &lt;script&gt; helper &lt;Rafał Wrzeszcz&gt;.
 -   Updated JMS Serializer reference &lt;Rafał Wrzeszcz&gt;.
 -   Minor resources fixes &lt;Rafał Wrzeszcz&gt;.
--   [#1] <script> and <link> helpers extend ArrayObject &lt;Rafał Wrzeszcz&gt;.
+-   [#1] &lt;script&gt; and &lt;link&gt; helpers extend ArrayObject &lt;Rafał Wrzeszcz&gt;.
 -   [#3] Markup element generation abstration &lt;Rafał Wrzeszcz&gt;.
 -   [#4] Configurable stylesheets &lt;Rafał Wrzeszcz&gt;.
 -   [#5] Configurable scripts &lt;Rafał Wrzeszcz&gt;.
