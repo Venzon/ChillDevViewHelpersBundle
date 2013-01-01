@@ -51,7 +51,7 @@ class ChillDevViewHelpersExtension extends Extension
         }
 
         // this is for forward compatibility
-        if ($container->hasDefinition('serializer') && !$container->hasDefinition('jms_serializer')) {
+        if ($container->has('serializer') && !$container->has('jms_serializer')) {
             $container->setAlias('jms_serializer', 'serializer');
         }
 
