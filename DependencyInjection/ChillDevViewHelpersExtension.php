@@ -111,6 +111,12 @@ class ChillDevViewHelpersExtension extends Extension
                 [$script['src'], $script['type'], $flows[$script['flow']], $script['charset']]
             );
         }
+
+        // pre-defined xmlns="" attributes
+        $xmlns = $container->getDefinition('chilldev.viewhelpers.helper.xmlns');
+        foreach ($config['xml_namespaces'] as $namespace => $alias) {
+            $xmlns->addMethodCall('offsetSet', [$namespace, $alias]);
+        }
     }
 
     /**

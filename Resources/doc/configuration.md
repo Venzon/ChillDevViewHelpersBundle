@@ -25,7 +25,7 @@ However this won't automatically send your pages as XHTML - this only enables th
 
 ## &lt;title&gt;
 
-`<title>` tag helper configuration provides two properties - `base` which is the default first element of page title (if not defined initial title will be empty) and `separator` which defines the string which will be used to glue all the parts together when displaying.
+`&lt;title&gt;` tag helper configuration provides two properties - `base` which is the default first element of page title (if not defined initial title will be empty) and `separator` which defines the string which will be used to glue all the parts together when displaying.
 
 ```yaml
 chilldev_viewhelpers:
@@ -36,7 +36,7 @@ chilldev_viewhelpers:
 
 ## &lt;link&gt;
 
-`<link>` tag helper configuration allows you to define initial references that will be applied to helper on each site:
+`&lt;link&gt;` tag helper configuration allows you to define initial references that will be applied to helper on each site:
 
 ```yaml
 chilldev_viewhelpers:
@@ -52,7 +52,7 @@ chilldev_viewhelpers:
 
 ### Stylesheets
 
-Most common use of `<link>` element is to define external stylesheets. You can use `stylesheets` key for shorter notation - it requires only `href` key, `type` is by default of value *text/css* and `rel` is always *stylesheet*:
+Most common use of `&lt;link&gt;` element is to define external stylesheets. You can use `stylesheets` key for shorter notation - it requires only `href` key, `type` is by default of value *text/css* and `rel` is always *stylesheet*:
 
 ```yaml
 chilldev_viewhelpers:
@@ -73,7 +73,7 @@ chilldev_viewhelpers:
 
 ## &lt;script&gt;
 
-`<script>` tag helper configuration allows you to define initial script references:
+`&lt;script&gt;` tag helper configuration allows you to define initial script references:
 
 ```yaml
 chilldev_viewhelpers:
@@ -85,7 +85,7 @@ chilldev_viewhelpers:
             charset: "utf-8" # optional
 ```
 
-Like with stylesheet definitions, `<script>` can be defined with just a plain string:
+Like with stylesheet definitions, `&lt;script&gt;` can be defined with just a plain string:
 
 ```yaml
 chilldev_viewhelpers:
@@ -93,9 +93,20 @@ chilldev_viewhelpers:
         - "/javascript/prototype.js"
 ```
 
+## xmlns=""
+
+You can also define XML namespaces in bundle configuration with simple map:
+
+```yaml
+chilldev_viewhelpers:
+    xml_namespaces:
+        http://www.w3.org/1999/xhtml: ""
+        http://ogp.me/ns/fb#: "fb"
+```
+
 ## &lt;meta&gt;
 
-Very similar like with `<link>` helper, you can define default `<meta>` tags for your website:
+Very similar like with `&lt;link&gt;` and `&lt;script&gt;` helpers, you can define default `&lt;meta&gt;` tags for your website:
 
 ```yaml
 chilldev_viewhelpers:
@@ -115,7 +126,7 @@ chilldev_viewhelpers:
 
 ### Keywords
 
-Special case of `<meta>` tag is `<meta name="keywords"/>` which comes pre-defined as phrases (strings) container. You can configure set of global keywords that will be added to this container at startup:
+Special case of `&lt;meta&gt;` tag is `&lt;meta name="keywords"/&gt;` which comes pre-defined as phrases (strings) container. You can configure set of global keywords that will be added to this container at startup:
 
 ```yaml
 chilldev_viewhelpers:
@@ -132,12 +143,12 @@ chilldev_viewhelpers:
 
 ```yaml
 chilldev_viewhelpers:
-    # <title> definition
+    # &lt;title&gt; definition
     title:
         base: "ChillDev ViewHelpers bundle"
         separator: " :: "
 
-    # <link>s definition
+    # &lt;link&gt;s definition
     links:
         -
             href: "http://static.chilldev.pl/images/favicon.png" # required
@@ -146,18 +157,18 @@ chilldev_viewhelpers:
                 - "icon"
             type: "image/png"
 
-    # stylesheets <link>s
+    # stylesheets &lt;link&gt;s
     stylesheets:
         -
             href: "/styles/main.css"
 
-    # <script>s definition
+    # &lt;script&gt;s definition
     scripts:
         -
             src: "/javascript/prototype.js" # required
             type: "application/javascript"
 
-    # <meta> tags
+    # &lt;meta&gt; tags
     meta:
         -
             name: "author"

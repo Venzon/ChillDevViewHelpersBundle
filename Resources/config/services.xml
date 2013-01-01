@@ -18,6 +18,7 @@
         <parameter key="chilldev.viewhelpers.helper.link.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link</parameter>
         <parameter key="chilldev.viewhelpers.helper.script.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Script</parameter>
         <parameter key="chilldev.viewhelpers.helper.serializer.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer</parameter>
+        <parameter key="chilldev.viewhelpers.helper.xmlns.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xmlns</parameter>
 
         <parameter key="chilldev.viewhelpers.xhtml.checker.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker</parameter>
 
@@ -80,6 +81,12 @@
         <service id="chilldev.viewhelpers.helper.serializer" class="%chilldev.viewhelpers.helper.serializer.class%">
             <tag name="templating.helper" alias="serializer"/>
             <argument type="service" id="jms_serializer"/>
+        </service>
+
+        <!-- xmlns attribute helper -->
+        <service id="chilldev.viewhelpers.helper.xmlns" class="%chilldev.viewhelpers.helper.xmlns.class%">
+            <tag name="templating.helper" alias="xmlns"/>
+            <argument type="service" id="templating.engine.php"/>
         </service>
     </services>
 </container>

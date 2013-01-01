@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.2
+# @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -17,4 +17,5 @@
 -   [&lt;meta&gt;](./usage/meta.md)
 -   [&lt;link&gt;](./usage/link.md)
 -   [&lt;script&gt;](./usage/script.md)
+-   [xmlns](./usage/xmlns.md)
 -   [Serializer](./usage/serializer.md)

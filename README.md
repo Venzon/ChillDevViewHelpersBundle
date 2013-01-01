@@ -67,13 +67,17 @@ In your view file:
 <?php $view['meta']->setProperty('og:title', $page->getName()); ?>
 <?php $view['link']->add('http://example.com/page-2-slug.html', 'next'); ?>
 <?php $view['script']->add('/javascript/prototype.js'); ?>
+<?php $view['xmlns']['http://www.w3.org/1999/xhtml'] = ''; ?>
+<?php $view['xmlns']['http://purl.org/NET/hinclude'] = 'hx'; ?>
+<?php $view['xmlns']['http://ogp.me/ns#'] = 'og'; ?>
+<?php $view['xmlns']['http://ogp.me/ns/fb#'] = 'fb'; ?>
 ```
 
 In your layout file:
 
 ```php
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:hx="http://purl.org/NET/hinclude" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<html<?php echo $view['xmlns']; ?>>
     <head>
         <?php echo $view['title']; ?>
         <?php echo $view['meta']; ?>

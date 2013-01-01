@@ -212,6 +212,38 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Check if xml namespaces parameters are handled correctly.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function preDefinedXmlNamespaces()
+    {
+        $namespace = 'foo';
+        $alias = 'bar';
+
+        $config = [
+            'xml_namespaces' => [
+                $namespace => $alias,
+            ],
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        foreach ($container->getDefinition('chilldev.viewhelpers.helper.xmlns')->getMethodCalls() as $call) {
+            if ($call[0] === 'offsetSet') {
+                $this->assertEquals($namespace, $call[1][0], 'ChillDevViewHelpersExtension::load() should set key parameter for "chilldev.viewhelpers.helper.xmlns"::offsetSet().');
+                $this->assertEquals($alias, $call[1][1], 'ChillDevViewHelpersExtension::load() should set value parameter for "chilldev.viewhelpers.helper.xmlns"::offsetSet().');
+                return;
+            }
+        }
+
+        $this->fail('ChillDevViewHelpersExtension::load() should set pre-defined xmlns="" attributes in "chilldev.viewhelpers.helper.script" service definition.');
+    }
+
+    /**
      * Check if keywords are handled correctly.
      *
      * @test

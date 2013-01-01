@@ -530,6 +530,33 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Check multiple xmlns="" definitions handling.
+     *
+     * @test
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+    public function multipleXmlNamespacesDefinition()
+    {
+        $namespace1 = 'foo';
+        $prefix1 = 'bar';
+        $namespace2 = 'baz';
+        $prefix2 = 'qux';
+
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'xml_namespaces' => [
+                        $namespace1 => $prefix1,
+                        $namespace2 => $prefix2,
+                    ],
+        ]));
+
+        $this->assertArrayHasKey($namespace1, $config['xml_namespaces'], 'Configuration should handle each xmlns definition.');
+        $this->assertArrayHasKey($namespace2, $config['xml_namespaces'], 'Configuration should handle each xmlns definition.');
+        $this->assertEquals($prefix1, $config['xml_namespaces'][$namespace1], 'Configuration should handle key xml_namespaces.' . $namespace1 . ' for xmlns definition.');
+        $this->assertEquals($prefix2, $config['xml_namespaces'][$namespace2], 'Configuration should handle key xml_namespaces.' . $namespace2 . ' for xmlns definition.');
+    }
+
+    /**
      * Check keywords elements handling.
      *
      * @test

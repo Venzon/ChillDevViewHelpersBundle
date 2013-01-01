@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.0
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -18,8 +18,10 @@ use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Script;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title;
+use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xmlns;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
+use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
 
 use JMS\SerializerBundle\Serializer\SerializerInterface;
 
@@ -31,6 +33,9 @@ use Symfony\Component\Templating\Storage\StringStorage;
 // initialize templating engine
 $templating = new PhpEngine(new TemplateNameParser(), new FilesystemLoader([]));
 
+// markup generator
+$markup = new Markup($templating);
+
 // XHTML checker for view helpers
 $checker = new Checker();
 
@@ -39,16 +44,20 @@ $title = new Title($templating);
 $templating->set($title);
 
 // <meta> helper
-$meta = new Meta($templating, $checker);
+$meta = new Meta($templating, $checker, $markup);
 $templating->set($meta);
 
 // <link> helper
-$link = new Link($templating, $checker);
+$link = new Link($templating, $checker, $markup);
 $templating->set($link);
 
 // <script> helper
-$script = new Script($templating, $checker);
+$script = new Script($templating, $checker, $markup);
 $templating->set($script);
+
+// xmlns="" helper
+$xmlns = new Xmlns($templating);
+$templating->set($xmlns);
 
 // to reduce dependencies here is simple JSON serializer
 class JsonSerializer implements SerializerInterface
@@ -76,6 +85,7 @@ $link->addStylesheet('style/style.css')
     ->add('images/favicon.png', ['shortcut', 'icon'], 'image/png');
 $script->add('javascript/app.js', Element::TYPE_APPLICATIONJAVASCRIPT)
     ->add('javascript/stats.js', Element::TYPE_APPLICATIONJAVASCRIPT, Element::FLOW_ASYNC);
+$xmlns['http://www.w3.org/1999/xhtml'] = '';
 
 echo $templating->render(__DIR__ . '/template.php', [
         'title' => 'Page',
