@@ -135,13 +135,13 @@
     </class>
     <source>eJztGm1T2zb4e36FyvXOgZak9GOhGRTYjW3HeiXXdUd6nGI/xhqy5Epygmn5sn+zv7G7/a9JlpM4ECcibwfb9CGx5ef93Ur2vkuipFZrbm3V0BZqR0SikFBA+jvBQiEeIhUBOowIpUfQQx8J9H8AmoCQqJuygEJDIxrcfZyqiAv0AYf47z/Qr+IG5I1/g/aE3qCNfnG/ry+w/NJIaCvH8nmSCXIZKfT61c5r9NefqJvdo7FtLi1WI8fqaf6EM/SqsdN4le9IwnzQ93onv0+wf4UvR5J33uXSdkoK2B0N3azVGI5BahwHhM4RJMACYH52wn4HX2lBdmu1VLrgtiFOKFaEXXbOfEES1TmmEANTBYWzLA45yzqHPE440/v6ioXkUjMNCSOGlyZOaACi0xYAxfWuM7LdSQU2dydMgQi11rvDEBio0Ch72i8joQgbVcS/wvE+xVKiMaMgol2U++TOg6G1al9rSK/cYmZtoa/7hEUgiDri/u1g866wxe6YwPleM/9O0i4lPgpTlocUugRl2Zf8XN/MQS1/s56r0UP0FjHoozHw3RGk4Fyd8gA0WBlru2Ue1D3f2CuA3kVPGyqyhvI0/pBAs4kCE0dgKoNOF20MeZ/6cMes7ZahGghgheDjD7ucU8DMoNW960jF1LsPZkE1Z5xS9T2mEibQskCEhbzu4STRdsw91syJvriOqfGk0i7dbmcJINknyo8mMNtu6cy+Q3/y3lTFsBA4s2opoihUqoWD4MhqJk/CU67OQFVqN4XjCEj6mGJhWUswjlJcVLAfYRXWPU0pnULdwloj7+V6tfImIZELp0lmrJa9i2WV1RYRO6+CmKKy+HPKXPXMPYRCcv0ppjbH6x4l7MqbN8oMsqyMskRwxZUOfJ0cBmeqxuNSCajKyZkCjgOWnRsJCGc41yIR+QG+pETAtMCxoNODy8KUDKb1qrLXnCJYcGGB5YH6GbBUvzAo+rsTdhdCLuCUixhTcpOXMAe8QtCwLVKoO0GbNewz9ec9TFPYLHUVlyVApYKhZx0iL3LDDujsOpO5dYJ0NYCeU9na1T+32J/Xr7RLyFu4UvrbLHQKfJeEcoEpJ74Rwon5Qyr7Q4WIISB4zVLM00jss6LdmgLfQgpfSjuE5cP8pAo2b/uRKqMgI4C7/dC9CY1ILKkVPbwcupfBefN/gbI3PfNnKeZW3hZU69z2ZvS2hZwL27xqzc6ZJzVcLFLnPhpTazS4Vk1fzhpM/lMlr1RUVlX58nOY+atejv5/xZu0nkTFk8J/0gXPyP8k613xZvTmTfu398cX7eNP7R8PPh6cHX44ed9ehoTA0tjKF1Led5IvDwFZP/cKQb2XyFyCMBdYZsz3Pj+8rg+ILdvsfoSFvDewTZXoMRR2WzFXOs1ex/RieKQ/d2kfo1Jd4VMJB0oJ0k0VHMifIKt7VbxHSK4vZS4W1XIyiUaSrsioV5D1uQjmNmeB79QqF7AJXGNzgK+TOOTc5G1XE6rI2rvngn3oSqIA7cWgcAtNkXj5J8WG5XKmCPdT5ZkSjgOWi48JN6fK42PGuHoHx3GiMqcDC+sTPQkhYxNbJ7pZHuBvNzYQHiTb0guqtnICQk2z7gr0GnBdrW6RUsmFGQB669XO8N3O+a5WP9/+wLPeUWj2cz1RkACrqh+tSjKtZ4yvE6Y2EZF6bigInNtUdphrBuvFRCrD5FmYUilUP2+iFtpZx5vGCctdNdsBXtEcYqyDG/cAcUYz/QHmzxIbxpYbL9HGwBo65FmANkZZUMqBolFD0PBW9krx2OLvWX2x2DPr27clhN5EQmOR50xqLW/CD4/PVKpBgD622HR6T7Bq6D4y/zxb+vtCEX/lvz5Yt93Wbmv/ABQvJng=</source>
   </file>
-  <file path="DependencyInjection/ChillDevViewHelpersExtension.php" hash="30a041ef07dfc83257f7d0833fa81be4" package="ChillDev\Bundle\ViewHelpersBundle">
+  <file path="DependencyInjection/ChillDevViewHelpersExtension.php" hash="85c79ef1aa4a2332f0d32e4b93cbcaf2" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
       <long-description><![CDATA[]]></long-description>
       <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
-      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-      <tag line="3" name="version" description="0.1.0"/>
+      <tag line="3" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.1.1"/>
       <tag line="3" name="since" description="0.0.1"/>
       <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
     </docblock>
@@ -158,8 +158,8 @@
         <description><![CDATA[ChillDev ViewHelpers extensions.]]></description>
         <long-description><![CDATA[]]></long-description>
         <tag line="22" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
-        <tag line="22" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-        <tag line="22" name="version" description="0.1.0"/>
+        <tag line="22" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="22" name="version" description="0.1.1"/>
         <tag line="22" name="since" description="0.0.1"/>
         <tag line="22" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
       </docblock>
@@ -183,14 +183,14 @@
           <type>\Symfony\Component\DependencyInjection\ContainerBuilder</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="127" package="ChillDev\Bundle\ViewHelpersBundle">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="137" package="ChillDev\Bundle\ViewHelpersBundle">
         <name>getAlias</name>
         <full_name>getAlias</full_name>
-        <docblock line="122">
+        <docblock line="132">
           <description><![CDATA[{@inheritdoc}]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="122" name="version" description="0.0.1"/>
-          <tag line="122" name="since" description="0.0.1"/>
+          <tag line="132" name="version" description="0.0.1"/>
+          <tag line="132" name="since" description="0.0.1"/>
         </docblock>
       </method>
     </class>
@@ -198,7 +198,7 @@
       <error line="33" code="50015">Argument $configs is missing from the Docblock of load()</error>
       <error line="33" code="50015">Argument $container is missing from the Docblock of load()</error>
     </parse_markers>
-    <source>eJzdV91O4zgUvs9TWCOkFNSmzFwO0IWhIEbL/AjYnVnRqnKTE+LFdTK2UygjbvZt9jVW2vfaYydN3TSFznC3uUl8/J2/7xzb8f4vWZJ5XndnxyM75CphisSMA8F3RqUmaUx0AuQ4YZz3YUp+Z3B3BjwDqcg4FxGHABWN7iHNdZJKckFj+u9f5It8APUQPpB9iQIe3JXjQ/yg6luQ8Z7VCtNsJtlNosmb3ddvyD9/k/FsxUbHfBZagdWaon+WCrIbvA52rUQxEQKOUWLHGQ1v6c0i8sE7G+3ASaCQILrreYJOQKHOBgqDPmQgIhDh7L34E0KNgex5Xq420b2CScapZuJmcBlKlunBCYcJCF1auJxN4lTMBsfpJEsFyvFLxOxmcIpVOU9DqlO5twbZEJfR1pQJkO9yxiP4Id3zlKLG4OuEF87pE/pnWme/ghTAG02d3GsQqiCq7LXGloI5Tv0v2irkVKkK62AqPoqMI0UqiffdI/hYlsyzQ74fMpGAZLqfho9zYT3WUroUr5V17TvLx5yFJM6FLQjhWM0WlZLOyFZoO0y1Sb1Z7FQh2bZWitDMUyrlklpzB0TAHTl2Za3tvToaYVsat5hOL5NpCEotKyzbbFeBoaGFJW7bsHS41JqtRbRtO+ssmdZo1H9/MRqRgPjdIOhegEpziSF0Cx/+tuuk2yW6WqckKUpWD6HTsxz6CuSUoaXgfsL9mhUQdIyb6dezqw/nll1cKp2rWQa4yd5XQBaTee7X/n2i0c5w2+G6walFzT3OMY9LvhVokmdEM22a0XHFFE4tHFqAP7zGRHDHN2Sh9xX3FbWdHmp/RuAENHLuh6a5I5gGU+zukqrA2gwWBqtarnHn5rBJqGOq4Jkob0D3IWaC2dZqDrN4F9H6250ejaIPgLtNdEw5by2ZNo9PM7Oz+e2Vmet1IQ6XoGtrZcOknNzC7C6VkVoiYRCmuXBYmINMk/TI7ktJqOBBZfglVDSE+WMc7GNj0R7R9MZZckamzPbxcxU26u5KiVMJNEycZWcRQ4JOrK86qRhfmKQpHn3FoVKFsYRyWtYYufbNX0VDn9qUkB+TkAvcW0VNbBEQiOtFY0XoR4NcBj4S4ApWnOMei7nr2UYBLMDPBfF5jmwK4lk/Cf4njOBbzqbPezL/FCcWWnPleXUlquotW5pq49rEANpz/2GxCePKXNuImYROZBoLIrLPmbjtYWr2H809A1D+goY06k83pHVQdqT5Xj0QDKCetY9D3+RsZpFtCbE/bJNyKLFEzlDjQeQMJxAxWidmM15M/ETpGQeVADg8rebloMrsFpLNc7ysdGy2CxNOzq6wzK0mLQhY0wlbMU/vTImvl2LyRSonlPvkoEfKX/e3b0/PP30Z9U9Oj347v1reEn1kDGQz+uSihqVqJsIG7NHlHx+PF9jh3vp+VfZS0dSxxcwLerYw8HTXlk7mlbWjlaqWoA0Omaj5sC0MoDcZFjUtx1VD29ItcGaIdXaQYUIl7jAbH9Aux/jXJdTBq1eEai3ZONfgsGwnf55jq/40xQgZVbfVOdOL6ys2zxbljKoV2q3tlcWUxjEScVkupMpOu7SyuhuUxDTdT6Lm+8niLrL5/QQ5OzL+W/WLhwSdS0EqFkcOi+U58eg9ev8BflYTDw==</source>
+    <source>eJzdWN1u2zYUvvdTcEVQJYEtp91dk3hpkxQtlnZFkq0d4sCgpWOLLU2pJJVEKXKzt9lrDNh77ZCSJerHidvcTYAhkfrO33cODynv/ZJESa833N7ukW1yHjFFZowDwXtCpSbxjOgIyGHEOD+CK/IHg+s3wBOQikxTEXLwUdDIHtBUR7Ekp3RG//2LfJS3oG6DW7IncYL718X4AB+o+uonfGSlgjjJJJtHmjzfefacDMztZ/LP32SatVQNzGMu7FvhK3SDxYLs+M/8Z3ZGMREAjneKcUKDL3ReBTB+ZZ0eO3HkM4ge9nqCLkChzBoC4yNIQIQgguyt+AyBRkd2e71UrSN7DouEU83EfHwWSJbo8TGHBQhdaDjLFrNYZOPDeJHEAufxSczYfPwak3MSB1THcncFssMvI60pEyBfpYyH8F2yJzFFifGnBc+N03vk32id/ApSAO9UdXyjQaicqKLkOisLljj1f6qugFOlSqyDKWnJAw8VKWd633oEL0uWubbJtwMmIpBMH8XB3XKy5utOOVvz184N7T1Jp5wFZJYKmxfCMambVEqakY3AFprqk2bN2Ff5zJbVkrtmrkIoldSq2ycCrsmhO7e5tdtEI2xDY8MZjBIZB6BUXaCus186hooqTdxWY2GwVqGblbd9+9ZZOZuTydHb08mE+MQb+v7wFFScSnRhmNvwtlwjwyHR5XIlUZ6ypguDkeXQUyCvGGrybxbca2gBQafYWj+9OX93YtnFFTM4zxLAlntTAtmMLGO/8G4ijXoutxyuO4xa1NLiEnNXj8B0dtPccQ3h75rKkAS4bDGoKeNMZy37OXeDUUTVEcyYYDYrJkBGObsF6W2Rp0/JT/dgPy/UxMW3wnBEFeiXnFHVkuqTms1VARbkVtAiUyQWPDNBJbFSbGqW4upA13C5le4Cej/9GB1JE6KZbjjAFL6q8m0B3uUFKsbt19QqJv8B2j4gcAEaS94LTG8J4cq/wuZSVKpvdfqVwnIprTDnxrCOq1Oq4AEv56Dduuh0M7/n3npbgxENw3eAPT88pJxv1lSby6OJ2V+8fuvNxSoXL2vQlbmyblJOvkB2HctQ1UgYB3EqHBaWILNGR2TnsSSUcL9U/BgqOtz8Pg72sLDoiGg6dzqemVOme/9Yho24u1KwHQENIqfrWcQlQSPWVpNU9C+I4hgPIPnWXrpRQzkla5RceOZs11GnNiTkxwTkAnfbqIVNAgJxvWjMCH1vkHXgHQGuoGUctziMXWdrOVCBH3LiwxLZ5cSDdiI8rU3ga8quHrZkTnbHFtow1es1hahqlmyhqo9rEx3oL+0H+R6IK3NlISYSBqEpLAjJHmfiywhDsydldwvG+UcUpBG/vyCtgaIizXN7VzCAZtQeDj0Ts3mLbEuYeZd9UgwlpsgZajwHOMMFhIw2iVmPF7vHK51xUBGAw1M7LgdVRFfNrB/jWSljo61UODG7k0VsjdmcgBWVsDHj8bVJ8UXNJ0/EckG5R/ZHpPiAevHi9clvHydHx69f/n5yXm+JHjKGm3on+vi0gaUqE0EH9uXZn+8PK+zl7up6VfbTrqti8zePqNlcwf1VWxhZZtaOWlktQGtsMmH3ZpsrQGsyyHNajMuCtqmrcGaIeXaQQUQldpi1N2iXYzx1CbX/5AmhWks2TTU4LNuXP86xFb+fYoRMyv8MlkxXfyJg8WxQc6pt0W51txZTPJshEWfFQir19Ast7W5QENP1eRh2fx5Wn4Lrfx7Ol2fz5nefBJ1KQUoWJw6LxT5x17vr/QcNOIqc</source>
   </file>
   <file path="ChillDevViewHelpersBundle.php" hash="b8c5fb4b6962fef97c69dcef3290c0cd" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
