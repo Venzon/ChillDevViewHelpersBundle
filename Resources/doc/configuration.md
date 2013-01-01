@@ -2,7 +2,7 @@
 # This file is part of the ChillDev ViewHelpers bundle.
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
 # @version 0.1.0
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
@@ -167,6 +167,11 @@ chilldev_viewhelpers:
         -
             src: "/javascript/prototype.js" # required
             type: "application/javascript"
+
+    # map of xmlns="" attributes
+    xml_namespaces:
+        http://www.w3.org/1999/xhtml: ""
+        http://ogp.me/ns/fb#: "fb"
 
     # &lt;meta&gt; tags
     meta:
