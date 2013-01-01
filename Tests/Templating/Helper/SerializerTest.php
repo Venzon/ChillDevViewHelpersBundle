@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -18,20 +18,18 @@ use PHPUnit_Framework_TestCase;
 
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer;
 
-use JMS\SerializerBundle\Serializer\SerializerInterface;
-
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 class SerializerTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var MockSerializer
-     * @version 0.0.1
+     * @var JMS\SerializerBundle\Serializer\SerializerInterface
+     * @version 0.1.2
      * @since 0.0.1
      */
     protected $mock;
@@ -49,7 +47,7 @@ class SerializerTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->mock = new MockSerializer();
+        $this->mock = $this->getMock('JMS\\SerializerBundle\\Serializer\\SerializerInterface');
         $this->serializer = new Serializer($this->mock);
     }
 
@@ -65,49 +63,37 @@ class SerializerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @version 0.0.1
+     * @version 0.1.2
      * @since 0.0.1
      */
     public function defaultSerializationFormat()
     {
-        $data = new stdClass();
+        $data = new \stdClass();
+        $toReturn = new \stdClass();
 
-        $this->serializer->serialize($data);
+        $this->mock->expects($this->once())
+            ->method('serialize')
+            ->with($this->identicalTo($data), $this->equalTo('json'))
+            ->will($this->returnValue($toReturn));
 
-        $this->assertSame($data, $this->mock->data, 'Serializer::serialize() should pass data to serializer.');
-        $this->assertEquals('json', $this->mock->format, 'Serializer::serialize() should serialize to JSON by default.');
+        $return = $this->serializer->serialize($data);
+        $this->assertSame($toReturn, $return, 'Serializer::serialize() should return result of serializer operation.');
     }
 
     /**
      * @test
-     * @version 0.0.1
+     * @version 0.1.2
      * @since 0.0.1
      */
     public function customSerializationFormat()
     {
-        $data = new stdClass();
+        $data = new \stdClass();
         $format = 'foo';
 
+        $this->mock->expects($this->once())
+            ->method('serialize')
+            ->with($this->identicalTo($data), $this->equalTo($format));
+
         $this->serializer->serialize($data, $format);
-
-        $this->assertSame($data, $this->mock->data, 'Serializer::serialize() should pass data to serializer.');
-        $this->assertEquals($format, $this->mock->format, 'Serializer::serialize() should serialize to specified format.');
-    }
-}
-
-class MockSerializer implements SerializerInterface
-{
-    public $data;
-    public $format;
-
-    public function serialize($data, $format)
-    {
-        $this->data = $data;
-        $this->format = $format;
-    }
-
-    public function deserialize($data, $type, $format)
-    {
-        // dummy
     }
 }
