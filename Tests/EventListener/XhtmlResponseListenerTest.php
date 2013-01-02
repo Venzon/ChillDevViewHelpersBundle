@@ -167,8 +167,6 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
         $this->listener->setXhtml(false)
             ->onKernelResponse($event);
 
-        //TODO: check with proper event with set flag explicitly to false
-
         $this->assertEquals(self::TEXT_HTML, $response->headers->get('Content-Type'), 'XhtmlResponseListener::setXhtml() should set flag to specified value.');
     }
 
