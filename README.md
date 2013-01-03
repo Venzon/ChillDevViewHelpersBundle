@@ -2,8 +2,8 @@
 # This file is part of the ChillDev ViewHelpers bundle.
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.0
+# @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.1.2
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -91,6 +91,19 @@ In your layout file:
 ```
 
 For more advanced aspects see [advanced usage documentation](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/usage.md) or even [internals description](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/internals.md).
+
+# Extras
+
+There are also some [extra resources](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/extras.md) included in this bundle that can be useful for your PHP-templates-based project.
+
+[KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle) supports PHP templating, but lacks default template for paginator helper. You can use one from this bundle with just following one setting in your application configuration:
+
+```yaml
+# KNP paginator configuration
+knp_paginator:
+    template:
+        pagination: "ChillDevViewHelpersBundle:Pagination:sliding.html.php"
+```
 
 # Resources
 
