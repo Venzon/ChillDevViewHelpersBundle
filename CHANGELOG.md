@@ -3,12 +3,19 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.1
+# @version 0.1.2
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
 
 # ChangeLog
+
+## **0.1.2** (01.02.2013)
+
+- Default pagination view for KnpPaginatorBubdle &lt;Rafał Wrzeszcz&gt;.
+- Fixed JMS serializer reference - "jms_serializer" is only in master, in 0.9.* it is named just "serializer" &lt;Rafał Wrzeszcz&gt;.
+- Refactored tests to use PHPUnit mocks &lt;Rafał Wrzeszcz&gt;.
+- Minimized Composer output in Travis &lt;Rafał Wrzeszcz&gt;.
 
 ## **0.1.1** (01.01.2013)
 
