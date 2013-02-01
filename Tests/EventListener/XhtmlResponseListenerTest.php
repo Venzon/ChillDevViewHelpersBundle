@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -24,7 +24,7 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.2
+ * @version 0.1.2
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -38,8 +38,8 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
     const TEXT_HTML = 'text/html';
 
     /**
-     * @var MockKernel
-     * @version 0.0.1
+     * @var Symfony\Component\HttpKernel\HttpKernelInterface
+     * @version 0.1.2
      * @since 0.0.1
      */
     protected $mock;
@@ -59,7 +59,7 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->mock = new MockKernel();
+        $this->mock = $this->getMock('Symfony\\Component\\HttpKernel\\HttpKernelInterface');
         $this->listener = new XhtmlResponseListener();
     }
 
@@ -167,8 +167,6 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
         $this->listener->setXhtml(false)
             ->onKernelResponse($event);
 
-        //TODO: check with proper event with set flag explicitly to false
-
         $this->assertEquals(self::TEXT_HTML, $response->headers->get('Content-Type'), 'XhtmlResponseListener::setXhtml() should set flag to specified value.');
     }
 
@@ -232,13 +230,5 @@ class XhtmlResponseListenerTest extends PHPUnit_Framework_TestCase
         $this->listener->onKernelResponse($event);
 
         $this->assertEquals(self::TEXT_HTML, $response->headers->get('Content-Type'), 'XhtmlResponseListener::onKernelResponse() should not set XHTML Content-Type if client does not accept such type.');
-    }
-}
-
-class MockKernel implements HttpKernelInterface
-{
-    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
-    {
-        // dummy
     }
 }

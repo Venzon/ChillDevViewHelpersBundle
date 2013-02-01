@@ -4,68 +4,27 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.2
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
 
 namespace ChillDev\Bundle\ViewHelpersBundle\Tests\Templating\Helper;
 
-use PHPUnit_Framework_TestCase;
-
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Script;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
-use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
-use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
-
-use Symfony\Component\Templating\PhpEngine;
-use Symfony\Component\Templating\TemplateNameParser;
-use Symfony\Component\Templating\Loader\FilesystemLoader;
+use ChillDev\Bundle\ViewHelpersBundle\Tests\BaseTemplatingTest;
 
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.2
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
-class ScriptTest extends PHPUnit_Framework_TestCase
+class ScriptTest extends BaseTemplatingTest
 {
-    /**
-     * @var PhpEngine
-     * @version 0.0.2
-     * @since 0.0.2
-     */
-    protected $templating;
-
-    /**
-     * @var Checker
-     * @version 0.0.2
-     * @since 0.0.2
-     */
-    protected $checker;
-
-    /**
-     * Markup generator.
-     *
-     * @var Markup
-     * @version 0.1.0
-     * @since 0.1.0
-     */
-    protected $markup;
-
-    /**
-     * @version 0.1.0
-     * @since 0.0.2
-     */
-    protected function setUp()
-    {
-        $this->templating = new PhpEngine(new TemplateNameParser(), new FilesystemLoader([]));
-        $this->checker = new Checker();
-        $this->markup = new Markup($this->templating);
-    }
-
     /**
      * @test
      * @version 0.1.0

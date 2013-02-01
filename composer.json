@@ -9,7 +9,9 @@
         "php",
         "templating",
         "helper",
-        "xhtml"
+        "xhtml",
+        "paginator",
+        "markup"
     ],
     "homepage": "http://chilloutdevelopment.github.com/ChillDevViewHelpersBundle",
     "license": "MIT",
@@ -37,7 +39,8 @@
     },
     "suggest": {
         "symfony/http-kernel": "2.1.*",
-        "jms/serializer-bundle": "0.9.*"
+        "jms/serializer-bundle": "0.9.*",
+        "knplabs/knp-paginator-bundle": "2.2.*"
     },
     "require-dev": {
         "ext-xsl": "*",
