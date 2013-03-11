@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.1
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -24,7 +24,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.1
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -32,7 +32,7 @@ class ChillDevViewHelpersExtension extends Extension
 {
     /**
      * {@inheritDoc}
-     * @version 0.1.0
+     * @version 0.1.3
      * @since 0.0.1
      */
     public function load(array $configs, ContainerBuilder $container)
@@ -48,11 +48,6 @@ class ChillDevViewHelpersExtension extends Extension
         // enable XHTML Content-Type fix
         if ($config['xhtml']) {
             $loader->load('xhtml.xml');
-        }
-
-        // enable serializer helper only on-demand
-        if ($config['serializer']) {
-            $loader->load('serializer.xml');
         }
 
         // set up title

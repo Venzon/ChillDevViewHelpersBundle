@@ -2,8 +2,8 @@
 # This file is part of the ChillDev ViewHelpers bundle.
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.0
+# @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.1.3
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -18,4 +18,3 @@
 -   [&lt;link&gt;](./usage/link.md)
 -   [&lt;script&gt;](./usage/script.md)
 -   [xmlns](./usage/xmlns.md)
--   [Serializer](./usage/serializer.md)

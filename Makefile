@@ -26,11 +26,11 @@ ci: check lint tests
 # project initialization
 init:
 	git submodule update --init --recursive
-	$(COMPOSER) install
+	$(COMPOSER) install --optimize-autoloader
 
 # update composer dependencies
 update:
-	$(COMPOSER) update
+	$(COMPOSER) update --optimize-autoloader --no-dev
 
 # syntax checking
 check:

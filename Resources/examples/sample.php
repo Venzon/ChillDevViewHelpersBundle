@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -16,14 +16,11 @@ require(__DIR__ . '/../../vendor/autoload.php');
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Link;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Meta;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Script;
-use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Title;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Xmlns;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
-
-use JMS\SerializerBundle\Serializer\SerializerInterface;
 
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\TemplateNameParser;
@@ -58,23 +55,6 @@ $templating->set($script);
 // xmlns="" helper
 $xmlns = new Xmlns($templating);
 $templating->set($xmlns);
-
-// to reduce dependencies here is simple JSON serializer
-class JsonSerializer implements SerializerInterface
-{
-    public function serialize($data, $format)
-    {
-        return json_encode($data);
-    }
-
-    public function deserialize($data, $type, $format)
-    {
-        // dummy
-    }
-}
-
-// JMS serializer helper
-$templating->set(new Serializer(new JsonSerializer()));
 
 // sample pre-defined data
 $title->setSeparator(' :: ')

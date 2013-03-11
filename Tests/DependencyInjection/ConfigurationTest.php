@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.1
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -22,8 +22,8 @@ use Symfony\Component\Config\Definition\NodeInterface;
 
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -768,35 +768,5 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         ]));
 
         $this->assertTrue($config['xhtml'], 'Configuration should handle XHTML configuration flag.');
-    }
-
-    /**
-     * Check default serializer helper configuration.
-     *
-     * @test
-     * @version 0.1.1
-     * @since 0.1.1
-     */
-    public function defaultSerializerConfiguration()
-    {
-        $config = $this->tree->finalize($this->tree->normalize([]));
-
-        $this->assertTrue($config['serializer'], 'Default value for serializer should be TRUE.');
-    }
-
-    /**
-     * Check serializer helper configuration handling.
-     *
-     * @test
-     * @version 0.1.1
-     * @since 0.1.1
-     */
-    public function serializerConfiguration()
-    {
-        $config = $this->tree->finalize($this->tree->normalize([
-                    'serializer' => false,
-        ]));
-
-        $this->assertFalse($config['serializer'], 'Configuration should handle serializer configuration flag.');
     }
 }

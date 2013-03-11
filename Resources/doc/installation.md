@@ -2,8 +2,8 @@
 # This file is part of the ChillDev ViewHelpers bundle.
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.0.2
+# @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.1.3
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -18,10 +18,9 @@ Add `"chilldev/view-helpers-bundle": "dev-master"` to your `composer.json` file 
 
 **Note:** `dev-master` is a reference to `master` branch which is **stable** - to use current development branch with latest updates use `dev-develop`.
 
-There are two optional dependencies, that you may, but don't have to install (they won't be installed automatically):
+There is also optional dependency, that you may, but don't have to install (it won't be installed automatically):
 
--   [Symfony HTTP Kernel component](https://github.com/symfony/HttpKernel): required if you want to use `xhtml` helper which binds for kernel events (if you use **Symfony2** you already have all Symfony components installed),
--   [JMSSerializerBundle](https://github.com/schmittjoh/JMSSerializerBundle): required if you want to use `serializer` helper, which is just a wrapper for this bundle.
+-   [Symfony HTTP Kernel component](https://github.com/symfony/HttpKernel): required if you want to use `xhtml` helper which binds for kernel events (if you use **Symfony2** you already have all Symfony components installed).
 
 ## Step 2: include bundle in your kernel
 

@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.1
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -22,7 +22,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.1
+ * @version 0.1.3
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -42,55 +42,6 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->extension = new ChillDevViewHelpersExtension();
-    }
-
-    /**
-     * @test
-     * @version 0.1.1
-     * @since 0.1.1
-     */
-    public function enabledSerializer()
-    {
-        $config = [
-            'serializer' => true,
-        ];
-        $container = new ContainerBuilder();
-
-        $this->extension->load([$config], $container);
-
-        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should load serializer helper if it is enabled in configuration.');
-    }
-
-    /**
-     * @test
-     * @version 0.1.1
-     * @since 0.1.1
-     */
-    public function disabledSerializer()
-    {
-        $config = [
-            'serializer' => false,
-        ];
-        $container = new ContainerBuilder();
-
-        $this->extension->load([$config], $container);
-
-        $this->assertFalse($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should not load serializer helper if it is disabled in configuration.');
-    }
-
-    /**
-     * @test
-     * @version 0.1.1
-     * @since 0.1.1
-     */
-    public function newSerializer()
-    {
-        $container = new ContainerBuilder();
-        $container->register('jms_serializer', 'foo');
-
-        $this->extension->load([], $container);
-
-        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.serializer'), 'ChillDevViewHelpersExtension::load() should load serializer helper if serializer definition is present.');
     }
 
     /**

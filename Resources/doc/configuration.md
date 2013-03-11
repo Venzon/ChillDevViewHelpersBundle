@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.1
+# @version 0.1.3
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -137,15 +137,6 @@ chilldev_viewhelpers:
         - "chilldev"
         - "symfony2"
         - "bundle"
-```
-
-## serializer
-
-Serializer helper has no configuration at all. However if you don't have **JMSSerializerBundle** you may want to disable loading serializer helpers to avoid undefined serives errors:
-
-```yaml
-chilldev_viewhelpers:
-    serializer: false
 ```
 
 # Full example
