@@ -35,10 +35,10 @@
     ],
     "require": {
         "php": ">=5.4",
-        "symfony/templating": "2.1.*"
+        "symfony/templating": ">=2.1,<2.3-dev"
     },
     "suggest": {
-        "symfony/http-kernel": "2.1.*",
+        "symfony/http-kernel": ">=2.1,<2.3-dev",
         "jms/serializer-bundle": "0.9.*",
         "knplabs/knp-paginator-bundle": "2.2.*"
     },
@@ -46,10 +46,10 @@
         "ext-xsl": "*",
         "phpunit/phpunit": "3.7.*",
         "squizlabs/php_codesniffer": "dev-master",
-        "symfony/config": "2.1.*",
-        "symfony/dependency-injection": "2.1.*",
-        "symfony/http-foundation": "2.1.*",
-        "symfony/http-kernel": "2.1.*",
+        "symfony/config": ">=2.1,<2.3-dev",
+        "symfony/dependency-injection": ">=2.1,<2.3-dev",
+        "symfony/http-foundation": ">=2.1,<2.3-dev",
+        "symfony/http-kernel": ">=2.1,<2.3-dev",
         "jms/serializer-bundle": "0.9.*"
     },
     "autoload": {
