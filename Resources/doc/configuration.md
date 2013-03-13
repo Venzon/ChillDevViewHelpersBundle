@@ -139,6 +139,15 @@ chilldev_viewhelpers:
         - "bundle"
 ```
 
+## paginator 
+
+Paginator helper has no configuration at all. However if you don't have **KnpPaginatorBundle** you may want to disable loading paginator helpers to avoid undefined serives errors:
+
+```yaml
+chilldev_viewhelpers:
+    paginator: false
+``` 
+
 # Full example
 
 ```yaml

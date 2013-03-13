@@ -39,16 +39,18 @@
     },
     "suggest": {
         "symfony/http-kernel": ">=2.1,<2.3-dev",
-        "knplabs/knp-paginator-bundle": "2.2.*"
+        "knplabs/knp-paginator-bundle": "2.3.*"
     },
     "require-dev": {
         "ext-xsl": "*",
         "phpunit/phpunit": "3.7.*",
-        "squizlabs/php_codesniffer": "1.4.4",
+        "squizlabs/php_codesniffer": "1.4.*",
         "symfony/config": ">=2.1,<2.3-dev",
         "symfony/dependency-injection": ">=2.1,<2.3-dev",
         "symfony/http-foundation": ">=2.1,<2.3-dev",
-        "symfony/http-kernel": ">=2.1,<2.3-dev"
+        "symfony/http-kernel": ">=2.1,<2.3-dev",
+        "knplabs/knp-paginator-bundle": "2.3.*",
+        "knplabs/knp-components": "~1.1"
     },
     "autoload": {
         "psr-0": {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# This file is part of the ChillDev ViewHelpers bundle.
+#
+# @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
+# @copyright 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.1.3
+# @since 0.1.3
+# @package ChillDev\Bundle\ViewHelpersBundle
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <!-- classes definition -->
+        <parameter key="chilldev.viewhelpers.helper.paginator.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Paginator</parameter>
+    </parameters>
+
+    <services>
+        <!-- serializer helper -->
+        <service id="chilldev.viewhelpers.helper.paginator" class="%chilldev.viewhelpers.helper.paginator.class%">
+            <tag name="templating.helper" alias="paginator"/>
+            <argument type="service" id="templating.helper.router"/> 
+            <argument type="service" id="translator"/>
+            <argument type="service" id="templating.engine.php"/>
+        </service>
+    </services>
+</container>

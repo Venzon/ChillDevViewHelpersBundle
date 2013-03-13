@@ -769,4 +769,34 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($config['xhtml'], 'Configuration should handle XHTML configuration flag.');
     }
+
+    /**
+     * Check default paginator helper configuration.
+     *
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function defaultPaginatorConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([]));
+
+        $this->assertTrue($config['paginator'], 'Default value for paginator should be TRUE.');
+    }
+
+    /**
+     * Check paginator helper configuration handling.
+     *
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function paginatorConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'paginator' => false,
+        ]));
+
+        $this->assertFalse($config['paginator'], 'Configuration should handle paginator configuration flag.');
+    }
 }

@@ -50,6 +50,11 @@ class ChillDevViewHelpersExtension extends Extension
             $loader->load('xhtml.xml');
         }
 
+        // enable paginator helper only on-demand
+        if ($config['paginator']) {
+            $loader->load('paginator.xml');
+        }
+
         // set up title
         if (isset($config['title']['separator'])) {
             $container->setParameter('chilldev.viewhelpers.title.separator', $config['title']['separator']);

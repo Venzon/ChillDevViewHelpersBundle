@@ -41,6 +41,12 @@ class Configuration implements ConfigurationInterface
         // define parameters
         $rootNode
             ->children()
+                ->booleanNode('paginator')
+                    ->defaultTrue()
+                    ->info('paginator helper flag')
+                ->end()
+            ->end()
+            ->children()
                 ->booleanNode('xhtml')
                     ->defaultFalse()
                     ->info('application/xhtml+xml Content-Type switch')
