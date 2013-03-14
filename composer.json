@@ -39,6 +39,7 @@
     },
     "suggest": {
         "symfony/http-kernel": ">=2.1,<2.3-dev",
+        "jms/serializer-bundle": "0.11.*",
         "knplabs/knp-paginator-bundle": "2.3.*"
     },
     "require-dev": {
@@ -49,6 +50,8 @@
         "symfony/dependency-injection": ">=2.1,<2.3-dev",
         "symfony/http-foundation": ">=2.1,<2.3-dev",
         "symfony/http-kernel": ">=2.1,<2.3-dev",
+        "jms/serializer-bundle": "0.11.*",
+        "jms/serializer": "0.11.*",
         "knplabs/knp-paginator-bundle": "2.3.*",
         "knplabs/knp-components": "~1.1"
     },

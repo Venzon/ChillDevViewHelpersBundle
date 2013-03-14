@@ -148,6 +148,15 @@ chilldev_viewhelpers:
     paginator: false
 ``` 
 
+## serializer
+
+Serializer helper has no configuration at all. However if you don't have **JMSSerializerBundle** you may want to disable loading serializer helpers to avoid undefined serives errors: 
+
+```yaml
+chilldev_viewhelpers:
+    serializer: false
+```
+
 # Full example
 
 ```yaml

@@ -18,10 +18,11 @@ Add `"chilldev/view-helpers-bundle": "dev-master"` to your `composer.json` file 
 
 **Note:** `dev-master` is a reference to `master` branch which is **stable** - to use current development branch with latest updates use `dev-develop`.
 
-There are two optional dependencies, that you may, but don't have to install (they won't be installed automatically):
+There are three optional dependencies, that you may, but don't have to install (they won't be installed automatically):
 
 -   [Symfony HTTP Kernel component](https://github.com/symfony/HttpKernel): required if you want to use `xhtml` helper which binds for kernel events (if you use **Symfony2** you already have all Symfony components installed),
--   [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle): required if you want to use `paginator` helper, which is just a wrapper for this bundle.
+-   [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle): required if you want to use `paginator` helper, which is just a wrapper for this bundle,
+-   [JMSSerializerBundle](https://github.com/schmittjoh/JMSSerializerBundle): required if you want to use `serializer` helper, which is just a wrapper for this bundle.
 
 ## Step 2: include bundle in your kernel
 

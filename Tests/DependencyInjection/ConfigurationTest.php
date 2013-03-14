@@ -799,4 +799,34 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($config['paginator'], 'Configuration should handle paginator configuration flag.');
     }
+
+    /**
+     * Check default serializer helper configuration.
+     *
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function defaultSerializerConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([]));
+
+        $this->assertTrue($config['serializer'], 'Default value for serializer should be TRUE.');
+    }
+
+    /**
+     * Check serializer helper configuration handling.
+     *
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function serializerConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'serializer' => false,
+        ]));
+
+        $this->assertFalse($config['serializer'], 'Configuration should handle serializer configuration flag.');
+    }
 }

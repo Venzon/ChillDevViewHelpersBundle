@@ -55,6 +55,11 @@ class ChillDevViewHelpersExtension extends Extension
             $loader->load('paginator.xml');
         }
 
+        // enable serializer helper only on-demand
+        if ($config['serializer']) {
+            $loader->load('serializer.xml');
+        }
+
         // set up title
         if (isset($config['title']['separator'])) {
             $container->setParameter('chilldev.viewhelpers.title.separator', $config['title']['separator']);
