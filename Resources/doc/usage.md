@@ -20,3 +20,4 @@
 -   [xmlns](./usage/xmlns.md)
 -   [Paginator](./usage/paginator.md)
 -   [Serializer](./usage/serializer.md)
+-   [Formatter](./usage/formatter.md)

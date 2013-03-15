@@ -60,6 +60,11 @@ class ChillDevViewHelpersExtension extends Extension
             $loader->load('serializer.xml');
         }
 
+        // enable formatter helper only on-demand
+        if ($config['formatter']) {
+            $loader->load('formatter.xml');
+        }
+
         // set up title
         if (isset($config['title']['separator'])) {
             $container->setParameter('chilldev.viewhelpers.title.separator', $config['title']['separator']);

@@ -157,6 +157,15 @@ chilldev_viewhelpers:
     serializer: false
 ```
 
+## formatter
+
+Formatter helper has no configuration at all. However you have to enable loading if you have **SonataFormatterBundle** since it's disabled by default to avoid undefined serives errors: 
+
+```yaml
+chilldev_viewhelpers:
+    formatter: true
+```
+
 # Full example
 
 ```yaml

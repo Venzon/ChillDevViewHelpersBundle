@@ -829,4 +829,34 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($config['serializer'], 'Configuration should handle serializer configuration flag.');
     }
+
+    /**
+     * Check default formatter helper configuration.
+     *
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function defaultFormatterConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([]));
+
+        $this->assertFalse($config['formatter'], 'Default value for formatter should be TRUE.');
+    }
+
+    /**
+     * Check formatter helper configuration handling.
+     *
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function formatterConfiguration()
+    {
+        $config = $this->tree->finalize($this->tree->normalize([
+                    'formatter' => true,
+        ]));
+
+        $this->assertTrue($config['formatter'], 'Configuration should handle formatter configuration flag.');
+    }
 }

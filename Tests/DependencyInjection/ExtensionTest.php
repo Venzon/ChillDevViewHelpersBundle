@@ -113,6 +113,40 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function enabledFormatter()
+    {
+        $config = [
+            'formatter' => true,
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        $this->assertTrue($container->hasDefinition('chilldev.viewhelpers.helper.formatter'), 'ChillDevViewHelpersExtension::load() should load formatter helper if it is enabled in configuration.');
+    }
+
+    /**
+     * @test
+     * @version 0.1.3
+     * @since 0.1.3
+     */
+    public function disabledFormatter()
+    {
+        $config = [
+            'formatter' => false,
+        ];
+        $container = new ContainerBuilder();
+
+        $this->extension->load([$config], $container);
+
+        $this->assertFalse($container->hasDefinition('chilldev.viewhelpers.helper.formatter'), 'ChillDevViewHelpersExtension::load() should not load formatter helper if it is disabled in configuration.');
+    }
+
+    /**
      * Check if title.separator parameter is handled correctly.
      *
      * @test
