@@ -20,7 +20,9 @@ Currently it contains:
 -   `&lt;script&gt;` tag helper,
 -   `xmlns=""` attribute helper,
 -   XHTML Content-Type negotation helper for real XHTML applications (`application/xhtml+xml`),
+-   sub-requests shortcut helper,
 -   PHP helper wrapper for [JMSSerializerBundle](https://github.com/schmittjoh/JMSSerializerBundle),
--   PHP helper wrapper for [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle).
+-   PHP helper wrapper for [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle),
+-   PHP helper wrapper for [SonataFormatterBundle](https://github.com/sonata-project/SonataFormatterBundle).
 
 Because not everyone uses Twig…

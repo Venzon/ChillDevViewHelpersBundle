@@ -18,6 +18,7 @@
 -   [&lt;link&gt;](./usage/link.md)
 -   [&lt;script&gt;](./usage/script.md)
 -   [xmlns](./usage/xmlns.md)
+-   [Standalone](./usage/standalone.md)
 -   [Paginator](./usage/paginator.md)
 -   [Serializer](./usage/serializer.md)
 -   [Formatter](./usage/formatter.md)
