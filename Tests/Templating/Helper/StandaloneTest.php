@@ -39,6 +39,10 @@ class StandaloneTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->actions = $this->getMock('Symfony\\Bundle\\FrameworkBundle\\Templating\\Helper\\ActionsHelper', [], [], '', false);
+
+        if (!\method_exists($this->actions, 'controller')) {
+            $this->markTestSkipped('Standalone helper is only useful in Symfony 2.2.');
+        }
     }
 
     /**
