@@ -95,13 +95,13 @@
     </class>
     <source>eJzdU9FO2zAUfc9XXKFIaRFNgccBhY2hMWlIaOs2JIKQm94kFo7j2U5RmXjZ3+w3Ju2/du2GpLSgbdrbHEVJbs6599xz7f1DVaggGG5uBrAJ44IbyLhAoKdi2kKVgS0QjgsuxGucwSeOt6coFGoDk1pOBcZEdNwjVtui0vCeZeznN/is79DcpXewrykg4tvm+4hemPkSKzHyrLRSc83zwsLu9s4u/PgOk/lajoF7XbBiz5pRfV5J2I534m0fMVymuPStWHrD8k558sqrTZYaWEQIPQwCyUo0xPkDQvLRcmH2gqA2CB/mZVbJeXJclaqSKG0yxlIJZrnMk/NCncicS9xrHT5j+qZWkKNEzSzZVfjU/4WJqWDGNB0GXwOg5bt2i/ZW6wugNyVu/jwAjmZMQ2tZF32ssok+UupjQ/9UurKYWpxCaNuCZP+KmLeSW84EJ2ugXBnJmi46CKzslC1nfr6rvxZeTwRPIatlah3r+jqtpLG6Tm3vydJ9T1vY7FZo6fAORkvaDh574ED3a068WbSNYGjf2YFlOZyOz96BkVwptM+YQcJchdDBx3S74xOvYJjWbA7hlFkGLy0RJrX1dqtV5KSqBITcXBS2FHDh62eC5R1Oo621fCjbu+g/pfFfLW92AJ4ILOkk91x3W8ttbLUiV80fDls2sLbXbjYuZmggl1d7bTCrNLK0gN7CImYgdDbCwQhCmr0lCf2lEl2eyyvKFNEVrw99MEKTMoU9n6tPkOhg4zfIthiBN6JOYLNZ3Gr8j/YXqWjiMSScUlVTSuBVOXqvHeIhRMNRBC8gGkX9h713H/wCn3rtdg==</source>
   </file>
-  <file path="DependencyInjection/Configuration.php" hash="423d99348a0a0049ca064ab8a8aee502" package="ChillDev\Bundle\ViewHelpersBundle">
+  <file path="DependencyInjection/Configuration.php" hash="676ef461525e3eb946dfcfd9c585e82e" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
       <long-description><![CDATA[]]></long-description>
       <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
       <tag line="3" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-      <tag line="3" name="version" description="0.1.1"/>
+      <tag line="3" name="version" description="0.1.3"/>
       <tag line="3" name="since" description="0.0.1"/>
       <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
     </docblock>
@@ -117,8 +117,8 @@
         <description><![CDATA[ChillDev.ViewHelpers configuration handler.]]></description>
         <long-description><![CDATA[]]></long-description>
         <tag line="20" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
-        <tag line="20" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-        <tag line="20" name="version" description="0.1.0"/>
+        <tag line="20" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="20" name="version" description="0.1.3"/>
         <tag line="20" name="since" description="0.0.1"/>
         <tag line="20" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
       </docblock>
@@ -128,20 +128,20 @@
         <docblock line="31">
           <description><![CDATA[{@inheritDoc}]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="31" name="version" description="0.1.0"/>
+          <tag line="31" name="version" description="0.1.3"/>
           <tag line="31" name="since" description="0.0.1"/>
         </docblock>
       </method>
     </class>
-    <source>eJztWl9v2zYQf/enYIMCdtLaTrq3JvWSNhmWbciKxOg6xEFASyeLK0WqJGVHafOyb7OvMWDfa6Qo23Ji2Yz/ocHGh0Sm7o6/O979eJJ98H0cxpVKc2engnZQOyQSBYQC0v9jLBTiAVIhoHchofQY+ugDgcGPQGMQEnUT5lNoaEWje4gTFXKBznGA//kT/SZuQd56t+hA6AnaGOSfD/UFlp8bMW1lWh6PU0F6oUKvdvdeobr59x36+y/UTR+YqptLq9zIlPsaBuEM7Tb2GnvZjCTMA/15N/8cY+8T7o0d6LzNQHcKftgZLd2sVBiOQGodB4XOMcTAfGBeesr+AE9pIPuVSiJddNsQxRQrwnqdC0+QWHVOKETAVG7hIo0CztLOOx7FnOl5fcUC0tOLBoQRs5Y2TqgPotMWAPn1vrOynUkENp9OmQIRaK/3R5kwdKFR3HCvqIRCbFwRq93/BTZ+dwUb71EsJZoICiJ6i7I9uXdjFK3KlwrSI4uYGTvoyyFhIQiijrl3N5y8DzafnQCczTWz/3HSpcRDQcKylEI9UHb5wj7XtjNRu74Zz9X4JnqDGAzQhPj+WFJwrs64D1qsqFVvmRu1qmfi5UP/uq8DFdpAVbX+yECziXyTR2AIQpeLDoZ8aH00Y0a9Zaz6AlgOfPJml3MKmBm1WlXq8GFKbkFUH8paeb08TqhqiwSm2LMyhAW8aAxZV1BAcW+K4XpLl/J8cDehiug8XD9gKucBw3GsNzlLp2Zm9MVNRE2aKZ1v9XYaA5IDorzQEev0uZlRx0Lg1LqliKJQ6hb2/WPrmTwNzri6AFXq3YwVx0LSwxSL4XabLFK8bLfHWnl0zxJKZ1i3sjbIB5lfrewgk8hlpbI0mI69i2VZ1JaBnVE0pqgIf0HM5WntmkIBufkYUUtAtSol7FN10SwzyrI0y2LBFVc68XVxGJ2ZHk+iElBWk3MBTgoWNzcUEMzZXKtE5Dl8ToiAWYljRWcnl5UpBEz7VRavBSFYcWGF5ZH6BbBUvzLImw8n7S4EXMAZF5Fh1ozCHPRyoEFG2k7SZowOwdrzPqYJbBeOPJchQCWCoWcdIq+zwA7t7DubuXOSdA2A7qXZxt2/tNpXm3faJeWtXKH8bRU6Jb5LQbnIFAvfgHBa/DHM/lgQEfgEbxjFIgeJvZcft4bgW0jhnrQdYvakMY3BFj1+pEopyBDg/nnofgiNTazoKHo8HbrT4KL1vwTtza78eY650duSbl3asxm9aSFnYlvUrfk186Sai2V47oMJtVaDG9X05LzG5D9FeQVSWRfzZS+JFme9TP1/xps2ngTjSeE9acIz+J8k3+VPRq9ft39/f3LdPvnY/unow9HFu/PT9+1VIASWRBZfQPnACV+WArJ2Wc2BVl8icwnCXGCZMq969XheHxpbddi9EAv5oGGbiehbIHbLmGvtZm8iej36vmFhap+wUs7wiYQjpQTpJgqO5M+Q1qpla4+VXB/KXCKqcTKJxkjXFNRPkA648BcOZ67vdFQuERO4webbBV3EAeembrvaUEnV3n8vOICuJArQQQQKt9AMxKt/U2yWXE0X4f5WeS7CScEi+Zh0c2IeDzPG1Vs4iWKVOr2wsHuiOyFkYmJ5optmCf5mawvhYbGtnFB1lGMQalZ01+DXcNX1+hYqFV+bBqC/We/MuvVs3fX659kveDbbCs2/rzsK4mNV9qVVAdNm2vgaYWobEan7htzApS1lh75mOF5MtTIqnqUtFVL1ahu10N4mnjROWbZV8zegmh8OEdbJjfuAOKOp/gPmBx1bJpZbL9HWMBo65ZmPtsZVUKiB/KAGv1Fd2yPFt5Z/z2rL5Z4ZX7+uIPWmGprIPGdTG3kSfnx+JlINE/Rby02n5wTrhj5HFu9nC7+tyPOv+LsMu213lbvKvyW2TPw=</source>
+    <source>eJztWt1u2zYUvvdTsEEBO2ltN+1dk3pNkwzLNmRFYnQd4iKgpSOLK0WpJGVHaXOzt9lrDNh7jT+yLSeWzfgPyTZe2DJ1zuF3Ds/5SEre/y4Jk0qlubNTQTuoHRKBAkIBqe8Ec4niAMkQ0GFIKD2CPvpAYPAD0AS4QN2U+RQaSlHrvsWpDGOOznCA//4D/cqvQVx712ifqw7aGOS/36oLLL40EtoyWl6cZJz0Qolevth9ier66xX660/Uze6YqutLq9wwyn0Fg8QMvWjsNl6ZHkGYB+q36jG/E+x9xr2xA513BnSn4IftUdLNSoXhCITScVDoHEECzAfmZSfsd/CkArJXqaTCRbcNUUKxJKzXOfc4SWTnmEIETOYWzrMoiFnWOYyjJGaqX12xgPTUoAFhRI+ljBPqA++0OUB+veesbHtSjvWvEyaBB8rrvVEmDF1oFCfcKyqhEGtX+L9p/j2KhUATsUFEzZSZmls3RkGrfK0g1UzgdNtBX98SFgIn8ij2boadt8HmvROATV/TfCdplxIPBSkzmYV6IO3whemubRtRO75uT+X4JnqDGAzQhPjeWJLHsTyNfVBiRa16S9+oVT0dLx/6l30VqNAGqqr0RwaaTeTrdALNE6pqVDDEXeujHt3qLW3V58By4JM3u3FMATOtVqsKFT5MyTXw6l1ZK6+GxymVbZ7CFHtWhrAgLhpD1hUUUNybYrjeUhU9H1yCe4RhGa8C28jWaqAFMY+wlPPD9j2mYh62kbHVYLsKZURXgQsniaoNU4VNY/TZVUR1dUpVpvV2lgASAyK98F5YMec4s0glkRRKkWLfP7JgxUlwGstzkKWAZ2T8WEh4mGI+THxdT+W5NdbKA3aaUjrDupW1cds3frXMyi6Qy0hl0ZqOvYtFWdSWgW3WLExREf6CmMtn/27/9L6AXH2MqKXiWpUS9rl6W2QmyxWyTCuL0ixLeCxjqXJZ5bvWmenxJCoOZWU2F+CkYHFyQw7BnMm1SkScwZeUcJiVOFZ0dnJZmULAlF9l8VoQghXnVlgcyJ8BC/kLg3w35qTdBcWTcKq5Uq0xhpUc9HKggVkinKR1G20Hak/7mKawXVj8XRoHmXKGnnSIuDSBHdrZczZz4yTpGgB1uGAbd//Can/avNMuKW/lCuVvq9Ap8V0KykWmWPgahNPg92H2+4KIwCd4wygWWUjsvXy51QTfQhL3hN0rm6PXNAZbdPkRMqMgQoDb66H7IjQ2saKl6P506E6Di9b/ErQ3u/LnOeZGb0u6dWHXZvSmhZyJbVG35tfMo9pcLMNzH3SolRpcyaYn5m1M/lOUVyCVdTGfeWq2OOsZ9f8Zb1p7FIwnuPeoCU/jf5R8l5+MXr9u//b++LJ9/LH948GHg/PDs5P37VUgBJZG+aMsGg+c8JkUELWLag60+hzpS+D6AouMedVP9+f1obFVh90LMRd3NmwzET0EYreMudbd7FVEL0cvYBam9gkr5QyfCjiQkpNuKuFA/ARZrVo29ljJ9VDmElGFkwk0RrqmoH6GbBBzf+Fw5vpOS+USMYErrN+zqCIO4ljXbVcZKqna288FB9AVRALaj0DiFpqB2D2IruHRQ65mF+H+VHkuwknBIvnodHNiHg8zFst3cBwlMnN6YDF6ZYB0TCxPdDOT4G+2thAeFtvKCVVFOQEuZ0V3DX4NR12vb6GUyaXeAPQ3650et27GXa9/nn1ns9mt0Pz7akdBfCzL3kMVMG1mG18jTG4jItS+ITdwYUvZYV8zbM+mWhkVz9KWCqn6aRu10O4mThonzEzV/Amo5otDhFVy4z6gmNFMfYD+h8uWjuXWc7Q1jIZKeeajrXEVFGogX6jBb1TXdqR4aPn3pLZc7un27dsKUm+qoYnMcza1kZPw/fMzFXKYoA8tN53OCdYNtY4svp8t/Mskz7/iP1TstN1Ubir/AMJujmA=</source>
   </file>
-  <file path="DependencyInjection/ChillDevViewHelpersExtension.php" hash="2b8f0dae1d66af30660c11994bf922a5" package="ChillDev\Bundle\ViewHelpersBundle">
+  <file path="DependencyInjection/ChillDevViewHelpersExtension.php" hash="3ced31487b11f52b06c6d90df9474eea" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
       <long-description><![CDATA[]]></long-description>
       <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
       <tag line="3" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-      <tag line="3" name="version" description="0.1.1"/>
+      <tag line="3" name="version" description="0.1.3"/>
       <tag line="3" name="since" description="0.0.1"/>
       <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
     </docblock>
@@ -159,7 +159,7 @@
         <long-description><![CDATA[]]></long-description>
         <tag line="22" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
         <tag line="22" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-        <tag line="22" name="version" description="0.1.1"/>
+        <tag line="22" name="version" description="0.1.3"/>
         <tag line="22" name="since" description="0.0.1"/>
         <tag line="22" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
       </docblock>
@@ -169,7 +169,7 @@
         <docblock line="33">
           <description><![CDATA[{@inheritDoc}]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="33" name="version" description="0.1.0"/>
+          <tag line="33" name="version" description="0.1.3"/>
           <tag line="33" name="since" description="0.0.1"/>
         </docblock>
         <argument line="38">
@@ -183,14 +183,14 @@
           <type>\Symfony\Component\DependencyInjection\ContainerBuilder</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="132" package="ChillDev\Bundle\ViewHelpersBundle">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\DependencyInjection" line="142" package="ChillDev\Bundle\ViewHelpersBundle">
         <name>getAlias</name>
         <full_name>getAlias</full_name>
-        <docblock line="127">
+        <docblock line="137">
           <description><![CDATA[{@inheritdoc}]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="127" name="version" description="0.0.1"/>
-          <tag line="127" name="since" description="0.0.1"/>
+          <tag line="137" name="version" description="0.0.1"/>
+          <tag line="137" name="since" description="0.0.1"/>
         </docblock>
       </method>
     </class>
@@ -198,7 +198,7 @@
       <error line="33" code="50015">Argument $configs is missing from the Docblock of load()</error>
       <error line="33" code="50015">Argument $container is missing from the Docblock of load()</error>
     </parse_markers>
-    <source>eJzdV91u2zYUvtdTEEUAOYEtJ91dk3hJ84MWS7siydYOsWEw0lHEhaZUknLiFLnZ2+w1Buy9dkjJEi3LidvczRe2SX3nnO9855AU937Okszz+ltbHtkilwlTJGYcCP5mVGqSxkQnQI4SxvkxTMnvDO7eAc9AKnKdi4hDgIbG9oDmOkklOacx/fcv8lk+gHoIH8iexAke3JXjA/xD1dcg4wNrFabZTLKbRJPX2zuvSc/8/ET++Ztcz5Zc9czfwjiwxlOkwVJBtoOdYMfOKCZCwPF2Oc5oeEtv6gSGby3poZNHMYPovucJOgGFNmsYDI8hAxGBCGfvxZ8QaiSy63m5Wsf2EiYZp5qJm+FFKFmmhyccJiB06eFiNolTMRsepZMsFTiP/0TMboanWJyzNKQ6lbsrkC28jLWmTIB8mzMewXfZnqUULYZfJrwITp+wf6d19gtIAbzV1cm9BqEKocqWa+0smOPU/6m7Qk6VqrAOppKlSDxSpJrxvnkEP1Ys89ki3w6YSEAyfZyGj/PJBa7b1ewCXzvXt79Zfs1ZSOJc2LoQjkXtUCnpjGyEttFUlzR7xj4qZjatl4Ka+ZRGuaTW3T4RcEeO3LnO5m4TjbANjRtOb5DJNASlFg0WfXYrYuio9sRtN5YBFzq0U7Pt2qfOyumMx8fvz8djEhC/HwT9c1BpLpFCv4jhb7pB+n2iq+VKkqJkTQq9gdXQVyCnDD0F9xPuN7yAoNe4tX55d/nhzKqLK6Z3OcsAt9z7CshiMs/9yr9PNPoZbTpatwS1qHnEOeaxLTbSY5SzB9SsSISkgs/wqxfBhIqonUVt9SyVGvo0HwWa5BnRTJvF4QRlCh/VoS3AHxkOeB6Z4iGFJQ5VqXsDtP6EwAlo7AE/NIstgmkwxdVWli6wPoPaYdVbK8K5OaxD9ZoqeIblDehjiJlgttXbaRa/BVt/szegUfQBcBOMjijnnQXX5uPTzGy4fnfpydUqiqMF6MpaWZqUk1uY3aUyUgsiDMM0F44Kc5DplAHZfqkIFTyoHL9Eihaa36fBHjYWHRBNb5wtwMwps539WIWNubtS4lQCDRNnAVrEiGAQG6spKvILkzTFE7k46yoaCyinZY2TK9+87LT0qU0J9TEJucDdZdTEFgGBuF40VoR+NMhF4CMBrmApOO75mLuerUWgBj9H4tMc2Ubi2TgJvr6M4WvOps9HMq86JxbaCOV5TSOqmi1buuri2kQC3Xn8sDgUcGWubMRMAu7V2FgQkT3OxO0AU7Ovju6ZhPMvaEhj/nRD2gBlR5r/y6eCATSz9nHom5zNU1RbQuyPuqQcSiyRM9R4MDrDCUSMNoVZTxfDnyg946ASAEen5bwcVJldPbN+jheVjc22duHk7E6WuTVmCwFWdMJGzNM7U+KrBU6+SOWEcp/sD0h5o3jz5vTs18/j45PTw9/OLhe3RB8Vw0O9FX1y3sBSNRNhC/bw4o+PRzV2tLu6X5W967R1bPHkBT1bOHi6a8sg88ra0VJVS9Aah0zUftgWDjCaDIualuOqoW3papwZYp0dZJhQiTvM2ge0qzG+dQm1/+oVoVpLdp1rcFS2D39cY2v+tMQIGVeX6LnS9a0am2cDXw+pWpLd+l5aTGkcoxAX5UKq/HRLL8u7QSlM230par8v1Xej9e9LqNmhid9pXoQk6FwKUqk4dlQsz4lH79H7DxCtPug=</source>
+    <source>eJzdWNtu2zgQfddXEEUAOYEtp+1bk3jb5oIWTbtFkt12EQcGI40sbmlKJSknTpGX/Zv9jQX2v3ZIyRIty7HTvK0fYnN0ZubM4fCi7P+SJZnn9Xd2PLJDLhKmSMw4EPzOqNQkjYlOgBwmjPMjmJLfGdy8A56BVOQ6FxGHAB2N72ua6ySV5IzG9N+/yBd5B+ouvCP7Eg08uCnHr/EHVd+DjA+sV5hmM8nGiSYvdp+/ID3z9ZL88ze5ni2F6pmfhXNgnadIg6WC7AbPg5fWopgIAcdoseOMht/ouC5g+NaSHjp1FBZE9z1P0Ako9NnAYXgEGYgIRDh7L/6EUCORPc/L1Sa+FzDJONVMjIfnoWSZHh5zmIDQZYTz2SROxWx4mE6yVKAdf4mYjYcnODmnaUh1KvdWIFt4GW9NmQD5Nmc8gkf5nqYUPYZfJ7xITh/wf6d19gGkAN4a6vhWg1CFUGXLtXYWzHHq/9RdIadKVVgHU8lSFB4pUlm8Hx7BjxXLfHbIj9dMJCCZPkrD+7mxybW0LvC1tr79zvJrzkIS58LOC+E4qR0qJZ2RrdA2muqSZs/YR4Vl20YpqJlP6ZRLasMdEAE35NC1dbb3mmiEbWnccHqDTKYhKLXosBizWxHDQHUkbruxTLjQoZ2abdc+dVZOZzQ6en82GpGA+P0g6J+BSnOJFPpFDn/bTdLvE10tV5IUU9ak0BtYDX0FcsowUnA74X4jCgh6jVvr13cXH0+turhiehezDHDLva2ALCbz2i/920RjnKttR+uWpBY1zzjH3LflzuiYCSNBWQdJBZ/hn14EEyqidhKV01oiFXIjMqgVo5zdwaPY1F5r6dTQjfjEqZxQrR9Hp3Jay6ZCPkxGgSZ5RjTTZttwUjKFj+rEFuBfGUHwpC6nZ4lCtQh6A/T+jMAJIIWOH5ptKIJpMMV9qGzqwMYM6oDVqluRzq1hE6rXVMEalmPQRxAzwewm0E6z+C7Y+tu9AY2ij4DHQ3RIOe8shDYfn2bmKPK7S08uV1G8WoCunCtLk3LyDWY3qYzUggjDMM2Fo8IcZBplQHafKkIFD6rAT5GihebjNNjHxqIDounY2RyNTZmN/udm2Li7KwWXENAwcZafRVwRTGJzNUVFfmGSpnhXKW4BFY0FlNOyJsilb66BLX1qS0J9TEEucG8ZNbGTgEBcLxpnhH4yyEXgPQGuYCk5noZYu55tRKAGryPxeY5sI7E2T4IXuxF8z9l0fSZzCTy20EYqz2s6UdVs2TJUF9cmEujO84fFcYkrc2UjZhJwp8bGgojscya+DbA0e6l2T2u0P6EhjfvDDWkTlB1pfi8fCgbQrNrHoW9qNk9RbQmxf9Ul5VDiFDlDjVcGZziBiNGmMJvpYvgTpWccVALg6LRcl4Mqq6stm9d4XvnYausQTs2usaytYS0EWNEJWzFPb8wUXy5w8oU5frlPDgakfNd69erk9Ncvo6Pjkze/nV4sbok+KoZneiv6+KyBpWomwhbsm/M/Ph3W2Ku91f2q7FtgW8cWT57Qs0WAh7u2TDKfWTtamtUStMEhE7UftkUAzCbDYk7LcdXQdupqnBniPDvIMKESd5iND2hXY7x1CXXw7BnBS5hk17kGR2X78Oc1tu4PS4yQUfXvhbnS9f8bsHm28K5K1ZLsNvbSYkrjGIU4LxdSFadbRlneDUph2t4ko/Y3yfqtcfM3SdTsjcnfab4iStC5FKRSceSoWJ4T99699x/3bI9A</source>
   </file>
   <file path="ChillDevViewHelpersBundle.php" hash="b8c5fb4b6962fef97c69dcef3290c0cd" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
@@ -1225,17 +1225,17 @@
     </class>
     <source>eJzdVMtu2zAQvOsr9hAgjgHLTq5NXKNugRRIe7CNNgcBBi2vJCIUpZKUHbnIpX/T3yjQ/+qSomE7fiAFcijKgx7kDndnZsnrt2VWBkG33Q6gDZOMa0i4QKB3yZSBIgGTIQwzLsR7XMAXjstbFCUqDbNKzgWGBLTYAatMVigYsYT9/gFf1Qr1Kl7BtaIJES79/4A+mP4WlqLvUHFR1oqnmYGr3uUV/PoJs3pvj479bFChQy0oPy8k9MJeeOlmNJcxbv2XLH5g6aby6J2rNtoi0MxQdDcIJMtRE+YFgGiCeSmY4TKNmoU3QVDplyA/LFCaO64NSlTRfWZyMaK0hdS4nvV7jes8KWQdDYuclgm1n3WT3Lt3fzv5dAfDQtJGpjOpSwS95CbOIHOR/4VTsWBag5MO8JGYzjU0UcH3AGg4MexYC6K8wraxjVPBra6DBgum4KAVm4hdDn52h4eb67p3qQqDscE5nDUZyaFnhX2U3HAmOInmvYGEDEk59cexMuk4svxwoetEMDpM9a8ZVDPBY0gqGRuLmk5j2tWoKjatkwVcOHjjgx1nhi6UTt9Xd7MRxC4+7ckyQlMpuZZEAynE9J4QykUB1UNnwXsP9vy+Ft0UzWfarvWcjU98/mglOD9GYpgxmZKvTfMlgqVHrJwVhSBFKMDHNoc13COKIoGxfShMUCGReC2mGo3zs9WUcQPkMZ40sdPfxVz45t7Sx8UfU2dMF4/thSWrXctzuSgerI/+GORIV9P831VsOnUV40nFtoU4IFijzFPwB/RxQGU=</source>
   </file>
-  <file path="Templating/Helper/Serializer.php" hash="e71ee9813be260042896300d83332a1c" package="ChillDev\Bundle\ViewHelpersBundle">
+  <file path="Templating/Helper/Serializer.php" hash="ea40b39823aa08bda83dc6e2dd13e03a" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
       <long-description><![CDATA[]]></long-description>
       <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
-      <tag line="3" name="copyright" description="2012 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-      <tag line="3" name="version" description="0.0.1"/>
+      <tag line="3" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.1.3"/>
       <tag line="3" name="since" description="0.0.1"/>
       <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
     </docblock>
-    <namespace-alias name="SerializerInterface">JMS\SerializerBundle\Serializer\SerializerInterface</namespace-alias>
+    <namespace-alias name="SerializerInterface">JMS\Serializer\SerializerInterface</namespace-alias>
     <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
     <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="30" package="ChillDev\Bundle\ViewHelpersBundle">
       <extends>\Symfony\Component\Templating\Helper\Helper</extends>
@@ -1256,8 +1256,8 @@
         <docblock line="32">
           <description><![CDATA[Serializer.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="32" name="var" description="" type="\JMS\SerializerBundle\Serializer\SerializerInterface">
-            <type by_reference="false">\JMS\SerializerBundle\Serializer\SerializerInterface</type>
+          <tag line="32" name="var" description="" type="\JMS\Serializer\SerializerInterface">
+            <type by_reference="false">\JMS\Serializer\SerializerInterface</type>
           </tag>
           <tag line="32" name="version" description="0.0.1"/>
           <tag line="32" name="since" description="0.0.1"/>
@@ -1269,8 +1269,8 @@
         <docblock line="41">
           <description><![CDATA[Initializes object.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="41" name="param" description="Serializaer service." type="\JMS\SerializerBundle\Serializer\SerializerInterface" variable="$serializer">
-            <type by_reference="false">\JMS\SerializerBundle\Serializer\SerializerInterface</type>
+          <tag line="41" name="param" description="Serializaer service." type="\JMS\Serializer\SerializerInterface" variable="$serializer">
+            <type by_reference="false">\JMS\Serializer\SerializerInterface</type>
           </tag>
           <tag line="41" name="version" description="0.0.1"/>
           <tag line="41" name="since" description="0.0.1"/>
@@ -1278,7 +1278,7 @@
         <argument line="48">
           <name>$serializer</name>
           <default><![CDATA[]]></default>
-          <type>\JMS\SerializerBundle\Serializer\SerializerInterface</type>
+          <type>\JMS\Serializer\SerializerInterface</type>
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="62" package="ChillDev\Bundle\ViewHelpersBundle">
@@ -1324,7 +1324,7 @@
         </docblock>
       </method>
     </class>
-    <source>eJzdVM1u2zAMvvspeCiQtGidtNe1XbD20A7YFjTBdjFQKDYdq5MlTZKTOkUve5u9xoC91+ifxE7cYMPQ04Qgpkl+1MePks/f6kR73uDoyIMjmCbcQswFAj01Mw5UDC5BuEq4ENe4gM8clzcoNBoLs0xGAn0CFtgRy1yiDNyxmP36Dl/MCu0qXMG5IYfwl/X7iAxmv/laXJaoUOnc8Hni4Gx4egY/f8As79Q4KcwK5ZeoBe3PlYShP/RPS4/lMsTWu2bhVzZvmAfvSrZBq4HKQ9kDz5MsRUuYvwAEU0y1YI7LeVAF3nheZhHef5gEEzScCb5CUyc3jpZ5Kx2amHarkZM8jZXMgyuVaiVRuu4ezVb1rJpqkJSh9SDKIdJvfDOuI8dQqUMEd/mBNmrBI7SgpMjpDyGmIU6XfP5fDDYUzNq2VvjoUEYWqlTvyQNapaTFasvq1651ZLRgBl6YYRPf5l57t/iXvkH5JOEdhg4jOLCbojTeHT63krsqSCOaPRCiw4suKktfYtauvIkzssm94CH6/0o9mwkeQpzJ0BWo+/tQSetMFrr+H2gclgUq1Yt14Oi0nly2eF5s61EkPXdUGVNlZVI651JwOrNrBCv47BEo5Y+F2JWIcM0cA6c2yJYYVTr1Q7ePCOYa4VPmdOaKq5Ey12QadJmR69RN6xFEVP211N0w7Nfcj2tSF9B7sEr2djWtWXWkbdk7pQ736XxXlrL1d8QCgZnt6LstQ3WzoPiivpYEc3QfqVx/T6e9psfeupNn7ze3NR8U</source>
+    <source>eJytVMtu2zAQvOsr9hDAThDLeRybpEaTQ1KgrREb7UVAQEsriylFqiRlRy5y6d/0Nwr0v7p6WbIVoy8ThkXu7gxmZ0VdvE6ixHGGR0cOHME04gZCLhDomTBtQYVgI4TriAtxgwv4yHF5iyJBbWCWykCgS8AcO2KpjZSGexayn9/gk16hWfkruNAUEO6yOo9ow8wXNxFXBcpXSab5PLJwdnJ6BoP8cQ4/vsMs61AN8m0JdgvwgmRwJeHEPXXPi4jh0kc6U6Q4J8z/zOZNA96bQrTX6qOMUPXQcSSL0RDmDwDeFONEMMvl3CsTrxwnNQhv3028CWrOBF+hbm3vpEUdEnlVOMniUMnMu1ZxoiRK26VsmKsJNWwQFana/mJ09BvfjqvMMZRmkJ4GVWqHRKsFD9CAkiKjP4SQRjdd8vl+x/nXc6zn9n9z9AUzpu0VPlmUgYGy1PnqAK3C0ny1bXWrUJ0ZLZiGF2bY5De1V9EN/UVsWDzJeIu+xQAOzJqUxrul505yWyZpRLNHQnR00fVk8UvK2szrPKM9hRfcR/dfpaczwX0IU+nbHPXw4CtprE592/+NjMOCoHQ9XweW3tbBVUvn5aYfedFzx5UxMSsd03suBad3tkawXM8Og2L+lJtdmgg3zDKwao1smVGWUz90+0hgliB8SG2S2vxqxMw2lRptqmVdum49gIDY9+XuWmG/0n5cibqE3qNRsrftaaWqY21rv0V1uMvn+4LKVN8RAwRmpuPvpg3lzYL8A7ovC+Zo3xNdf0envabHXt3Js/MLfhUZeg==</source>
   </file>
   <file path="Templating/Helper/Link.php" hash="ce30b531947c14f485353e8009a8861c" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
@@ -2198,6 +2198,107 @@
     </class>
     <source>eJzdV11T4zYUfc+vuA/MbsKEhOVxISkpZLt0oMuQ7C4dwjCKI8cqiuxKMhA6vPTf9G90pv+rVx9OHNthw277sn5IbOle6dxzjiT74IckSmq19vZ2DbZhGDEFIeMU8D8hUkMcgo4oHEWM82N6B58YvX9PeUKlgnEqJpy2MNHkHpJUR7GECxKSf/6Ez/KRqsfgEQ4kNvDWvX8+xBuifm8lvGuzgjiZSzaNNOztvtmDv/+C8bw0xo65dVktm3WH87NYwG7rTWvXtigmAorPu609+5yQ4JZMl8hHP1q0o1wBrgWj27WaIDOqMGeDhNGQzhJONBPTkevYr9VSRaEnJZl/GP9GA+1bXjTWIJAs0aM+pzMqcIQXD3AZ6RkfHUU0uDWYNsv/qBlXozMib9PEox7MZ2Es5qOjeJbEArHkJzmPkr6YMkH3vxzrZvJ/J0JTGSLD+wu7veJ6X9mqX031PmgyhcjGfheeCjhRCpyqQB80FROV9wgwJMpqrWqAV4Gm2h+21alIxJSSMad4JxU19jJ9lkZz4cpdsA7UytPyPVnA4R2RsBBv2boo2hbpW1cKt21t+5/IWCNyOoEtvZiwDOby/fDsFAJnxEog3qTfDiPI3F7E4BwNUyqoJDquhuGCKlBYBxRQLNtKKGbZ8imAOBFMM8IZWg6WhC1NvooIN1wyW2qU53i9vlmaZ3TBSLUIWbRnxwNfS9aXKCkJk445CyBMRaBN1s1NEAulZRroemVdzRLuZgFbww7s1oK5tjSeUTvdHDWdVTMWAjM6OjmvFEI8CZ2ljqbzqaTmBdWpFMrLpwCFJaqkorRRgFUbcG5RgzleqkjdyO0FUqdU/4LD1YvM+Ilfux319boqehPchgS9Bxe3xoUe/paSQbaF8TggBkDRS1monicUzk7O+mDuilFMaNgKeXwP/QcapLYS87hutMDtdNnk/rFVopnyEAbmh6HRCDL4X3mXTCZ1U37TV9YBfzK/fTv89bx/M+xfDn/ufeoNji5OzodNX1wu6t3ph883x/13vY+npjsrqAMi5bzS1lfXphel8WPUS2ZvFmzdXPVwE3KIPaTl1A2/QeXMYrOfdcos5ZrhOZWzTNnzeemwCANCfQe2+ZrVibY5I2JeXzBNzInvKGnm5N7AUsvoZ621DFu1mG1v5DwWxpKSIIK604coiyofsXDiTrdg/yozZRlPL7PVMeVU44FIvJ0glPEM8KDQBE+HdcfiRhvS/74pTCx2S0xxBbfb+OUkJllR+MY5ZXcUwcigQgFDkFUAU+gDdLpYmU0sysFCo5ft2uni1j+QQb0BnU6lduZKBarjJrhyo1/ntMquMQK5XW1++lpBf3KvDSipF0nSRFKFTl2RZ80JOcRX4zUZ3/76oeOBnaV0WG7hx4bChXJ1ndsUUUL/CkThwHHeNV8l6jkBq2Wz49v9vO7qbGSRz62bkfkkiCdoMJPeyAh/qv0L8ZWUPA==</source>
   </file>
+  <file path="Templating/Helper/Formatter.php" hash="d06a07b213a30f57041116503e4d5fbb" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.1.3"/>
+      <tag line="3" name="since" description="0.0.1"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="Pool">Sonata\FormatterBundle\Formatter\Pool</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="30" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Formatter</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Formatter</full_name>
+      <docblock line="19">
+        <description><![CDATA[Formatter helper.]]></description>
+        <long-description><![CDATA[<p>This is PHP helper, since SonataFormatterBundle provides only one for Twig.</p>]]></long-description>
+        <tag line="19" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="19" name="copyright" description="2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="19" name="version" description="0.1.3"/>
+        <tag line="19" name="since" description="0.1.3"/>
+        <tag line="19" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="39" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$formatter</name>
+        <default><![CDATA[]]></default>
+        <docblock line="32">
+          <description><![CDATA[Formatter.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="" type="\Sonata\FormatterBundle\Formatter\Pool">
+            <type by_reference="false">\Sonata\FormatterBundle\Formatter\Pool</type>
+          </tag>
+          <tag line="32" name="version" description="0.1.3"/>
+          <tag line="32" name="since" description="0.1.3"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="48" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="41">
+          <description><![CDATA[Initializes object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="param" description="Formatter service." type="\Sonata\FormatterBundle\Formatter\Pool" variable="$formatter">
+            <type by_reference="false">\Sonata\FormatterBundle\Formatter\Pool</type>
+          </tag>
+          <tag line="41" name="version" description="0.1.3"/>
+          <tag line="41" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="48">
+          <name>$formatter</name>
+          <default><![CDATA[]]></default>
+          <type>\Sonata\FormatterBundle\Formatter\Pool</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="62" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>transform</name>
+        <full_name>transform</full_name>
+        <docblock line="53">
+          <description><![CDATA[Performs text formatting.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="param" description="Input format." type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="param" description="Source text." type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="return" description="Formatted text." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="version" description="0.1.3"/>
+          <tag line="53" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="62">
+          <name>$format</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="62">
+          <name>$text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="74" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="67">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="version" description="0.1.3"/>
+          <tag line="67" name="since" description="0.1.3"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJytVEtu2zAQ3esUswgQ14jlfJZNXaMpinRTGInRbgQEtDyy2FIkS1J27SKb3KbXKJB7ZUhJ/sgw0I8Jw+QMZ4bvvSF1/VbnOor63W4EXRjn3ELGBQLNmhkHKgOXI9zkXIj3OIfPHBe3KDQaC5NSTgXGlOhzh6x0uTJwxzL2/ARfzArtKl3BtSGHiBe1PaQFs99jLQYhK1V6afgsd3B5fnEJPT9dwe9fMFnuler5ZZUch+Q5weBKwnl8EV8Fj+UyRbLJE2zN0m9stiGQvAugky0elYei+1EkWYGWcv4gIRljoQVzXM6SauN1FJUW4V5J5ljyQZmCOYemDl/byUgp0cQui0zJZXKjCq0kSrdfdVO8btK6EORhp2lAaB79RrejeucMKjkqRC1AoI2a8ylaUFIs6Q8ho/aNF3x2zJYeoZeN/Xe9TAWzdkss/OFQTi1UkdHPCGgESf3YkjWuPc3GcM4M+J5tHLtQa+8O3ODrh5l0dpg6nMJJ1pxB3Wwd/1Fyx5ngK9+QyVdK2MNBD5IVAclWpS2GFs2cpxj/K85yIngKWSlT57MeHlIlrTNl6jqtQ1+FhEpCP04c3b3eYAPqzQ5XH/K4x3iExsdYcNQaqMPp3h/gTUhos6lLeumyyYoPhIbC96o0xNevN3EGXWlkE9hIOG1F/Z9+zjBpPcBOjfmsQtQWr8bS1rA3OFjgkKJ3oZKtX78Fuk7M7sm5y716DuA/fMciPkP3icp1DhA9XVM8bYg8Ri/Kav6z</source>
+  </file>
   <file path="Templating/Helper/Title.php" hash="cb9d452f5eff0dd26e10d89c9b7cb8e4" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
@@ -2293,6 +2394,119 @@
     </class>
     <source>eJzdVM1u2zAMvvspeAiaplictMc6zYp1w9bLMDTBeglQKA5tC1NkTaLbpUMve5u9xoC912jZiZ1mQfd3mgFDEsWP4veR0ui5yUwQDI6OAjiCaSYdJFIh8GiEJcgToAzhIpNKvcRbeC/x7g0qg9bBvNALhSEDS+y5KCjLLVyJRHz/Atf2Ht19fA8jywYV3tXrc54I9zE0auxRcW5WVqYZwcnw+AS+fYX5aidGv5xWqNCjbvl8mWsYhsPw2Fuc1DG21kbEH0TaZD574bOdtQhUFvYeBIEWS3SM+QXAbIpLowRJnc6qjSgICvebyItck5Aa7ew6twtXh5islkmuV7y7NLlGTW3Iu8y80iljoqd9q3Pr4VIT2oTJRZtKHyiKSJLCg5QiIJFC5l3/i2rGSjgH05Ie4CdCvXDgVQbJAuGStXIB8PdInuCzt1a1FDpFMVfIM+uQWLpyz8tXfnxZNmoD+rKE9c7a4fxWWNgUrbFus62tW4y9beBHY3PCmHABHdocuJvMpZYkhZIsMTR+TVG3E+OrLZZNau3Q+2mtYY5sudlxWK6Jm2SymSX8x9zZrLB/P1z4p7SLuZIxJIWOqUTd3HBYPrmI6fCneT9rJ3QGulCq5yNVNfUxheW8Tk/bsRpQL9o4dojfwf64JcrZtvql08NODa6QCqtdLboDLodwO9pb77VWsepAKJ+ffyVVivSWwx0+pl8f3PXXvruPxGvkN0kQt1GdoUVj0bFwooz+BJ0pX7c9iL/vAMon/pS9zEae2rgL4W4J+2N0sTB42HRBE6/HiO5oUMPX0jwEPwCZ4Dat</source>
   </file>
+  <file path="Templating/Helper/Standalone.php" hash="71f028e615fe98b2535fa55715ac52cc" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.1.3"/>
+      <tag line="3" name="since" description="0.1.3"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="ActionsHelper">Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="27" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Standalone</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Standalone</full_name>
+      <docblock line="18">
+        <description><![CDATA[Shortcut helper for internal requests.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="18" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="18" name="copyright" description="2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="18" name="version" description="0.1.3"/>
+        <tag line="18" name="since" description="0.1.3"/>
+        <tag line="18" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="36" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$actions</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Sub-requests helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="\Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper">
+            <type by_reference="false">\Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper</type>
+          </tag>
+          <tag line="29" name="version" description="0.1.3"/>
+          <tag line="29" name="since" description="0.1.3"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="45" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="38">
+          <description><![CDATA[Initializes templating helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="param" description="Actions helper." type="\Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper" variable="$actions">
+            <type by_reference="false">\Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper</type>
+          </tag>
+          <tag line="38" name="version" description="0.1.3"/>
+          <tag line="38" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="45">
+          <name>$actions</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="59" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>render</name>
+        <full_name>render</full_name>
+        <docblock line="50">
+          <description><![CDATA[Renders sub-request.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="Controller reference." type="string" variable="$controller">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="50" name="param" description="" type="" variable="$options"/>
+          <tag line="50" name="return" description="Rendered fragment." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="50" name="version" description="0.1.3"/>
+          <tag line="50" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="59">
+          <name>$controller</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="59">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="59">
+          <name>$attributes</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="59">
+          <name>$query</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="79" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="72">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="72" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="version" description="0.1.3"/>
+          <tag line="72" name="since" description="0.1.3"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="50" code="50015">Argument $attributes is missing from the Docblock of render()</error>
+      <error line="50" code="50015">Argument $query is missing from the Docblock of render()</error>
+    </parse_markers>
+    <source>eJzdVcFO3DAQvecrptJK7KLdLJQjsKWlqtpLD4DaQxchb3aysfA6wZ5AA+LSv+lvVOp/deLE2SSwUitxqi+xx37Pb97YztGbLMmCYLq7G8AuXCTSQiwVAn8zYQjSGChBOE2kUu/xFr5IvPuIKkNjYZHrpcKQgSX2ROSUpAbORCx+/4Cv5h7tfXQPR4YDKryrxyfcEfYmzNTMoaI0K4xcJQSv9/YP4NdPWBRPOCZlt0KFDnXL+8tUw164Hx64iJU6wtY4E9G1WG2Uz985tfNWAlWEV0+DQIs1Wsb8BWB+getMCZJ6Na8mDoMgtwjnxTpOdeGBHwxz3qXmehts/jYiTsJ6kjbHabrOUo2anoE1m9ZVO2fbKcoJEjcBMVdBakKjhQKDNzlasv9FmSIlrIVzEnopFNsD+J1QLy1US4OHALg5W8rG1uSLiXegties5/ySk1thoFOJzUxXfh3tpOBiU/fNTEoYES5hICo6LlFPzyctSQol2TCgprDblPENFOuutobbh3vYfxadL5SMIM61o4Orq4hJyeQRDZ/feORwldNlGxA/GpOZl3Xcyr6cfnziwRlXrHw+7KY2WzJnHaU7A5ZEJlWKVZxuugZjNMhphV1YMzJIudGepdqWqxMbsVrzzXopy4wjHrZUjmGQZt6Ob5djEMaIgo0hlrLICXtx9sAULtQ3dzqF8lVo6ATb5m97ec05N0G4KhqAjGH4ai7tlaMeeuBo1CJ1VWsJ3PEsO3A8a2YuDxtAXcOy1Z52iz6Z1R50t+it2fjT82pjy7j2YjR+VmwTHG0/W6U8fynYLyWFfXK6ugejPt/lH+CljsQK6TPTDfvlrDdmw/0LtuMzeQz+ABL1TKg=</source>
+  </file>
   <file path="Templating/Helper/ChangeableCharset.php" hash="ee9c1f07d2de791210411d7d5b8211ef" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
@@ -2304,6 +2518,294 @@
       <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
     </docblock>
     <source>eJzdUz1PwzAQ3fMrbqgEVGpaOiGVj4oyMEMFSxfXXBIL1zH2pdAiFv4NfwOJ/8XFSQhtFxhY8GL7/N75vWf5+MxmNor63W4EXZhmykOiNALPVjiCPAHKECaZ0voCl3Cj8PEStUXnYV6YO40xE0vuWBSU5Q6uRCI+XuHWrdGv5RqOHRd0/Fjvx7wQ/iG2+jSwZG5XTqUZwXBwOIT3N5ivdnr0ymXFigNryfer3MAgPowHoeKVkfhtb4W8F2mrfHYe1M6+GagqjO5HkREL9Mz5AWE2xYXVgpRJZ9XB6CvAc+ERXF7wIXKSHEcWECAz4TxSOZuUmf8iNXJCEWPZEoq5xkllMnqOgEeIpBxdmBTOoWH3uSF8oiaNuD5vYOOlcODJcT5taVNzXd3QHWr9MFuXE0rCO+g0iZ/AXkFJ72iPX2lL1jWSB9loq8VvSeJfIBa1qLbplP/ElolfSy3mWklICiOpZHGrOr/95pqDAKzSLEeH+H/2TltnDXAUIC87Bq+QCmd2PO7k7gKucfkH5tLW3Lap+u5Nb42hl+gTZPdlXw==</source>
+  </file>
+  <file path="Templating/Helper/Paginator.php" hash="30c1d800836ea31204e22f494c001129" package="ChillDev\Bundle\ViewHelpersBundle">
+    <docblock line="3">
+      <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+      <tag line="3" name="copyright" description="2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+      <tag line="3" name="version" description="0.1.3"/>
+      <tag line="3" name="since" description="0.1.3"/>
+      <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+    </docblock>
+    <namespace-alias name="PaginationInterface">Knp\Component\Pager\Pagination\PaginationInterface</namespace-alias>
+    <namespace-alias name="RouterHelper">Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper</namespace-alias>
+    <namespace-alias name="PhpEngine">Symfony\Component\Templating\PhpEngine</namespace-alias>
+    <namespace-alias name="Helper">Symfony\Component\Templating\Helper\Helper</namespace-alias>
+    <namespace-alias name="TranslatorInterface">Symfony\Component\Translation\TranslatorInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="33" package="ChillDev\Bundle\ViewHelpersBundle">
+      <extends>\Symfony\Component\Templating\Helper\Helper</extends>
+      <name>Paginator</name>
+      <full_name>\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Paginator</full_name>
+      <docblock line="22">
+        <description><![CDATA[Paginator helper.]]></description>
+        <long-description><![CDATA[<p>This is PHP helper, since KnpPaginatorBundle provides only one for Twig.</p>]]></long-description>
+        <tag line="22" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
+        <tag line="22" name="copyright" description="2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
+        <tag line="22" name="version" description="0.1.3"/>
+        <tag line="22" name="since" description="0.1.3"/>
+        <tag line="22" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="42" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$routerHelper</name>
+        <default><![CDATA[]]></default>
+        <docblock line="35">
+          <description><![CDATA[Router generator.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="var" description="" type="\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper">
+            <type by_reference="false">\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper</type>
+          </tag>
+          <tag line="35" name="version" description="0.1.3"/>
+          <tag line="35" name="since" description="0.1.3"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="51" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$translator</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[Translator.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="" type="\Symfony\Component\Translation\TranslatorInterface">
+            <type by_reference="false">\Symfony\Component\Translation\TranslatorInterface</type>
+          </tag>
+          <tag line="44" name="version" description="0.1.3"/>
+          <tag line="44" name="since" description="0.1.3"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="60" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" package="Default">
+        <name>$templating</name>
+        <default><![CDATA[]]></default>
+        <docblock line="53">
+          <description><![CDATA[Templating engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="var" description="" type="\Symfony\Component\Templating\PhpEngine">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="53" name="version" description="0.1.3"/>
+          <tag line="53" name="since" description="0.1.3"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="71" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="62">
+          <description><![CDATA[Initializes helper.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="62" name="param" description="Router generator." type="\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper" variable="$routerHelper">
+            <type by_reference="false">\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper</type>
+          </tag>
+          <tag line="62" name="param" description="Messages translator." type="\Symfony\Component\Translation\TranslatorInterface" variable="$translator">
+            <type by_reference="false">\Symfony\Component\Translation\TranslatorInterface</type>
+          </tag>
+          <tag line="62" name="param" description="Templating engine." type="\Symfony\Component\Templating\PhpEngine" variable="$templating">
+            <type by_reference="false">\Symfony\Component\Templating\PhpEngine</type>
+          </tag>
+          <tag line="62" name="version" description="0.1.3"/>
+          <tag line="62" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="71">
+          <name>$routerHelper</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper</type>
+        </argument>
+        <argument line="71">
+          <name>$translator</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Translation\TranslatorInterface</type>
+        </argument>
+        <argument line="71">
+          <name>$templating</name>
+          <default><![CDATA[]]></default>
+          <type>\Symfony\Component\Templating\PhpEngine</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="89" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>render</name>
+        <full_name>render</full_name>
+        <docblock line="78">
+          <description><![CDATA[Renders the pagination template.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="param" description="Pagination data." type="\Knp\Component\Pager\Pagination\PaginationInterface" variable="$pagination">
+            <type by_reference="false">\Knp\Component\Pager\Pagination\PaginationInterface</type>
+          </tag>
+          <tag line="78" name="param" description="Template to use." type="string" variable="$template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="78" name="param" description="URL parameters." type="array" variable="$queryParams">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="78" name="param" description="View parameters." type="array" variable="$viewParams">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="78" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="78" name="version" description="0.1.3"/>
+          <tag line="78" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="90">
+          <name>$pagination</name>
+          <default><![CDATA[]]></default>
+          <type>\Knp\Component\Pager\Pagination\PaginationInterface</type>
+        </argument>
+        <argument line="91">
+          <name>$template</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="92">
+          <name>$queryParams</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="93">
+          <name>$viewParams</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="127" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>sortable</name>
+        <full_name>sortable</full_name>
+        <docblock line="114">
+          <description><![CDATA[Create a sort url for given field.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="114" name="param" description="Pagination data." type="\Knp\Component\Pager\Pagination\PaginationInterface" variable="$pagination">
+            <type by_reference="false">\Knp\Component\Pager\Pagination\PaginationInterface</type>
+          </tag>
+          <tag line="114" name="param" description="Field title." type="string" variable="$title">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="114" name="param" description="Sorting key." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="114" name="param" description="Link element attributes." type="array" variable="$options">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="114" name="param" description="Additional parameters." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="114" name="param" description="Template to use." type="string" variable="$template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="114" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="114" name="version" description="0.1.3"/>
+          <tag line="114" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="128">
+          <name>$pagination</name>
+          <default><![CDATA[]]></default>
+          <type>\Knp\Component\Pager\Pagination\PaginationInterface</type>
+        </argument>
+        <argument line="129">
+          <name>$title</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="130">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="131">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="132">
+          <name>$params</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="133">
+          <name>$template</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="229" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>filter</name>
+        <full_name>filter</full_name>
+        <docblock line="216">
+          <description><![CDATA[Create a filter url for given field.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="216" name="param" description="Pagination data." type="\Knp\Component\Pager\Pagination\PaginationInterface" variable="$pagination">
+            <type by_reference="false">\Knp\Component\Pager\Pagination\PaginationInterface</type>
+          </tag>
+          <tag line="216" name="param" description="Field title." type="string" variable="$title">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="216" name="param" description="Filter key." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="216" name="param" description="Link element attributes." type="array" variable="$options">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="216" name="param" description="Additional parameters." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="216" name="param" description="Template to use." type="string" variable="$template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="216" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="216" name="version" description="0.1.3"/>
+          <tag line="216" name="since" description="0.1.3"/>
+        </docblock>
+        <argument line="230">
+          <name>$pagination</name>
+          <default><![CDATA[]]></default>
+          <type>\Knp\Component\Pager\Pagination\PaginationInterface</type>
+        </argument>
+        <argument line="231">
+          <name>$fields</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="232">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="233">
+          <name>$params</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="234">
+          <name>$template</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="ChillDev\Bundle\ViewHelpersBundle\Templating\Helper" line="297" package="ChillDev\Bundle\ViewHelpersBundle">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="290">
+          <description><![CDATA[Returns helpers alias.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="290" name="return" description="Helper name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="290" name="version" description="0.1.3"/>
+          <tag line="290" name="since" description="0.1.3"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="216" code="50014">Name of argument $fields does not match with the DocBlock's name $title in filter()</error>
+      <error line="216" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $fields in filter()</error>
+      <error line="216" code="50014">Name of argument $options does not match with the DocBlock's name $key in filter()</error>
+      <error line="216" code="50014">Name of argument $params does not match with the DocBlock's name $options in filter()</error>
+      <error line="216" code="50014">Name of argument $template does not match with the DocBlock's name $params in filter()</error>
+      <notice line="216" code="50013">Parameter $title could not be found in filter()</notice>
+      <notice line="216" code="50013">Parameter $key could not be found in filter()</notice>
+    </parse_markers>
+    <source>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</source>
   </file>
   <file path="Templating/Helper/Xmlns.php" hash="040e9c7593d0362aa69155eaffbe5e7b" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">

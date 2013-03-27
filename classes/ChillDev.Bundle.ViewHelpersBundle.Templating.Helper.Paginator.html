@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>ChillDev ViewHelpers Bundle - by Chillout Development » \ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer</title>
+<title>ChillDev ViewHelpers Bundle - by Chillout Development » \ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Paginator</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -59,9 +59,11 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Initializes object."><span class="description">Initializes object.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Initializes helper."><span class="description">Initializes helper.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_filter" title="filter :: Create a filter url for given field."><span class="description">Create a filter url for given field.</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#method_getName" title="getName :: Returns helpers alias."><span class="description">Returns helpers alias.</span><pre>getName()</pre></a></li>
-<li class="method public "><a href="#method_serialize" title="serialize :: Performs inline serialization."><span class="description">Performs inline serialization.</span><pre>serialize()</pre></a></li>
+<li class="method public "><a href="#method_render" title="render :: Renders the pagination template."><span class="description">Renders the pagination template.</span><pre>render()</pre></a></li>
+<li class="method public "><a href="#method_sortable" title="sortable :: Create a sort url for given field."><span class="description">Create a sort url for given field.</span><pre>sortable()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -69,12 +71,16 @@
                     <ul></ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="property protected "><a href="#property_serializer" title="$serializer :: Serializer."><span class="description">Serializer.</span><pre>$serializer</pre></a></li></ul>
+                    <ul>
+<li class="property protected "><a href="#property_routerHelper" title="$routerHelper :: Router generator."><span class="description">Router generator.</span><pre>$routerHelper</pre></a></li>
+<li class="property protected "><a href="#property_templating" title="$templating :: Templating engine."><span class="description">Templating engine.</span><pre>$templating</pre></a></li>
+<li class="property protected "><a href="#property_translator" title="$translator :: Translator."><span class="description">Translator.</span><pre>$translator</pre></a></li>
+</ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Serializer"></a><ul class="breadcrumb">
+<a id="\ChillDev\Bundle\ViewHelpersBundle\Templating\Helper\Paginator"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -92,13 +98,13 @@
 <span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.html">Helper</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Serializer.html">Serializer</a>
+<span class="divider">\</span><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Helper.Paginator.html">Paginator</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Serializer helper.</p>
+<p class="short_description">Paginator helper.</p>
 <div class="details">
-<div class="long_description"><p>This is PHP helper, since JMSSerializerBundle provides only one for Twig.</p></div>
+<div class="long_description"><p>This is PHP helper, since KnpPaginatorBundle provides only one for Twig.</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -106,15 +112,15 @@
 </tr>
 <tr>
 <th>copyright</th>
-<td>2012 © by Rafał Wrzeszcz - Wrzasq.pl.</td>
+<td>2013 © by Rafał Wrzeszcz - Wrzasq.pl.</td>
 </tr>
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 <tr>
 <th>package</th>
@@ -124,25 +130,65 @@
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Initializes object.</h2>
-<pre>__construct(\JMS\Serializer\SerializerInterface $serializer) </pre>
+<h2>Initializes helper.</h2>
+<pre>__construct(\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper $routerHelper, \Symfony\Component\Translation\TranslatorInterface $translator, \Symfony\Component\Templating\PhpEngine $templating) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 </table>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$serializer</h4>
-<code>\JMS\Serializer\SerializerInterface</code><p>Serializaer service.</p></div>
+<h4>$routerHelper</h4>
+<code>\Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper</code><p>Router generator.</p></div>
+<div class="subelement argument">
+<h4>$translator</h4>
+<code>\Symfony\Component\Translation\TranslatorInterface</code><p>Messages translator.</p></div>
+<div class="subelement argument">
+<h4>$templating</h4>
+<code>\Symfony\Component\Templating\PhpEngine</code><p>Templating engine.</p></div>
+</div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method public method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Create a filter url for given field.</h2>
+<pre>filter(\Knp\Component\Pager\Pagination\PaginationInterface $pagination, array $fields, array $options, array $params, string $template) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>version</th>
+<td>0.1.3</td>
+</tr>
+<tr>
+<th>since</th>
+<td>0.1.3</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pagination</h4>
+<code>\Knp\Component\Pager\Pagination\PaginationInterface</code><p>Pagination data.</p></div>
+<div class="subelement argument"><h4>$fields</h4></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Link element attributes.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Additional parameters.</p></div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>Template to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
@@ -154,11 +200,11 @@
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 </table>
 <h3>Returns</h3>
@@ -166,50 +212,130 @@
 <code>string</code>Helper name.</div>
 </div></div>
 </div>
-<a id="method_serialize"></a><div class="element clickable method public method_serialize" data-toggle="collapse" data-target=".method_serialize .collapse">
-<h2>Performs inline serialization.</h2>
-<pre>serialize(mixed $object, string $type) : string</pre>
+<a id="method_render"></a><div class="element clickable method public method_render" data-toggle="collapse" data-target=".method_render .collapse">
+<h2>Renders the pagination template.</h2>
+<pre>render(\Knp\Component\Pager\Pagination\PaginationInterface $pagination, string $template, array $queryParams, array $viewParams) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 </table>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$object</h4>
-<code>mixed</code><p>Data to serialize.</p></div>
+<h4>$pagination</h4>
+<code>\Knp\Component\Pager\Pagination\PaginationInterface</code><p>Pagination data.</p></div>
 <div class="subelement argument">
-<h4>$type</h4>
-<code>string</code><p>Output format.</p></div>
+<h4>$template</h4>
+<code>string</code><p>Template to use.</p></div>
+<div class="subelement argument">
+<h4>$queryParams</h4>
+<code>array</code><p>URL parameters.</p></div>
+<div class="subelement argument">
+<h4>$viewParams</h4>
+<code>array</code><p>View parameters.</p></div>
 <h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>Serialized data.</div>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
-<h3>
-<i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_serializer"> </a><div class="element clickable property protected property_serializer" data-toggle="collapse" data-target=".property_serializer .collapse">
-<h2>Serializer.</h2>
-<pre>$serializer : \JMS\Serializer\SerializerInterface</pre>
+<a id="method_sortable"></a><div class="element clickable method public method_sortable" data-toggle="collapse" data-target=".method_sortable .collapse">
+<h2>Create a sort url for given field.</h2>
+<pre>sortable(\Knp\Component\Pager\Pagination\PaginationInterface $pagination, string $title, string $key, array $options, array $params, string $template) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.1</td>
+<td>0.1.3</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pagination</h4>
+<code>\Knp\Component\Pager\Pagination\PaginationInterface</code><p>Pagination data.</p></div>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code><p>Field title.</p></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>Sorting key.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Link element attributes.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Additional parameters.</p></div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>Template to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_routerHelper"> </a><div class="element clickable property protected property_routerHelper" data-toggle="collapse" data-target=".property_routerHelper .collapse">
+<h2>Router generator.</h2>
+<pre>$routerHelper : \Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>version</th>
+<td>0.1.3</td>
+</tr>
+<tr>
+<th>since</th>
+<td>0.1.3</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_templating"> </a><div class="element clickable property protected property_templating" data-toggle="collapse" data-target=".property_templating .collapse">
+<h2>Templating engine.</h2>
+<pre>$templating : \Symfony\Component\Templating\PhpEngine</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>version</th>
+<td>0.1.3</td>
+</tr>
+<tr>
+<th>since</th>
+<td>0.1.3</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_translator"> </a><div class="element clickable property protected property_translator" data-toggle="collapse" data-target=".property_translator .collapse">
+<h2>Translator.</h2>
+<pre>$translator : \Symfony\Component\Translation\TranslatorInterface</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>version</th>
+<td>0.1.3</td>
+</tr>
+<tr>
+<th>since</th>
+<td>0.1.3</td>
 </tr>
 </table>
 </div></div>
