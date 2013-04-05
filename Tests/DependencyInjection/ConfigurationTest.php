@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.3
+ * @version 0.1.4
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -23,7 +23,7 @@ use Symfony\Component\Config\Definition\NodeInterface;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.3
+ * @version 0.1.4
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -774,60 +774,60 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
      * Check default paginator helper configuration.
      *
      * @test
-     * @version 0.1.3
+     * @version 0.1.4
      * @since 0.1.3
      */
     public function defaultPaginatorConfiguration()
     {
         $config = $this->tree->finalize($this->tree->normalize([]));
 
-        $this->assertTrue($config['paginator'], 'Default value for paginator should be TRUE.');
+        $this->assertFalse($config['paginator'], 'Default value for paginator should be FALSE.');
     }
 
     /**
      * Check paginator helper configuration handling.
      *
      * @test
-     * @version 0.1.3
+     * @version 0.1.4
      * @since 0.1.3
      */
     public function paginatorConfiguration()
     {
         $config = $this->tree->finalize($this->tree->normalize([
-                    'paginator' => false,
+                    'paginator' => true,
         ]));
 
-        $this->assertFalse($config['paginator'], 'Configuration should handle paginator configuration flag.');
+        $this->assertTrue($config['paginator'], 'Configuration should handle paginator configuration flag.');
     }
 
     /**
      * Check default serializer helper configuration.
      *
      * @test
-     * @version 0.1.3
+     * @version 0.1.4
      * @since 0.1.3
      */
     public function defaultSerializerConfiguration()
     {
         $config = $this->tree->finalize($this->tree->normalize([]));
 
-        $this->assertTrue($config['serializer'], 'Default value for serializer should be TRUE.');
+        $this->assertFalse($config['serializer'], 'Default value for serializer should be FALSE.');
     }
 
     /**
      * Check serializer helper configuration handling.
      *
      * @test
-     * @version 0.1.3
+     * @version 0.1.4
      * @since 0.1.3
      */
     public function serializerConfiguration()
     {
         $config = $this->tree->finalize($this->tree->normalize([
-                    'serializer' => false,
+                    'serializer' => true,
         ]));
 
-        $this->assertFalse($config['serializer'], 'Configuration should handle serializer configuration flag.');
+        $this->assertTrue($config['serializer'], 'Configuration should handle serializer configuration flag.');
     }
 
     /**

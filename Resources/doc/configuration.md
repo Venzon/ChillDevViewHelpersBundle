@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.3
+# @version 0.1.4
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -141,25 +141,25 @@ chilldev_viewhelpers:
 
 ## paginator 
 
-Paginator helper has no configuration at all. However if you don't have **KnpPaginatorBundle** you may want to disable loading paginator helpers to avoid undefined serives errors:
+Paginator helper has no configuration at all. However you have to enable loading it if you have **KnpPaginatorBundle** since it's disabled by default to avoid undefined serives errors:
 
 ```yaml
 chilldev_viewhelpers:
-    paginator: false
+    paginator: true
 ``` 
 
 ## serializer
 
-Serializer helper has no configuration at all. However if you don't have **JMSSerializerBundle** you may want to disable loading serializer helpers to avoid undefined serives errors: 
+Paginator helper has no configuration at all. However you have to enable loading it if you have **JMSSerializerBundle** since it's disabled by default to avoid undefined serives errors:
 
 ```yaml
 chilldev_viewhelpers:
-    serializer: false
+    serializer: true
 ```
 
 ## formatter
 
-Formatter helper has no configuration at all. However you have to enable loading if you have **SonataFormatterBundle** since it's disabled by default to avoid undefined serives errors: 
+Formatter helper has no configuration at all. However you have to enable loading it if you have **SonataFormatterBundle** since it's disabled by default to avoid undefined serives errors: 
 
 ```yaml
 chilldev_viewhelpers:

@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.3
+ * @version 0.1.4
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -22,7 +22,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.3
+ * @version 0.1.4
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritDoc}
-     * @version 0.1.3
+     * @version 0.1.4
      * @since 0.0.1
      */
     public function getConfigTreeBuilder()
@@ -42,11 +42,11 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->booleanNode('serializer')
-                    ->defaultTrue()
+                    ->defaultFalse()
                     ->info('serializer helper flag')
                 ->end()
                 ->booleanNode('paginator')
-                    ->defaultTrue()
+                    ->defaultFalse()
                     ->info('paginator helper flag')
                 ->end()
                 ->booleanNode('formatter')
