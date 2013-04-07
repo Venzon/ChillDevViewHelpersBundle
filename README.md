@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.2
+# @version 0.1.4
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -108,7 +108,7 @@ knp_paginator:
 # Resources
 
 -   [Source documentation](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/tree/master/Resources/doc/index.md)
--   [GitHub page with API documentation](http://chilloutdevelopment.github.com/ChillDevViewHelpersBundle)
+-   [GitHub page with API documentation](http://chilloutdevelopment.github.io/ChillDevViewHelpersBundle)
 -   [Travis CI](https://travis-ci.org/chilloutdevelopment/ChillDevViewHelpersBundle)
 -   [Issues tracker](https://github.com/chilloutdevelopment/ChillDevViewHelpersBundle/issues)
 -   [Packagist package](https://packagist.org/packages/chilldev/view-helpers-bundle)
