@@ -95,13 +95,13 @@
     </class>
     <source>eJzdU9FO2zAUfc9XXKFIaRFNgccBhY2hMWlIaOs2JIKQm94kFo7j2U5RmXjZ3+w3Ju2/du2GpLSgbdrbHEVJbs6599xz7f1DVaggGG5uBrAJ44IbyLhAoKdi2kKVgS0QjgsuxGucwSeOt6coFGoDk1pOBcZEdNwjVtui0vCeZeznN/is79DcpXewrykg4tvm+4hemPkSKzHyrLRSc83zwsLu9s4u/PgOk/lajoF7XbBiz5pRfV5J2I534m0fMVymuPStWHrD8k558sqrTZYaWEQIPQwCyUo0xPkDQvLRcmH2gqA2CB/mZVbJeXJclaqSKG0yxlIJZrnMk/NCncicS9xrHT5j+qZWkKNEzSzZVfjU/4WJqWDGNB0GXwOg5bt2i/ZW6wugNyVu/jwAjmZMQ2tZF32ssok+UupjQ/9UurKYWpxCaNuCZP+KmLeSW84EJ2ugXBnJmi46CKzslC1nfr6rvxZeTwRPIatlah3r+jqtpLG6Tm3vydJ9T1vY7FZo6fAORkvaDh574ED3a068WbSNYGjf2YFlOZyOz96BkVwptM+YQcJchdDBx3S74xOvYJjWbA7hlFkGLy0RJrX1dqtV5KSqBITcXBS2FHDh62eC5R1Oo621fCjbu+g/pfFfLW92AJ4ILOkk91x3W8ttbLUiV80fDls2sLbXbjYuZmggl1d7bTCrNLK0gN7CImYgdDbCwQhCmr0lCf2lEl2eyyvKFNEVrw99MEKTMoU9n6tPkOhg4zfIthiBN6JOYLNZ3Gr8j/YXqWjiMSScUlVTSuBVOXqvHeIhRMNRBC8gGkX9h713H/wCn3rtdg==</source>
   </file>
-  <file path="DependencyInjection/Configuration.php" hash="676ef461525e3eb946dfcfd9c585e82e" package="ChillDev\Bundle\ViewHelpersBundle">
+  <file path="DependencyInjection/Configuration.php" hash="017396d128210831a92c64fd3f13270a" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
       <description><![CDATA[This file is part of the ChillDev ViewHelpers bundle.]]></description>
       <long-description><![CDATA[]]></long-description>
       <tag line="3" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
       <tag line="3" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-      <tag line="3" name="version" description="0.1.3"/>
+      <tag line="3" name="version" description="0.1.4"/>
       <tag line="3" name="since" description="0.0.1"/>
       <tag line="3" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
     </docblock>
@@ -118,7 +118,7 @@
         <long-description><![CDATA[]]></long-description>
         <tag line="20" name="author" description="Rafał Wrzeszcz &lt;rafal.wrzeszcz@wrzasq.pl&gt;"/>
         <tag line="20" name="copyright" description="2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl."/>
-        <tag line="20" name="version" description="0.1.3"/>
+        <tag line="20" name="version" description="0.1.4"/>
         <tag line="20" name="since" description="0.0.1"/>
         <tag line="20" name="package" description="ChillDev\Bundle\ViewHelpersBundle"/>
       </docblock>
@@ -128,12 +128,12 @@
         <docblock line="31">
           <description><![CDATA[{@inheritDoc}]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="31" name="version" description="0.1.3"/>
+          <tag line="31" name="version" description="0.1.4"/>
           <tag line="31" name="since" description="0.0.1"/>
         </docblock>
       </method>
     </class>
-    <source>eJztWt1u2zYUvvdTsEEBO2ltN+1dk3pNkwzLNmRFYnQd4iKgpSOLK0WpJGVHaXOzt9lrDNh7jT+yLSeWzfgPyTZe2DJ1zuF3Ds/5SEre/y4Jk0qlubNTQTuoHRKBAkIBqe8Ec4niAMkQ0GFIKD2CPvpAYPAD0AS4QN2U+RQaSlHrvsWpDGOOznCA//4D/cqvQVx712ifqw7aGOS/36oLLL40EtoyWl6cZJz0Qolevth9ier66xX660/Uze6YqutLq9wwyn0Fg8QMvWjsNl6ZHkGYB+q36jG/E+x9xr2xA513BnSn4IftUdLNSoXhCITScVDoHEECzAfmZSfsd/CkArJXqaTCRbcNUUKxJKzXOfc4SWTnmEIETOYWzrMoiFnWOYyjJGaqX12xgPTUoAFhRI+ljBPqA++0OUB+veesbHtSjvWvEyaBB8rrvVEmDF1oFCfcKyqhEGtX+L9p/j2KhUATsUFEzZSZmls3RkGrfK0g1UzgdNtBX98SFgIn8ij2boadt8HmvROATV/TfCdplxIPBSkzmYV6IO3whemubRtRO75uT+X4JnqDGAzQhPjeWJLHsTyNfVBiRa16S9+oVT0dLx/6l30VqNAGqqr0RwaaTeTrdALNE6pqVDDEXeujHt3qLW3V58By4JM3u3FMATOtVqsKFT5MyTXw6l1ZK6+GxymVbZ7CFHtWhrAgLhpD1hUUUNybYrjeUhU9H1yCe4RhGa8C28jWaqAFMY+wlPPD9j2mYh62kbHVYLsKZURXgQsniaoNU4VNY/TZVUR1dUpVpvV2lgASAyK98F5YMec4s0glkRRKkWLfP7JgxUlwGstzkKWAZ2T8WEh4mGI+THxdT+W5NdbKA3aaUjrDupW1cds3frXMyi6Qy0hl0ZqOvYtFWdSWgW3WLExREf6CmMtn/27/9L6AXH2MqKXiWpUS9rl6W2QmyxWyTCuL0ixLeCxjqXJZ5bvWmenxJCoOZWU2F+CkYHFyQw7BnMm1SkScwZeUcJiVOFZ0dnJZmULAlF9l8VoQghXnVlgcyJ8BC/kLg3w35qTdBcWTcKq5Uq0xhpUc9HKggVkinKR1G20Hak/7mKawXVj8XRoHmXKGnnSIuDSBHdrZczZz4yTpGgB1uGAbd//Can/avNMuKW/lCuVvq9Ap8V0KykWmWPgahNPg92H2+4KIwCd4wygWWUjsvXy51QTfQhL3hN0rm6PXNAZbdPkRMqMgQoDb66H7IjQ2saKl6P506E6Di9b/ErQ3u/LnOeZGb0u6dWHXZvSmhZyJbVG35tfMo9pcLMNzH3SolRpcyaYn5m1M/lOUVyCVdTGfeWq2OOsZ9f8Zb1p7FIwnuPeoCU/jf5R8l5+MXr9u//b++LJ9/LH948GHg/PDs5P37VUgBJZG+aMsGg+c8JkUELWLag60+hzpS+D6AouMedVP9+f1obFVh90LMRd3NmwzET0EYreMudbd7FVEL0cvYBam9gkr5QyfCjiQkpNuKuFA/ARZrVo29ljJ9VDmElGFkwk0RrqmoH6GbBBzf+Fw5vpOS+USMYErrN+zqCIO4ljXbVcZKqna288FB9AVRALaj0DiFpqB2D2IruHRQ65mF+H+VHkuwknBIvnodHNiHg8zFst3cBwlMnN6YDF6ZYB0TCxPdDOT4G+2thAeFtvKCVVFOQEuZ0V3DX4NR12vb6GUyaXeAPQ3650et27GXa9/nn1ns9mt0Pz7akdBfCzL3kMVMG1mG18jTG4jItS+ITdwYUvZYV8zbM+mWhkVz9KWCqn6aRu10O4mThonzEzV/Amo5otDhFVy4z6gmNFMfYD+h8uWjuXWc7Q1jIZKeeajrXEVFGogX6jBb1TXdqR4aPn3pLZc7un27dsKUm+qoYnMcza1kZPw/fMzFXKYoA8tN53OCdYNtY4svp8t/Mskz7/iP1TstN1Ubir/AMJujmA=</source>
+    <source>eJztWt1u2zYUvvdTsEEBO2ltN92umtRrmmRYtiErEqPrEBcBLR1ZXClKJSk7Spubvc1eY8Dea/yRbTmxbMZ/SLbxwpapcw6/c3jOR1Ly/ndJmFQqzZ2dCtpB7ZAIFBAKSH0nmEsUB0iGgA5DQukR9NF7AoMfgCbABeqmzKfQUIpa9w1OZRhzdIYD/Pcf6Fd+DeLau0b7XHXQxiD//UZdYPG5kdCW0fLiJOOkF0r08sXuS1TXX9+gv/5E3eyOqbq+tMoNo9xXMEjM0IvGbuNb0yMI80D9Vj3md4K9T7g3dqDz1oDuFPywPUq6WakwHIFQOg4KnSNIgPnAvOyE/Q6eVED2KpVUuOi2IUooloT1OuceJ4nsHFOIgMncwnkWBTHLOodxlMRM9asrFpCeGjQgjOixlHFCfeCdNgfIr/eclW1PyrH+dcIk8EB5vTfKhKELjeKEe0UlFGLtCv83zb9HsRBoIjaIqJkyU3PrxiholS8VpJoJnG476MsbwkLgRB7F3s2w8zbYvHcCsOlrmu8k7VLioSBlJrNQD6QdvjDdtW0jasfX7akc30SvEYMBmhDfG0vyOJansQ9KrKhVb+kbtaqn4+VD/7KvAhXaQFWV/shAs4l8nU6geUJVjQqGuGt91KNbvaWt+hxYDnzyZjeOKWCm1WpVocKHKbkGXr0ra+XV8Dil8ntMBUwxaIUIC+KiNWR9QQHFvSmW6y1V0vPRJbhHGJbxSsCNjK0GWxDzCEu5msCNjK0G21UoI7oKXDhJVHWYOmwao8+uIqrrU6pCrbezBJAYEOmF98KKOceZRSqJpFCKFPv+kQUrToLTWJ6DLAU8I+fHQsLDFPNh6uuKKk+usVYesNOU0hnWrayN277xq2XWdoFcRiqL1nTsXSzKorYMbLNqYYqK8BfEXD77d/un9wXk6kNELRnXqpSwT9XbIjN5rpBlWlmUZlnCYxlLlcsq37XOTI8nUXEoK7O5ACcFi5MbcgjmTK5VIuIMPqeEw6zEsaKzk8vKFAKm/CqL14IQrDi3wuJA/gxYyF8Y5PsxJ+0uKJ6EU82VapExrOSglwMN2jyFmpO0bqMNQe1pH9MUtgvLv0vjIFPO0JMOEZcmsEM7e85mbpwkXQOgjhds4+5fWO2Pm3faJeWtXKH8bRU6Jb5LQbnIFAtfg3Aa/D7Mfl8QEfgEbxjFIguJvZcvt5rgW0jinrC7ZXP4msZgiy4/QmYURAhwez10X4TGJla0FN2fDt1pcNH6X4L2Zlf+PMfc6G1Jty7s2oxet5AzsS3q1vyaeVSbi2V47r0OtVKDK9n0xLyNyX+K8gqksi7mM8/NFmc9o/4/401rj4LxBPceNeFp/I+S7/KT0atX7d/eHV+2jz+0fzx4f3B+eHbyrr0KhMDSKH+UReOBEz6TAqJ2Uc2BVp8jfQlcX2CRMa/68f68PjS26rB7IebizoZtJqKHQOyWMde6m72K6OXoFczC1D5hpZzhUwEHUnLSTSUciJ8gq1XLxh4ruR7KXCKqcDKBxkjXFNRPkA1i7i8czlzfaalcIiZwhfWbFlXEQRzruu0qQyVVe/u54AC6gkhA+xFI3EIzELsH0TU8esjV7CLcnyrPRTgpWCQfnW5OzONhxmL5Fo6jRGZODyxGrwyQjonliW5mEvz11hbCw2JbOaGqKCfA5azorsGv4ajr9S2UMrnUG4D+Zr3T49bNuOv1z7PvbDa7FZp/X+0oiI9l2XuoAqbNbONrhMltRITaN+QGLmwpO+xrhu3ZVCuj4lnaUiFVP26jFtrdxEnjhJmpmj8B1XxxiLBKbtwHFDOaqQ/Q/3HZ0rHceo62htFQKc98tDWugkIN5As1+I3q2o4UDy3/ntSWyz3dvn5dQepNNTSRec6mNnISvn9+pkIOE/Sh5abTOcG6odaRxfezhf+Z5PlX/I+Knbabyk3lHyYrjvk=</source>
   </file>
   <file path="DependencyInjection/ChillDevViewHelpersExtension.php" hash="3ced31487b11f52b06c6d90df9474eea" package="ChillDev\Bundle\ViewHelpersBundle">
     <docblock line="3">
