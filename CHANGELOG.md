@@ -3,12 +3,17 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.3
+# @version 0.1.4
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
 
 # ChangeLog
+
+## **0.1.4** (08.04.2013)
+
+-  Updated GitHub pages references &lt;Rafał Wrzeszcz&gt;.
+-  [fixes #10] Disabled optional helpers by default &lt;Rafał Wrzeszcz&gt;.
 
 ## **0.1.3** (27.03.2013)
 
