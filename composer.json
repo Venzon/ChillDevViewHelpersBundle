@@ -46,8 +46,8 @@
     },
     "require-dev": {
         "ext-xsl": "*",
-        "phpunit/phpunit": "3.7.*",
-        "squizlabs/php_codesniffer": "1.4.*",
+        "phpunit/phpunit": "3.7.19",
+        "squizlabs/php_codesniffer": "1.4.5",
         "symfony/config": ">=2.1,<2.3-dev",
         "symfony/dependency-injection": ">=2.1,<2.3-dev",
         "symfony/http-foundation": ">=2.1,<2.3-dev",
