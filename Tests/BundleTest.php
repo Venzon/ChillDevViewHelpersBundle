@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.5
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -19,8 +19,8 @@ use ChillDev\Bundle\ViewHelpersBundle\DependencyInjection\ChillDevViewHelpersExt
 
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.0.1
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.5
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -37,5 +37,20 @@ class BundleTest extends PHPUnit_Framework_TestCase
     {
         $extension = (new ChillDevViewHelpersBundle())->getContainerExtension();
         $this->assertEquals('chilldev_viewhelpers', $extension->getAlias(), 'ChillDevViewHelpersBundle::getContainerExtension() should return bundle\'s extension.');
+    }
+
+    /**
+     * @test
+     * @version 0.1.5
+     * @since 0.1.5
+     */
+    public function build()
+    {
+        $mock = $this->getMock('Symfony\\Component\\DependencyInjection\\ContainerBuilder', array('addCompilerPass'));
+        $mock->expects($this->once())
+            ->method('addCompilerPass')
+            ->with($this->isInstanceOf('ChillDev\\Bundle\\ViewHelpersBundle\\DependencyInjection\\Compiler\\PathTransformersPass'));
+
+        (new ChillDevViewHelpersBundle())->build($mock);
     }
 }

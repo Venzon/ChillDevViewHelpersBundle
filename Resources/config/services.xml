@@ -99,11 +99,13 @@
 
         <!-- assets path transformer -->
         <service id="chilldev.viewhelpers.path_resolver.assets_transformer" class="%chilldev.viewhelpers.path_resolver.assets_transformer.class%">
+            <tag name="chilldev.viewhelpers.path_transformer" prefix="assets"/>
             <argument type="service" id="templating.helper.assets"/>
         </service>
 
         <!-- request path transformer -->
         <service id="chilldev.viewhelpers.path_resolver.request_transformer" class="%chilldev.viewhelpers.path_resolver.request_transformer.class%">
+            <tag name="chilldev.viewhelpers.path_transformer" prefix="base"/>
             <argument type="service" id="templating.globals"/>
         </service>
     </services>
