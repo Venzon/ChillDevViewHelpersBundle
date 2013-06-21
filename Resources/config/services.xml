@@ -4,7 +4,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.3
+# @version 0.1.5
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -25,6 +25,9 @@
         <parameter key="chilldev.viewhelpers.container.keywords.class">ChillDev\Bundle\ViewHelpersBundle\Templating\Container\Words</parameter>
 
         <parameter key="chilldev.viewhelpers.utils.markup.class">ChillDev\Bundle\ViewHelpersBundle\Utils\Markup</parameter>
+
+        <parameter key="chilldev.viewhelpers.path_resolver.class">ChillDev\Bundle\ViewHelpersBundle\PathResolver\PathResolver</parameter>
+        <parameter key="chilldev.viewhelpers.path_resolver.assets_transformer.class">ChillDev\Bundle\ViewHelpersBundle\PathResolver\Transformer\AssetsTransformer</parameter>
 
         <parameter key="chilldev.viewhelpers.title.separator"> - </parameter>
     </parameters>
@@ -88,6 +91,14 @@
         <service id="chilldev.viewhelpers.helper.standalone" class="%chilldev.viewhelpers.helper.standalone.class%">
             <tag name="templating.helper" alias="standalone"/>
             <argument type="service" id="templating.helper.actions"/>
+        </service>
+
+        <!-- paths resolver -->
+        <service id="chilldev.viewhelpers.path_resolver" class="%chilldev.viewhelpers.path_resolver.class%"/>
+
+        <!-- assets path transformer -->
+        <service id="chilldev.viewhelpers.path_resolver.assets_transformer" class="%chilldev.viewhelpers.path_resolver.assets_transformer.class%">
+            <argument type="service" id="templating.helper.assets"/>
         </service>
     </services>
 </container>

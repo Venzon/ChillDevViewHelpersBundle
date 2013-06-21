@@ -42,7 +42,7 @@
         "symfony/http-kernel": "~2.1",
         "jms/serializer-bundle": "0.11.*",
         "knplabs/knp-paginator-bundle": "2.3.*",
-        "sonata-project/formatter-bundle": ">=2.1,<2.3-dev"
+        "sonata-project/formatter-bundle": "~2.1"
     },
     "require-dev": {
         "ext-xsl": "*",
@@ -57,7 +57,7 @@
         "jms/serializer": "0.11.*",
         "knplabs/knp-paginator-bundle": "2.3.*",
         "knplabs/knp-components": "~1.1",
-        "sonata-project/formatter-bundle": ">=2.1,<2.3-dev"
+        "sonata-project/formatter-bundle": "~2.1"
     },
     "autoload": {
         "psr-0": {
