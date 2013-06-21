@@ -35,18 +35,18 @@ class PathResolverTest extends PHPUnit_Framework_TestCase
     {
         $prefix = 'foo';
         $basePath = 'bar/';
-        
+
         $transformer = new CustomTransformer($basePath);
-        
+
         $resolver = new PathResolver();
         $resolver->registerTransformer($prefix, $transformer);
-        
+
         $path = 'baz';
         $this->assertEquals($basePath . $path, $resolver->resolve('@' . $prefix . ':' . $path), 'PathResolver::resolve() should resolve registered prefix.');
-        
+
         $path = '@quux:qux';
         $this->assertEquals($path, $resolver->resolve($path), 'PathResolver::resolve() should not resolve unregistered prefix.');
-        
+
         $path = './qux';
         $this->assertEquals($path, $resolver->resolve($path), 'PathResolver::resolve() should resolve paths without prefix.');
     }

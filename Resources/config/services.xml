@@ -28,6 +28,7 @@
 
         <parameter key="chilldev.viewhelpers.path_resolver.class">ChillDev\Bundle\ViewHelpersBundle\PathResolver\PathResolver</parameter>
         <parameter key="chilldev.viewhelpers.path_resolver.assets_transformer.class">ChillDev\Bundle\ViewHelpersBundle\PathResolver\Transformer\AssetsTransformer</parameter>
+        <parameter key="chilldev.viewhelpers.path_resolver.request_transformer.class">ChillDev\Bundle\ViewHelpersBundle\PathResolver\Transformer\RequestTransformer</parameter>
 
         <parameter key="chilldev.viewhelpers.title.separator"> - </parameter>
     </parameters>
@@ -99,6 +100,11 @@
         <!-- assets path transformer -->
         <service id="chilldev.viewhelpers.path_resolver.assets_transformer" class="%chilldev.viewhelpers.path_resolver.assets_transformer.class%">
             <argument type="service" id="templating.helper.assets"/>
+        </service>
+
+        <!-- request path transformer -->
+        <service id="chilldev.viewhelpers.path_resolver.request_transformer" class="%chilldev.viewhelpers.path_resolver.request_transformer.class%">
+            <argument type="service" id="templating.globals"/>
         </service>
     </services>
 </container>

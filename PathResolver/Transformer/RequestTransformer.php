@@ -12,10 +12,10 @@
 
 namespace ChillDev\Bundle\ViewHelpersBundle\PathResolver\Transformer;
 
-use Symfony\Component\Templating\Helper\CoreAssetsHelper;
+use Symfony\Bundle\FrameworkBundle\Templating\GlobalVariables;
 
 /**
- * Assets URL transformer.
+ * Request URL transformer.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
@@ -23,38 +23,32 @@ use Symfony\Component\Templating\Helper\CoreAssetsHelper;
  * @since 0.1.5
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
-class AssetsTransformer implements TransformerInterface
+class RequestTransformer implements TransformerInterface
 {
     /**
-     * Assets URL generator.
+     * Request container.
      *
-     * @var CoreAssetsHelper
+     * @var GlobalVariables
      * @version 0.1.5
      * @since 0.1.5
      */
-    protected $helper;
-
-    /**
-     * Assets package.
-     *
-     * @var string|null
-     * @version 0.1.5
-     * @since 0.1.5
-     */
-    protected $package;
+    protected $globals;
 
     /**
      * Initializes URL transformer.
      *
-     * @param CoreAssetsHelper $helper Assets URL resolver.
-     * @param string|null $package Package name.
+     * @param GlobalVariables $globals Request container.
      * @version 0.1.5
      * @since 0.1.5
      */
-    public function __construct(CoreAssetsHelper $helper, $package = null)
+    public function __construct(GlobalVariables $globals)
     {
-        $this->helper = $helper;
-        $this->package = $package;
+        /*
+         * FIXME:
+         * for now we rely on GlobalVariables for Symfony 2.1 and 2.2 compatibility,
+         * in 2.3 we can just use synchronized service definition in DI
+         */
+        $this->globals = $globals;
     }
 
     /**
@@ -64,6 +58,6 @@ class AssetsTransformer implements TransformerInterface
      */
     public function transform($path)
     {
-        return $this->helper->getUrl($path, $this->package);
+        return $this->globals->getRequest()->getBaseUrl() . $path;
     }
 }

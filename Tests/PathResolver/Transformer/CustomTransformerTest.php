@@ -34,9 +34,9 @@ class CustomTransformerTest extends PHPUnit_Framework_TestCase
     {
         $prefix = 'foo/';
         $path = 'bar';
-        
+
         $transformer = new CustomTransformer($prefix);
-        
+
         $this->assertEquals($prefix . $path, $transformer->transform($path), 'CustomTransformer::transform() should prepand path with base URL.');
     }
 }

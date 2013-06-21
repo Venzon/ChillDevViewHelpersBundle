@@ -46,6 +46,8 @@ class CustomTransformer implements TransformerInterface
 
     /**
      * {@inheritDoc}
+     * @version 0.1.5
+     * @since 0.1.5
      */
     public function transform($path)
     {
