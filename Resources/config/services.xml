@@ -72,6 +72,7 @@
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
             <argument type="service" id="chilldev.viewhelpers.utils.markup"/>
+            <argument type="service" id="chilldev.viewhelpers.path_resolver"/>
         </service>
 
         <!-- <script> tag helper -->
@@ -80,6 +81,7 @@
             <argument type="service" id="templating.engine.php"/>
             <argument type="service" id="chilldev.viewhelpers.xhtml.checker"/>
             <argument type="service" id="chilldev.viewhelpers.utils.markup"/>
+            <argument type="service" id="chilldev.viewhelpers.path_resolver"/>
         </service>
 
         <!-- xmlns attribute helper -->

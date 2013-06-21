@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.5
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -14,6 +14,7 @@ namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
 use ArrayObject;
 
+use ChillDev\Bundle\ViewHelpersBundle\PathResolver\PathResolver;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Script\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
@@ -25,8 +26,8 @@ use Symfony\Component\Templating\Helper\HelperInterface;
  * &lt;script&gt; tag helper.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.5
  * @since 0.0.2
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -63,19 +64,30 @@ class Script extends ArrayObject implements
     protected $markup;
 
     /**
+     * Paths resolver.
+     *
+     * @var PathResolver
+     * @version 0.1.5
+     * @since 0.1.5
+     */
+    protected $pathResolver;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
      * @param Checker $checker XHTML checker.
      * @param Markup $markup Markup generator.
-     * @version 0.1.0
+     * @param PathResolver $pathResolver Paths resolver.
+     * @version 0.1.5
      * @since 0.0.2
      */
-    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup)
+    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup, PathResolver $pathResolver)
     {
         $this->templating = $templating;
         $this->checker = $checker;
         $this->markup = $markup;
+        $this->pathResolver = $pathResolver;
     }
 
     /**
@@ -98,11 +110,12 @@ class Script extends ArrayObject implements
      * @param int $flow Execution flow.
      * @param string $charset Script charset.
      * @return self Self instance.
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.2
      */
     public function add($src, $type = Element::TYPE_TEXTJAVASCRIPT, $flow = Element::FLOW_DEFAULT, $charset = null)
     {
+        $src = $this->pathResolver->resolve($src);
         $this[] = new Element($this->templating, $this->checker, $this->markup, $src, $type, $flow, $charset);
 
         return $this;

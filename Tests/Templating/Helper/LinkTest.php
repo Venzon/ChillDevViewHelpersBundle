@@ -5,7 +5,7 @@
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.2
+ * @version 0.1.5
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -19,7 +19,7 @@ use ChillDev\Bundle\ViewHelpersBundle\Tests\BaseTemplatingTest;
 /**
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
  * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.2
+ * @version 0.1.5
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -27,19 +27,19 @@ class LinkTest extends BaseTemplatingTest
 {
     /**
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function getHelperName()
     {
-        $this->assertEquals('link', (new Link($this->templating, $this->checker, $this->markup))->getName(), 'Link::getName() should return helper alias.');
+        $this->assertEquals('link', $this->createHelper()->getName(), 'Link::getName() should return helper alias.');
     }
 
     /**
      * Check if element is added to container.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function addToContainer()
@@ -49,7 +49,7 @@ class LinkTest extends BaseTemplatingTest
         $type = 'baz';
         $media = 'qux';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $return = $link->add($href, $rels, $type, $media);
 
         $element = $link->getByRel($rels[0])[0];
@@ -65,14 +65,14 @@ class LinkTest extends BaseTemplatingTest
      * Check default attributes values.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function addWithDefaultValues()
     {
         $rel = 'foo';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->add('bar', [$rel]);
 
         $this->assertNull($link->getByRel($rel)[0]->getType(), 'Link::add() should set type to NULL if not passed as argument.');
@@ -83,7 +83,7 @@ class LinkTest extends BaseTemplatingTest
      * Check if stylesheet is added to container.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.2
      */
     public function addStylesheetToContainer()
@@ -93,7 +93,7 @@ class LinkTest extends BaseTemplatingTest
         $type = 'baz';
         $media = 'qux';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $return = $link->addStylesheet($href, $media, $type);
 
         $element = $link->getByRel($rel)[0];
@@ -109,12 +109,12 @@ class LinkTest extends BaseTemplatingTest
      * Check default attributes values for stylesheet.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.2
      */
     public function addStylesheetWithDefaultValues()
     {
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->addStylesheet('bar');
 
         $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[0]->getType(), 'Link::addStylesheet() should set type to "text/css" if not passed as argument.');
@@ -125,7 +125,7 @@ class LinkTest extends BaseTemplatingTest
      * Check if multiple stylesheets are added to container.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.2
      */
     public function addStylesheetsToContainer()
@@ -136,7 +136,7 @@ class LinkTest extends BaseTemplatingTest
         $type = 'baz';
         $media = 'qux';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $return = $link->addStylesheets([$href1, $href2], $media, $type);
 
         $elements = $link->getByRel($rel);
@@ -156,12 +156,12 @@ class LinkTest extends BaseTemplatingTest
      * Check default attributes values for batch-added stylesheets.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.2
      */
     public function addStylesheetsWithDefaultValues()
     {
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->addStylesheets(['foo', 'bar']);
 
         $this->assertEquals("text/css", $link->getByRel(Link::REL_STYLESHEET)[0]->getType(), 'Link::addStylesheets() should set all types to "text/css" if not passed as argument.');
@@ -174,7 +174,7 @@ class LinkTest extends BaseTemplatingTest
      * Check string-to-array conversion of rel attribute.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function addWithStringAsRels()
@@ -182,7 +182,7 @@ class LinkTest extends BaseTemplatingTest
         $href = 'foo';
         $rel = 'bar';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->add($href, $rel);
 
         $this->assertEquals($href, $link->getByRel($rel)[0]->getHref(), 'Link::add() should convert rel attribute to array if single string is specified.');
@@ -192,14 +192,14 @@ class LinkTest extends BaseTemplatingTest
      * Check finding elemnets by rel attribute.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function getByRelCounts()
     {
         $rel = 'foo';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->add('bar', [$rel])
             ->add('bar', [$rel, 'baz'])
             ->add('bar', ['baz']);
@@ -211,14 +211,14 @@ class LinkTest extends BaseTemplatingTest
      * Check deleting links from container.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function deleteFromContainer()
     {
         $rel = 'foo';
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->add('bar', [$rel]);
 
         $this->assertCount(1, $link->getByRel($rel), 'If this fails, check add() or getByRel() test.');
@@ -233,14 +233,14 @@ class LinkTest extends BaseTemplatingTest
      * Check get/set charset.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.1.0
      */
     public function charsetChange()
     {
         $charset = 'iso-8859-2';
 
-        $title = new Link($this->templating, $this->checker, $this->markup);
+        $title = $this->createHelper();
         $title->setCharset($charset);
         $this->assertEquals($charset, $title->getCharset(), 'Link::setCharset() should change used charset.');
     }
@@ -249,7 +249,7 @@ class LinkTest extends BaseTemplatingTest
      * Check to-string conversion.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function toStringConversion()
@@ -261,7 +261,7 @@ class LinkTest extends BaseTemplatingTest
         $element1 = new Element($this->templating, $this->checker, $this->markup, $value1, [$value2, $value3]);
         $element2 = new Element($this->templating, $this->checker, $this->markup, $value1, [$value2, $value3]);
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->add($value1, [$value2, $value3])
             ->add($value1, [$value2, $value3]);
 
@@ -272,7 +272,7 @@ class LinkTest extends BaseTemplatingTest
      * Check to-string casting.
      *
      * @test
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function toStringCasting()
@@ -283,9 +283,19 @@ class LinkTest extends BaseTemplatingTest
 
         $element = new Element($this->templating, $this->checker, $this->markup, $value1, [$value2, $value3]);
 
-        $link = new Link($this->templating, $this->checker, $this->markup);
+        $link = $this->createHelper();
         $link->add($value1, [$value2, $value3]);
 
         $this->assertEquals((string) $element, (string) $link, 'Link::__toString() should handle conversion to string.');
+    }
+
+    /**
+     * @return Link
+     * @version 0.1.5
+     * @since 0.1.5
+     */
+    protected function createHelper()
+    {
+        return new Link($this->templating, $this->checker, $this->markup, $this->pathResolver);
     }
 }

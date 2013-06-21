@@ -4,8 +4,8 @@
  * This file is part of the ChillDev ViewHelpers bundle.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.5
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -14,6 +14,7 @@ namespace ChillDev\Bundle\ViewHelpersBundle\Templating\Helper;
 
 use ArrayObject;
 
+use ChillDev\Bundle\ViewHelpersBundle\PathResolver\PathResolver;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Link\Element;
 use ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker;
 use ChillDev\Bundle\ViewHelpersBundle\Utils\Markup;
@@ -25,8 +26,8 @@ use Symfony\Component\Templating\Helper\HelperInterface;
  * &lt;link&gt; tag helper.
  *
  * @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
- * @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
- * @version 0.1.0
+ * @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+ * @version 0.1.5
  * @since 0.0.1
  * @package ChillDev\Bundle\ViewHelpersBundle
  */
@@ -72,19 +73,30 @@ class Link extends ArrayObject implements
     protected $markup;
 
     /**
+     * Paths resolver.
+     *
+     * @var PathResolver
+     * @version 0.1.5
+     * @since 0.1.5
+     */
+    protected $pathResolver;
+
+    /**
      * Initializes templating helper.
      *
      * @param PhpEngine $templating Templating engine.
      * @param Checker $checker XHTML checker.
      * @param Markup $markup Markup generator.
-     * @version 0.0.1
+     * @param PathResolver $pathResolver Paths resolver.
+     * @version 0.1.5
      * @since 0.0.1
      */
-    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup)
+    public function __construct(PhpEngine $templating, Checker $checker, Markup $markup, PathResolver $pathResolver)
     {
         $this->templating = $templating;
         $this->checker = $checker;
         $this->markup = $markup;
+        $this->pathResolver = $pathResolver;
     }
 
     /**
@@ -107,7 +119,7 @@ class Link extends ArrayObject implements
      * @param string $type MIME type.
      * @param string $media Media query.
      * @return self Self instance.
-     * @version 0.1.0
+     * @version 0.1.5
      * @since 0.0.1
      */
     public function add($href, $rels, $type = null, $media = null)
@@ -117,6 +129,7 @@ class Link extends ArrayObject implements
             $rels = [$rels];
         }
 
+        $href = $this->pathResolver->resolve($href);
         $this[] = new Element($this->templating, $this->checker, $this->markup, $href, $rels, $type, $media);
 
         return $this;
