@@ -51,7 +51,8 @@ class PathTransformersPass implements CompilerPassInterface
                 )) {
                     throw new LogicException(
                         sprintf(
-                            'Service "%s" is defined with class "%s", which does not implements transformer interface',
+                            'Service "%s" is defined with class "%s", which does not implements transformer'
+                            . ' interface.',
                             $id,
                             $class
                         )
@@ -63,14 +64,14 @@ class PathTransformersPass implements CompilerPassInterface
                     if (!isset($attributes['prefix'])) {
                         throw new LogicException(
                             sprintf(
-                                '"prefix" attribute is required for tag "chilldev.viewhelpers.path_resolver" '
-                                . 'for class "%s"',
+                                '"prefix" attribute is required for tag "chilldev.viewhelpers.path_resolver" for class'
+                                . ' "%s".',
                                 $id
                             )
                         );
                     }
 
-                    $repository->addMethodCall(
+                    $resolver->addMethodCall(
                         'registerTransformer',
                         array($attributes['prefix'], new Reference($id))
                     );
