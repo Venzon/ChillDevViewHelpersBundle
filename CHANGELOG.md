@@ -3,17 +3,23 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.4
+# @version 0.1.5
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
 
 # ChangeLog
 
+## **0.1.5** (23.06.2013(
+
+-   Updated dependencies definitions to allow Symfony 2.3 (and any further version until Symfony 3.0) &lt;Rafał Wrzeszcz&gt;.
+-   [fixes #11] Removed rel="first" and rel="last" from paginator view, as these are not valid (X)HTML rel="" attribute values &lt;Rafał Wrzeszcz&gt;.
+-   [fixes #6] Created path resolver fir `script` and `link` helpers &lt;Rafał Wrzeszcz&gt;.
+
 ## **0.1.4** (08.04.2013)
 
--  Updated GitHub pages references &lt;Rafał Wrzeszcz&gt;.
--  [fixes #10] Disabled optional helpers by default &lt;Rafał Wrzeszcz&gt;.
+-   Updated GitHub pages references &lt;Rafał Wrzeszcz&gt;.
+-   [fixes #10] Disabled optional helpers by default &lt;Rafał Wrzeszcz&gt;.
 
 ## **0.1.3** (27.03.2013)
 
