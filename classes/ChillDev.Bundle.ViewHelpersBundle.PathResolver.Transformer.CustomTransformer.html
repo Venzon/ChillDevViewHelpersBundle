@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>ChillDev ViewHelpers Bundle - by Chillout Development » \ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker</title>
+<title>ChillDev ViewHelpers Bundle - by Chillout Development » \ChillDev\Bundle\ViewHelpersBundle\PathResolver\Transformer\CustomTransformer</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -59,8 +59,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Initializes proxy for given listener (if it exists)."><span class="description">Initializes proxy for given listener (if it exists).</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_isXhtml" title="isXhtml :: Checks if page uses XHTML."><span class="description">Checks if page uses XHTML.</span><pre>isXhtml()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Initializes transformer for given path."><span class="description">Initializes transformer for given path.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_transform" title="transform :: Transforms given path."><span class="description">Transforms given path.</span><pre>transform()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -68,12 +68,12 @@
                     <ul></ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="property protected "><a href="#property_listener" title="$listener :: XHTML event listener."><span class="description"></span><pre>$listener</pre></a></li></ul>
+                    <ul><li class="property protected "><a href="#property_basePath" title="$basePath :: Root path."><span class="description"></span><pre>$basePath</pre></a></li></ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\ChillDev\Bundle\ViewHelpersBundle\Templating\Xhtml\Checker"></a><ul class="breadcrumb">
+<a id="\ChillDev\Bundle\ViewHelpersBundle\PathResolver\Transformer\CustomTransformer"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -85,17 +85,17 @@
 <span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.html">ViewHelpersBundle</a>
 </li>
 <li>
-<span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.Templating.html">Templating</a>
+<span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.PathResolver.html">PathResolver</a>
 </li>
 <li>
-<span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.Templating.Xhtml.html">Xhtml</a>
+<span class="divider">\</span><a href="../namespaces/ChillDev.Bundle.ViewHelpersBundle.PathResolver.Transformer.html">Transformer</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.Templating.Xhtml.Checker.html">Checker</a>
+<span class="divider">\</span><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.PathResolver.Transformer.CustomTransformer.html">CustomTransformer</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Proxy for checking if site is using XHTML.</p>
+<p class="short_description">Simple map transformer.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -105,15 +105,15 @@
 </tr>
 <tr>
 <th>copyright</th>
-<td>2012 © by Rafał Wrzeszcz - Wrzasq.pl.</td>
+<td>2013 © by Rafał Wrzeszcz - Wrzasq.pl.</td>
 </tr>
 <tr>
 <th>version</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 <tr>
 <th>package</th>
@@ -123,64 +123,68 @@
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Initializes proxy for given listener (if it exists).</h2>
-<pre>__construct(\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener $listener) </pre>
+<h2>Initializes transformer for given path.</h2>
+<pre>__construct(string $basePath) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 </table>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$listener</h4>
-<code><a href="../classes/ChillDev.Bundle.ViewHelpersBundle.EventListener.XhtmlResponseListener.html">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</a></code><p>XHTML event listener.</p></div>
+<h4>$basePath</h4>
+<code>string</code><p>Base path for transofmrations.</p></div>
 </div></div>
 </div>
-<a id="method_isXhtml"></a><div class="element clickable method public method_isXhtml" data-toggle="collapse" data-target=".method_isXhtml .collapse">
-<h2>Checks if page uses XHTML.</h2>
-<pre>isXhtml() : bool</pre>
+<a id="method_transform"></a><div class="element clickable method public method_transform" data-toggle="collapse" data-target=".method_transform .collapse">
+<h2>Transforms given path.</h2>
+<pre>transform(string $path) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 </table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>Original path.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>bool</code>XHTML flag state.</div>
+<code>string</code>Resulted path.</div>
 </div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_listener"> </a><div class="element clickable property protected property_listener" data-toggle="collapse" data-target=".property_listener .collapse">
+<a id="property_basePath"> </a><div class="element clickable property protected property_basePath" data-toggle="collapse" data-target=".property_basePath .collapse">
 <h2></h2>
-<pre>$listener : <a href="../classes/ChillDev.Bundle.ViewHelpersBundle.EventListener.XhtmlResponseListener.html">\ChillDev\Bundle\ViewHelpersBundle\EventListener\XhtmlResponseListener</a></pre>
+<pre>$basePath : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>version</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 <tr>
 <th>since</th>
-<td>0.0.2</td>
+<td>0.1.5</td>
 </tr>
 </table>
 </div></div>
