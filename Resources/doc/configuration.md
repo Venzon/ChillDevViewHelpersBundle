@@ -3,7 +3,7 @@
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
 # @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.4
+# @version 0.1.5
 # @since 0.0.1
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -50,6 +50,8 @@ chilldev_viewhelpers:
             media: "screen" # optional
 ```
 
+You can use [paths resolved by prefixes](./usage.md#paths-resolving) in this helper configuration.
+
 ### Stylesheets
 
 Most common use of `&lt;link&gt;` element is to define external stylesheets. You can use `stylesheets` key for shorter notation - it requires only `href` key, `type` is by default of value *text/css* and `rel` is always *stylesheet*:
@@ -70,6 +72,8 @@ chilldev_viewhelpers:
     stylesheets:
         - "/styles/main.css"
 ```
+
+Prefixes work also for stylesheets definitions, as these are just shorthands for defining links.
 
 ## &lt;script&gt;
 
@@ -92,6 +96,8 @@ chilldev_viewhelpers:
     scripts:
         - "/javascript/prototype.js"
 ```
+
+You can use [paths resolved by prefixes](./usage.md#paths-resolving) in this helper configuration.
 
 ## xmlns=""
 

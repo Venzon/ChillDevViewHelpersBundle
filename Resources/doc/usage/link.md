@@ -2,8 +2,8 @@
 # This file is part of the ChillDev ViewHelpers bundle.
 #
 # @author Rafał Wrzeszcz <rafal.wrzeszcz@wrzasq.pl>
-# @copyright 2012 © by Rafał Wrzeszcz - Wrzasq.pl.
-# @version 0.1.0
+# @copyright 2012 - 2013 © by Rafał Wrzeszcz - Wrzasq.pl.
+# @version 0.1.5
 # @since 0.0.2
 # @package ChillDev\Bundle\ViewHelpersBundle
 -->
@@ -68,3 +68,11 @@ Link helper automatically escapes all attributes content.
 **Note:** Depending on XHTML switch state helper will generate tags ended with `>` (for XHTML turned off, default), or `/>` (for enabled XHTML). Thus it's important to enable XHTML before rendering helper output.
 
 **Note:** `<link>` tag helper extends [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php), so you can use standard methods to manage contained elements.
+
+## Paths resolving
+
+You can use [paths resolved by prefixes](../usage.md#paths-resolving) when defining link source (this works also for stylesheet shortcut call):
+
+```php
+<?php $view['link']->add('@assets:/styles/style.css', 'stylesheet', 'text/css'); ?>
+```
